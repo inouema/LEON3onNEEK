@@ -1,0 +1,27 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+######################################################################
+
+all install-bin clean dep depend install:
+
+install-man:
+	@set -e; \
+	for i in $(srcdir)/*.8 ; do \
+	  gone=`basename $$i .8`.1; \
+	  for f in $(DESTDIR)$(mandir)/man1/$${gone}*; \
+	  do if [ -f $$f ]; then echo Removing old $$f; rm -f $$f; fi; done; \
+	done
+	rm -f $(DESTDIR)$(mandir)/man5/conf.modules.5 $(DESTDIR)$(mandir)/man5/conf.modules.5.gz
+	set -e; \
+	for i in $(srcdir)/*.[1-8] ; do \
+	  ext=`echo $$i | sed 's/.*\.//'`; \
+	  $(MKDIR) $(DESTDIR)$(mandir)/man$$ext/; \
+	  $(INSTALL) -m 644 $$i $(DESTDIR)$(mandir)/man$$ext/; \
+	done
+
+realclean: clean
+
+distclean: realclean
+	rm -f Makefile

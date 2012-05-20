@@ -1,0 +1,5 @@
+OLD_VENDOR="gaisler"
+OLD_PRODUCT="leon3mmu"
+OLD_LINUXDIR="linux-2.6.21.1"
+OLD_LIBCDIR="glibc-from-compiler/build"
+OLD_LANGUAGE=""

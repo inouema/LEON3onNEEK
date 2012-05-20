@@ -1,0 +1,57 @@
+This version, modutils-2.2.2, has its roots in both the modules-2.*.*
+series and the subsequent modutils-2.1.* series.
+
+Many things have changed since either of them were released, especially
+since the module support in the kernel was upgraded during Linux-2.1.*.
+
+Bjorn Ekwall <bj0rn@blox.se> is responsible for the bulk of the actual
+code on the modules-2.*.* utilities, as well as the restructuring and
+additions since modutils-2.1.121.
+
+Jacques Gelinas <jack@solucorp.qc.ca> wrote the original depmod/modprobe
+and was "the other half" of the development team for most of the rest
+of the modules-2.*.* work.
+
+Richard Henderson <rth@cygnus.com> is responsible for the major rewrites
+that resulted in modutils-2.1.121, where the new genksyms, insmod and
+generic object file handling are especially noteworthy. As a result,
+the cross-platform portability of the utilites was greatly enhanced.
+
+Other developers have been of great assistance, too many to mention
+in this document. Look in ChangeLog for the names of most of them.
+
+The following list of ancillary credits is taken from the 2.1.13 source:
+
+insmod:
+ * Originally by Anonymous (as far as I know...)
+ * Linux version by Bas Laarhoven <bas@vimec.nl>
+ * Modified by Jon Tombs.
+ *
+ * Support for transient and resident symbols
+ * added by Bjorn Ekwall <bj0rn@blox.se> in June 1994 (C)
+ *
+ * Load map option conceived by Derek Atkins <warlord@MIT.EDU>
+ *
+ * Support for versioned kernels and symbols: Bjorn Ekwall in December 1994
+ *
+ * Merged in ksyms and rmmod in December 1994: Bjorn Ekwall
+ *
+ * Support for ELF modules: Bjorn Ekwall in December 1994 after having
+ *                          mangled sources from, and been enlightened
+ *                          and supported by Eric Youngdale <eric@aib.com>
+ *                          (the kludges are all mine, don't blame Eric...)
+ * Support for array initializers: Bjorn Ekwall in January 1995
+ * Support for string initializers: Bjorn Ekwall in January 1995
+ * Fixed major bug in a.out bss variable handling: March '95, Bas.
+ * ELF fixes from H.J.Lu <hjl@nynexst.com>
+ * Many ELF and other fixes from:
+ *      James Bottomley <J.E.J.Bottomley@damtp.cambridge.ac.uk>
+ * Full support for MODPATH setting: Henrik Storner <storner@osiris.ping.dk>
+ * Removed limitation of unversioned module vs. versioned kernel: Bjorn
+ * Handle all combinations of ELF vs a.out kernels/modules: Bjorn
+ * Added syslog error reporting with option "-s": Jacques Gelinas
+ * Added MOD_AUTOCLEAN and option "-k" (for kerneld"): Bjorn and Jacques
+ * mc68000: Andreas Schwab <schwab@issan.informatik.uni-dortmund.de>
+ * More fixes (ELF SHN_UNDEF et al) by  Andreas Schwab in February 1996
+ * Added Sparc support: Eddie C. Dost <ecd@skynet.be>
+ * Various improvements added by Hans Lermen <lermen@elserv.ffm.fgan.de>

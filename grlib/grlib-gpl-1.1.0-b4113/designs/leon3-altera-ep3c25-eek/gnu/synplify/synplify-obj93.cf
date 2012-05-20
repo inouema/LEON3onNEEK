@@ -1,0 +1,17 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/synplify/sim/synattr.vhd" "20120118214647.000" "20120128164811.573":
+  package attributes at 44( 2442) + 0 on 24;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/synplify/sim/synplify.vhd" "20120118214647.000" "20120128164811.498":
+  entity prim_counter at 14( 959) + 0 on 11;
+  architecture beh of prim_counter at 31( 1394) + 0 on 12;
+  entity prim_dff at 59( 2110) + 0 on 13;
+  architecture beh of prim_dff at 69( 2345) + 0 on 14;
+  entity prim_sdff at 83( 2619) + 0 on 15;
+  architecture beh of prim_sdff at 96( 2872) + 0 on 16;
+  entity prim_latch at 115( 3103) + 0 on 17;
+  architecture beh of prim_latch at 125( 3342) + 0 on 18;
+  entity zeroohm1 at 187( 6074) + 0 on 19;
+  architecture zeroohm1_a of zeroohm1 at 198( 6221) + 0 on 20;
+  entity prim_ramd at 225( 6851) + 0 on 21;
+  architecture beh of prim_ramd at 243( 7318) + 0 on 22;
+  package components at 265( 7750) + 0 on 23;

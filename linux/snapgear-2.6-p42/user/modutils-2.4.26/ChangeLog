@@ -1,0 +1,1615 @@
+2003-10-28 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.26
+
+	* Ignore SHT_MIPS_DWARF sections.  Alvaro Martinez Echevarria.
+	* Add -malign-double to cflags for 64 bit builds.
+	* Fix zlib linking problems.  Maciej W. Rozycki.
+	* Remove hard coded limits on length of modules.conf lines.
+	* Alias updates.  Red Hat.
+	* Makefile fix for parallel build using bison.  Andreas Haumer.
+	* Document difference between patterns and modules in modprobe.
+	  Frank Murphy.
+	* Suppress module not found message on modprobe -q.  Frank Murphy.
+	* Add module name to some messages.  Red Hat.
+	* Add amd64 support.  i386 now defaults to combined 32/64 bit.
+	  Arnd Bergmann.
+	* Older glibc versions had a wrong name for R_390_GOTOFF32.
+	  Arnd Bergmann.
+	* Run known directories in the correct historical order.  Red Hat.
+	* Upgrade config.sub, config.guess to glibc 2.3.2.
+	* Add sh64 support.  Benedict Gaster.
+	* Only build sys_oim.o when COMPAT_2_0 is set, it breaks with ia64 and
+	  recent glibc.
+
+2003-03-29 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.25
+
+	* Add hppa and hppa64 to the list of architectures that have function
+	  descriptors.
+	* Add combined s390/s390x support.  IBM.
+
+2003-03-23 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.24
+
+	* Remove the default of exporting all symbols, but only on
+	  architectures that have function descriptors (ia64, ppc64).
+	* Add libmodutils.a to make clean list.
+
+2003-03-13 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.23
+
+	* Correct s390[x] relocations for position independent code.
+	  Bill Nottingham/Amit S. Kale.
+	* Add alias for the tun/tap device.  Bill Nottingham.
+	* Fix insmod for ppc64 MODULE_PARM(foo, "l").  Peter Bergner.
+	* Add DESTDIR to man_kerneld, change man pages from 444 to 644.
+	  Peter Breitenlohner.
+	* libz must be static for --enable-zlib.  Bill Nottingham, reworked
+	  by Keith Owens.
+	* Add note about refusing patches that change behaviour to man pages.
+	* Alpha now uses srel32 in the exception handling macros.
+	  Richard Henderson.
+	* Support ia64 brl relocations.
+
+2002-11-25 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.22
+
+	* Avoid unaligned traps on alpha.  Ivan Kokshaysky.
+	* Handle R_PPC64_NONE relocs, remove warnings.  Alan Modra.
+	* Add DESTDIR to build (from SuSe).
+	* Check for special characters in module name (from SuSe).
+	* Check x86_64 for -mcmodel=kernel (from SuSe).
+	* Add alias for osst (from SuSe).
+	* Check for illegal mixture of gcc 2 and 3 (from Red Hat).
+	* Build libmodutils.a (from Red Hat).
+	* Selectively add aliases, above, below, prune entries (from Mandrake).
+	* Add MODUTILS_MACROS (from Mandrake).
+	* Remove more warnings.
+	* Add Kerntypes to prune list.
+
+2002-10-13 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.21
+
+	* Add ksymoops support for sbss section.
+	* Allow include to handle multiple files, with globbing.  Kelledin.
+
+2002-09-04 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.20
+
+	* Do not rely on timestamps for keywords.c.
+
+2002-07-31 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.19
+
+	* Correct ia64 SEGREL relocations.  Fixes incorrect unwind data for
+	  ia64 modules.
+	* Remove 64 bit warnings.
+	* New aliases.  Bill Nottingham.
+	* Add R_PARISC_PCREL22F.  Richard Hirst.
+	* Remove flex warning.
+
+2002-07-22 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.18
+
+	* Optionally only check the numeric part of the kernel and module
+	  version, insmod -N.  This option is always set for kernel >= 2.5, it
+	  defaults to off for earlier kernels.
+
+2002-07-21 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.17
+
+	* struct obj_symbol needs target specific value for 32/64 bit modutils.
+	  Will Schmidt.
+	* New binutils no longer uses '?' for kstrtab in System.map.
+	  Alan Modra.
+	* Only warn for unknown parameters on insmod.  This used to be an error
+	  which caused migration problems when a parameter was removed from a
+	  module.  Requested by Matt Domsch.
+	* Change default TAINT_URL to http://www.tux.org/lkml/#export-tainted.
+	* Upgrade for bison > 1.31.  Reported by Akim Demaille.
+	* Add license string "GPL v2".  Reported by Pavel Roskin.
+	* PPC64 updates for new relocation types.  Alan Modra.
+	* Revert depmod to pre-2.4.13 behaviour.  Unresolved symbols should not
+	  cause a non-zero return code unless depmod -u is explicitly set.
+
+2002-04-28 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.16
+
+	* Print 'Module loaded, with warnings' for people who cannot tell the
+	  difference between warnings and errors.
+	* Tell the user where to find more information about tainted modules.
+	* Add configure option TAINT_URL, default http://www.tux.org/lkml/#s1-18.
+	* Workaround for ppc64 symbols that contain _R in the name.  Guy Streeter.
+	* Add alias char-major-200 vxspec.  Tigran Aivazian.
+	* Add "look in syslog or dmesg output" to hints for failing modules.
+	  Suggested by Georg Acher.
+	* Environment variable UNAME_MACHINE overides the value of uname machine.
+
+2002-03-20 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.15
+
+	* Expand small snprintf buffers to PATH_MAX.  Debian #138350.
+	* Add alias ppp-compress-18 ppp_mppe.  Frank Cusack.
+	* Add x86-64 support.  Andreas Jaeger, Andi Kleen.
+	* Clean up and document modinfo printing of parameters.  Miloslav Trmac.
+	* Update config.{guess,sub} to 2002-03-04.
+
+2002-02-27 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.14
+
+	* Clean up modinfo, modprobe, rmmod, lsmod man pages.  Barry Rountree.
+	* Add EXPORT_SYMBOL_GPL to genksyms list.  Arjan van de Ven.
+	* Document %{kernel_version} and %{using_checksums} for modinfo.
+	  Pavel Roskin.
+	* Remove RCS Id lines.
+
+2002-02-01 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.13
+
+	* ppc64 changes by Alan Modra.
+	  insmod/insmod.c (add_symbols_from): Add function descriptor syms for
+	  ppc64.
+	  (create_module_ksymtab): Tweak module base for ppc64.
+	  obj/obj_ppc64.c (arch_new_file): Update comment.
+	  (ppc64_process_syms): Look for kernel and module base addresses.
+	  (arch_create_got): Accept more relocs.
+	  (apply_addr16_lo, apply_addr16_lo_ds, apply_addr16_hi,
+	  apply_addr16_ha, apply_toc16): New.
+	  (apply_toc16_ds): Use apply_addr16_lo_ds.
+	  (arch_apply_relocation): Perform more relocs.
+	* Add --quick to depmod (equivalent to -A).
+	* Clean up multiple man pages.  Barry Rountree.
+	* Fix a relocation problem in insmod for IA64 IMM64 types.
+	  Asit K Mallick.
+	* Make obj_gpl_license combined 32/64 bit aware.  Tom Duffy and
+	  Ben Collins (identical patches :)
+	* Build correctly with 32/64 and separate insmod/kallsyms.
+	  Bill Nottingham.
+	* fdatasync() after writing to /var/log/ksymoops to improve the chance
+	  of the log surviving an oops.  Suggested by Urban Widmark.
+	* Do not abort if insmod option is longer than 2000 characters.
+	  Reported by Gary Lerhaupt.
+	* Do not exit early on depmod problems, do as much work as possible.
+	  Requested by Christian Lademann.
+
+2001-11-20 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.12
+
+	* More verbose hints for unresolved symbols in non-GPL modules.
+	* Remove spurious #endif from elf_ppc64.h.
+	* Use #define for taint flags, add taint flag for non-SMP capable cpus.
+	* Do not check if the module is already loaded when -n is specified.
+
+2001-11-15 Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.11
+
+	* Add taint printing to lsmod.
+	* PPC64 support.  Alan Modra, Anton Blanchard.  Tweaked by Keith Owens.
+	* HPPA64 configure fix.  Reported by Helge Deller, different fix by
+	  Keith Owens.
+	* PNPBIOS support.  Andrey Panin.
+	* Add __sparc_dot_ to depmod.  Alex Buell.
+	* Add generic __dot_ support to depmod.  Keith Owens.
+
+2001-10-02  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.10
+
+	* Remove duplicate patch for sh, Tom Rini.
+	* Handle empty multi-line modinfo fields, reported by Bill Nottingham.
+	* Add obj_find_relsym(), standard method of finding relocation symbols.
+	* Default char-major-4 (tty) to off for s390.  S390 group via Red Hat.
+	* Support GPL only exported symbols (EXPORT_SYMBOL_GPL).
+
+2001-09-25  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.9
+
+	* Update to latest config.guess/sub from ftp.gnu.org:/pub/gnu/config.
+	* Add sh (super-h) support from Niibe Yutaka.
+	* IEEE1394 support by Kristian Hogsberg, cleaned up by KAO.
+	* Add support for Alpha GPREL16, GPRELHIGH, GPRELLOW relocs.
+	  Fix short data section allocation order for Alpha and IA-64.
+	  Don't relocate non-allocated sections.  Richard Henderson.
+	* Mark the kernel as tainted for non-GPL modules or insmod -f.
+
+2001-08-29  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.8
+
+	* Always define flag_unresolved_error.  Debian #108934.
+	* Check for symindx out of bounds.  H. J. Lu.
+	* Archdata for MIPS, dbe table.  Maciej W. Rozycki.
+	* Archdata for PPC, ftr fixup.
+
+2001-08-15  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.7
+
+	* Correct filename in depmod man page.  Debian #94652.
+	* Note that modprobe requries a bare module name.
+	* Ensure at least one space after section names in insmod map.
+	* obj_kallsyms needs to be 32/64 safe.
+	* Better error checking in makefiles.  Reported by Nico Schottelius.
+	* S390 support from Ulrich Weigand.  Includes Debian #107308.
+	* Add s390 iucv aliases.  Add binfmt-0000 off.  Fix modprobe man page
+	  typo.  Red Hat.
+	* Non-zero return code for depmod with unresolved symbols.  Original by
+	  Red Hat, reworked by me.
+	* Add alias tunl0 ipip, requested by Pekka Savola.
+	* Aliases for parallel port devices.  Tim Waugh.
+
+2001-05-06  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.6
+
+	* Replace uint64_t with u_int64_t for glibc 2.0.  Luis Carlos Yamamoto.
+	* /dev/rtc can be a module.  Urs Thuermann.
+	* Do not assume that malloc(0) returns a pointer.  Bug report by
+	  Kiichiro Naka, different fix by Keith Owens.
+	* Cross compile changes.  Maciej W. Rozycki.
+	* Better explanation for rmmod -a.   Marc Herbert.
+	* Remove modules(2) references.  Debian #69398.
+	* hppa dp is $global$, not data_start.  Richard Hirst.
+	* hppa64 stub for millicode calls must not use dp.  Richard Hirst.
+
+2001-03-29  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.5
+
+	* Use tgt_long in kernel structures.  Dave Miller.
+	* Correct format for generic strings.
+	* Print modinfo filename before parameters.
+	* Print modinfo output in machine parsable format.
+	* Support for SEGREL32 relocs on hppa/hppa64.  Richard Hirst.
+
+2001-03-26  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.4
+
+	* Do not generate filenames when reading nested config files.
+	* depmod ignored user prune commands, reported by Kristofer T. Karas.
+	* Change error message for short ELF header.
+	* Missing commas in alias list.  Urs Thuermann.
+	* Print an error message when genksyms detects a bad kernel version.
+	  Mark McLoughlin
+	* modinfo default changed to filename, description, author, parameters.
+	  Mark McLoughlin
+
+2001-02-26  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.3
+
+	* putenv() strings must be copied first.
+	* Not everybody has Elf64_Xword.
+	* Add stdlib.h to some files for glibc 2.2.
+	* Red Hat modutils-2.4.0-alias.patch.
+	* Out by one error in alloca.  Spotted by Yann Droneaud.
+
+2001-01-23  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.2
+
+	* genksym changes: Remove 'attribute' as a C keyword, add 'restrict',
+	  '__restrict', '__restrict__', '_Bool'.  Thanks to Richard Henderson.
+	* Log modprobe commands in /var/log/ksymoops.  This one's for Wichert.
+	* Revert to a single USB table format.  USB maintainers will not support
+	  anybody on 2.4.0-prerelease or earlier.
+
+2001-01-09  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.1
+
+	* Cast 2*sizeof to int in printf, new gcc warns about this.
+	* Add an optional version number to kernel tables.
+	* Handle version 1 and 2 usb device tables.
+	* man lsmod documents use count -1.
+
+2001-01-05  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.4.0
+
+	* Clone from 2.3.24.
+
+2001-01-01  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.24
+
+	* Correct check for empty generic string.
+	* Add alias usbdevfs usbcore.
+
+2000-12-17  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.23
+
+	* Correct error path in rmmod.c.  Andrew Morton.
+	* Include latest Red Hat alias list.  Bill Nottingham.
+	* hppa and hppa64 support.  Richard Hirst.
+	* Rework Makefiles for common 32/64 code.  Keith Owens.
+	* Add parportmap.  Adam J Richter, Keith Owens.
+	* Use GNU standards for cross compile.  Maciej W. Rozycki.
+	* Fix bound check on generic_string.  Bug reported by Jaroslav Kysela,
+	  different patch by Keith Owens.
+	* Warn instead of error for invalid MODULE_PARM.  Keith Owens.
+
+2000-12-07  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.22
+
+	* POSIXification/newlib changes.  Werner Almesberger.
+	* modprobe -C did not print probe/probeall.  Wolfgang Oertl.
+	* options statement was confused by /dev/snd and snd.  Wolfgang Oertl.
+	* Report failing module in a dependency list.  Original patch by
+	  Pavel Roskin, reworked by Keith Owens.
+	* IA64 unwind fix.  Richard Henderson via Red Hat.
+	* modprobe -c used incorrect keywords for generated filenames.
+	  Reported by Gabor Z. Papp.
+	* char-major-10-184 microcode.  Tigran Aivazian.
+	* Reinstate sys_oim.c in util/Makefile.in.
+	* Add support for persistent module data.
+	* Correct test for unexpected REL/RELA sections.  Maciej W. Rozycki.
+	* Limit stack recursion in modprobe.  Kurt Garloff.
+	* Support MODULE_GENERIC_STRING.  Jaroslav Kysela.
+
+2000-11-21  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.21
+
+	* Remove compile warnings in xstrcat.
+	* snprintf cleanups.
+	* Set safemode when uid != euid.
+	* Strip quotes from shell responses.
+
+2000-11-16  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.20
+
+	* Rewrite table generation code to make it easier to add new tables.
+	* usbmap uses zero vendor as wildcard, test more fields to find end of
+	  table.  Adam J. Richter.
+	* Off by one error in relocations.  Jean-Francois Moine.
+	* Use tgt_long to handle different sizes in combined 32/64 bit
+	  systems.  Original patch by Dave Miller.
+	* Include module type in headers of generated files.  Randy Dunlap.
+	* Add insmod -S (force kallsyms), clean up insmod parameters, man page.
+	* Clean up messages.
+	* Verify MODULE_PARM strings.
+	* Check for multiple well known symbols to get prefix.
+	* Security cleanup.  Triggered by Bugtraq exploits by Michal Zalewski,
+	  Sebastian Krahmer, Chris Evans.  It is still the kernel's fault for
+	  passing user data unchanged to a program running as root.
+	* Add missing s/390 arch_finalize_section_address.  Roger Luethi.
+	* depmod -F supports strange sparc __export_priv_.  Dave Miller.
+	* Sparc64 relocation patch.  Red Hat (not that they bothered to tell me).
+	* Sparc64 compile and link fixes.  Me, with thanks to Dave Miller for
+	  making a machine available.
+
+2000-10-22  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.19
+
+	* Add insmod -O.
+	* Generate usbmap from MODULE_DEVICE_TABLE(usb).
+	* Move print map before sys_init_module to assist debugging.
+	* Ignore ALLOC attribute for .modinfo.
+	* Correct R_MIPS_26 relocations by Maciej W. Rozycki.
+	* Switch back to .gz to suit kernel.org.
+
+2000-10-11  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.18
+
+	* Correct typo in modutils.spec use of mandir.
+	* Ignore addressless symbols in System.map, by Ivan Kokshaysky.
+	* No error on unexpected relocate sections if they are empty.
+	* Generate modules.isapnpmap from MODULE_DEVICE_TABLE(isapnp) and
+	  ISAPNP_CARD_TABLE.
+	* Add .rhkmvtag to prune list.
+	* Include filename in "not an ELF file" message.
+
+2000-09-21  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.17
+
+	* config.{guess,sub}, configure.in updates by Pavel Roskin.
+	* Fix a NULL base_dir in modinfo.  Reported by John Summerfield.
+	* obj_ia64 patch for module unwind.  Mike Stephens.
+	* Add vmlinux, vmlinuz, bzImage, zImage to prune list.
+	* depmod -F System.map only looks at exported symbols.
+	* Convert to bzip2.
+	* Spec file update for mandir by Horst von Brand.
+
+2000-09-10  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.16
+
+	* Increase maximum symbols in map from 10,000 to 100,000.
+	* Add __archdata section on architectures that need arch
+	  specific data in loaded modules (IA64 is first).
+	* Ignore unresolved references if there are no relocation
+	  entries for them.  Some versions of gcc generate spurious
+	  unresolved externals which are not actually used.
+	* Update modules.conf man page by John Levon.
+	* Simplify path list, defaults are almost all [toplevel] only.
+	* Add prune command to modules.conf man page.
+
+2000-08-16  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.15
+
+	* Fix spelling and typos in man pages.
+	* Add maintainer entry.
+	* spec file changes, newer rpm automatically gzips man pages.
+	  Horst von Brand.
+	* Do not install kdstat and kerneld manual pages unless kerneld is
+	  compiled.  Noticed by Debian.
+	* config.c needs explicit include of <stdarg.h> on older libc.c.
+	  Noticed by everybody :(.
+	* Ensure that sbindir exists before install binaries.  Noticed by
+	  Wolfgang Weisselberg.
+	* Sparc 32/64 fixes, Horst von Brand, Jakub Jelinek.
+	* Set the default value of use-syscall based on a config check for the
+	  presence of query_module() in libc.  Requested by Richard Gooch.
+	* Add a config option for the default value of root-check.  insmod -r is
+	  now a toggle.  Requested by Richard Gooch.
+	* Replace install -d with mkdir -p.  install -d has an undocumented
+	  feature, it silently changes directory permissions to 755 even if the
+	  directory already exists!
+	* MIPS ELF patch by Maciej W. Rozycki.
+
+2000-08-07  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.14
+
+	* Replace ftw() with modutils specific xftw().
+	* Use absolute filename in __insmod symbol.
+	* Generate modules.pcimap from MODULE_DEVICE_TABLE().
+
+2000-07-20  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.13
+
+	* More gzipped objects changes by Willy Tarreau.
+	* Default to no backwards compatibility.  See INSTALL if you want
+	  modutils to run on 2.0.x kernels, if you want kerneld (died in 2.1.91)
+	  or if your libc does not have create_module(), query_module() etc.
+	* IA64, s390 fixes.
+	* Red Hat 486 patch.
+	* Red Hat modprobe -k patch.
+	* Red Hat kallsyms patch.
+	* Add mtd directory, aliases from David Woodhouse.
+	* Handle unaligned IA64 relocations.
+	* Fix for IA64 modules with no cleanup routine, Mike Stephens.
+	* Refuse to load modules compiled with -mconstant-gp.
+
+2000-07-09  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.12
+
+	* Only read default config on first file.
+	* Add /lib/modules/.../kernel directory, positioning for Makefile rewrite.
+	* Correct modinfo -f by Yann Droneaud.
+	* Add filename to obj_file, allow %{filename} in modinfo format.
+	* Partial cleanup char vs const char.
+	* Handle gzipped objects by Willy Tarreau.
+	* SuSe patch for s390 support.
+	* SuSe patch to default aliases.
+	* IA64 support by Mike Stephens.
+	* Update hint message for kernel errors.
+	* Default to using libc, phasing out _syscall().
+
+2000-04-20  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.11
+
+	* Add ieee1394 directory, requested by Andreas Bombe.
+	* Documentation and options updates.  Add long options, clean
+	  up missing or incorrect usage entries.  Callum <no last name>.
+	* White space cleanup.
+	* Do meta expansion on "include" and "if" parameters.
+	* Ignore genksyms suffix when reading map from -F.
+	* Add support for kallsyms to assist kernel debugging.
+	* Hint message for -EBUSY.
+	* Sanity check on number of local symbols.
+
+2000-03-15  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.10
+
+	* Add arch64().  Keith Owens.
+	* Ensure that mandir exists.  Giacomo Catenazzi <cate@student.ethz.ch>
+	* Assume MOD_DELETED flag when QM_... gets ENOENT.  Keith Owens.
+	* util/config.c (check_update): New function.  (need_update): New
+	  function.  (config_read): If -A option given and update not needed,
+	  exit.  depmod/depmod.c (DEPMOD_MAIN): New option -A.  (depmod_usage):
+	  Update usage info.  Tim Waugh <twaugh@redhat.com>
+	* Derive genksyms prefix from well known symbol, automatically picks up
+	  unusual symbol prefixes.  Suggested by Edouard G. Parmelan because
+	  Red Hat used "smp" instead of "smp_" :(.  Different implementation by
+	  Keith Owens.
+	* Add ide modules directory.  Keith Owens.
+	* Truncate alias loops.  Pass alias result to probe[all].  Bug found and
+	  patch suggested by Pablo Bianucci, different implementation by Keith
+	  Owens.
+
+1999-12-19  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.9
+
+	* Remove devfs.aliases, out of date and to be supplied by
+	  devfsd, not modutils.
+	* util/alias.h (aliaslist): Add ppdev default alias.  Tim Waugh
+	  <tim@cyberelk.demon.co.uk>
+	* Redo the way the combined module recognizes its function.
+	  Suggested by Stepan Kasal, different implementation by Keith Owens.
+	* Rationalize the code for common 32/64 bit architectures.
+	  Keith Owens.
+	* Fix depmod error message.  Keith Owens.
+	* Report correct module name on failure (Debian 53423).  Keith Owens.
+	* Flush last message when using syslog.  Maciej W. Rozycki.
+
+1999-12-11  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.8
+
+	* More flexible recognition of the way the utility was called.
+	  Suggested by Stepan Kasal, different implementation by Keith Owens.
+	* Add option to strip binaries during install.
+	  Suggested by Stepan Kasal, different implementation by Keith Owens.
+	* Rework --enable-combined configure options, default is now to build
+	  a single module containing insmod, rmmod, modprobe, lsmod and ksyms.
+	  Stepan Kasal.
+	* Change --enable-combined-sparc to --enable-common-sparc, using
+	  "combined" for a single module as well as common sparc 32/64 code was
+	  confusing.  Keith Owens.
+	* Reduce ambiguity when an alias and a module have the same name.
+	  Keith Owens.
+	* Rework common sparc code.  Stepan Kasal.
+
+1999-11-21  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.7
+
+	* Reinstate kernel 2.0 support in rmmod.
+	* Include mips in target cpu list.  Debian #48875.
+	* insmod_ksymoops_clean checks if /proc/ksyms exists.  Debian #49013.
+	* snap_shot remove test for symlink.  Debian #49059.
+	* Correct RPM spec file.  Niels Kristian Bech Jensen.
+	* Add --enable-kerneld configure option.  Niels Kristian Bech Jensen.
+	* --enable-combined-sparc support (default on sparc and sparc64), which
+	  compiles executables handling both 32bit and 64bit SPARC modules.
+	  Jakub Jelinek.
+	* Fixes a few issues with SPARC 64bit support by a 32bit binary.  Jakub
+	  Jelinek.
+	* Cross compile support with thanks to Peter Loje Hansen.
+	* Add --disable-insmod-static.
+	* Add MOD_INITIALIZING.
+
+1999-10-18  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.6
+
+	* modprobe -a bug fixes by Yuuki Harano <masm@sa.uno.ne.jp>.
+	* Add EXTRA_DEFS to Makefiles for distributions.
+	* Add test for NO_WARN_ON_OLD_LINK for distributions that do not want
+	  warnings in 2.3.x.
+	* ARM patch from Philip Blundell <philb@gnu.org>.
+	* Remove malloc overwrite when modules do not reference __this_module.
+
+1999-10-12  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.5
+
+	* Debian VPATH patches, kernelversion script, man pages by
+	  Wichert Akkerman <wichert@cs.leidenuniv.nl>.
+	* VPATH fixes for insmod_ksymoops_clean.
+	* Correct timestamp in insmod_ksymoops_clean, change days from 7 to 2.
+	* Remove debugging instruction that had been left in.
+	* Change char-major-14 to soundcore, per sailer@ife.ee.ethz.ch
+	* Correct ppp-deflate-26, was -24.
+	* Correct manual headers.
+	* Add -r flag to depmod and insmod for people who want to shoot
+	  themselves in the foot.
+	* Reformat messages for 80 character wide screens and add commands.
+
+1999-10-08  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.4
+
+	* Replace /etc/conf.modules with /etc/modules.conf.
+	* Add insmod_ksymoops_clean script.
+
+1999-10-08  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.3
+
+	* Minor bug fixes.
+	  Do not malloc zero bytes.
+	  Return correct error message for modprobe -r.
+	  Remove spurious Makefile variables.
+
+1999-08-25  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.2
+
+	* Add usb directory.
+	* Update documentation.
+	* Additional hints for -EBUSY on init_module.
+
+1999-08-24  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.1
+
+	* Add ksymoops support.
+
+1999-08-24  Keith Owens  <kaos@ocs.com.au>
+
+	modutils 2.3.0
+
+	* New modutils maintainer.
+	* Convert from CVS to PRCS.
+
+1999-07-29  Richard Henderson  <rth@cygnus.com>
+
+	modutils-2.2.2-pre8:
+
+	* depmod/depmod.c (resolve): Prefer first definition.
+	Based on patch from Kurt Garloff <garloff@suse.de>.
+
+1999-05-31  Philip Blundell  <philb@gnu.org>
+
+	modutils-2.2.2-pre7:
+
+	* insmod/Makefile.in (depend): Fix for building outside source
+	directory.
+	* depmod/Makefile.in (depend): Likewise.
+	* obj/Makefile.in (depend): Likewise.
+
+	* obj/obj_arm.c (arch_apply_relocation): Correct handling of PC24
+	relocs.
+
+1999-03-30  Philip Blundell  <pb@nexus.co.uk>
+
+	Fix makefiles for building outside the source directory:
+	* Makefile.in: Don't set $(VPATH) here.
+	* insmod/Makefile.in: Build crc32.tab in the source directory.
+	* genksyms/Makefile.in: Build parse.[ch] in the source directory.
+
+Thu Mar 25 15:58:36 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	modutils-2.2.2-pre6:
+
+	* Cleaned up and unified util/config.c
+	* Added "probe" and "probeall" directives to conf.modules
+	  Added prefix "add" to "probe", "probeall", "above", "below", "options"
+	  Added "alias module null" for use as dummy that always succeeds
+	    Suggestions from Adam J. Richter <adam@yggdrasil.com>
+	* Updated man pages
+	* Cache syslog messages until exit (to avoid syslog loop)
+	* Added basic support for devfs in modprobe. New file: devfs.aliases
+	    Suggestion and aliases from Richard Gooch <rgooch@atnf.csiro.au>
+	* Depmod converted to C
+
+Tue Mar 23 20:08:13 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	modutils-2.2.2-pre5:
+
+	* "modprobe -r" with multiple modules tries each stack separately
+	  Report from Tim Waugh <tim@cyberelk.demon.co.uk>
+	* Removed spurious calls to "/bin/echo" in meta_expand.c (check for "=")
+	  Report from Adam J. Richter <adam@yggdrasil.com>
+	* Modprobe checks mtime instead of ctime for modules.dep
+	  Report from Tim Waugh <tim@cyberelk.demon.co.uk>
+	* Restructured depmod for higher speed
+	* Removed self-reference in depmod output
+	  Report from Adam J. Richter <adam@yggdrasil.com>
+	* Fixed extremely silly bug in modprobe.c build_stack()
+	* Made linked lists in modprobe a little more readable
+	* Automatic removal of obsolete section 1 man pages
+	* Added test module "test" in insmod/test
+	* Added support for pre-defined "below" in util/alias.h
+	* Check for C++ in configure. Input from:
+	  ralf@uni-koblenz.de, Petr Vandrovec <VANDROVE@vc.cvut.cz>
+
+Sat Mar 20 01:29:55 CET 1999   Bjorn Ekwall  <bj0rn@blox.se>
+
+	modutils-2.2.2-pre4:
+
+	* Fixed very silly stack bugs in modprobe.c build_stack()
+	* Added option "-d" (debug) to modprobe to show stacks
+	* Do not complain if modprobe fails to load "above" modules
+	* Made modprobe -r error reporting conform to specs
+	  Reports from Tim Waugh <tim@cyberelk.demon.co.uk>
+	* Added support for pre-defined "above" in util/alias.h
+	* Added to alias and options in alias.h
+	* Added "atm" to standard module tree.
+	  From Richard Gooch <rgooch@atnf.csiro.au>
+	* Changed make depend to use $(CC) instead of gcc
+	  and $(CXX) to $(CC) in depmod (for easier cross compiles)
+	  From Petr Vandrovec <VANDROVE@vc.cvut.cz>
+
+Thu Mar 18 23:38:46 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	modutils-2.2.2-pre3:
+
+	* Upgraded the script "create_syms" in the depmod directory
+	  to be actually useful after a kernel "make modules_install".
+	  Perhaps I should select a more appropriate name, though...
+
+	* Added '-q' option to insmod and modprobe to make insmod be
+	  quiet about unresolved symbols and version mismatches,
+	  except via the exit status. For "modprobe -k", -q is implied.
+
+	* Fixed silly bug in modprobe.c for reverting a failed load.
+
+	* Made sure config.c uses "version" and not "uts_info" when asked to.
+
+	* Serious restructuring of the logic in depmod in order to
+	  ensure correct dependencies at all times. Resolving of
+	  undefined symbols is delayed until _all_ modules in a subtree
+	  have been processed. Now makes sense of "path=/lib/modules".
+
+	* Modified linked list order in modprobe.c to make best use
+	  of the depmod upgrades.
+
+	* Explicitly initialize "errors" to 0 in insmod.c main() to handle
+	  multiple modprobe calls.
+
+	* Restored mscan definition, to pre1. That wasn't the problem...
+
+	* Upgraded NEWS, README, TODO, CREDITS, insmod.8, modprobe.8
+
+	* Commented away use of HAVE_WORDEXP in util/meta_expand.c
+	  until I'm sure it is OK.
+
+Wed Mar 17 18:17:59 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	pre2:
+
+	* From Michal Jaegermann <michal@ellpspace.math.ualberta.ca>:
+	  * Updated modutils.spec
+	  * Typecast adaptions for Alpha (config.c, meta_expand.c)
+	* Fixed bug in depmod.cc main() handling result from config_lstmod()
+	  helped by gdb stacktrace from Jochen Friedrich <jochen@nwe.de>
+	* Survive ftw(NON_EXISTANT_PATH) => errno = ENOENT in config.c
+	  (different behaviour on different platforms).  Bugreports and tests:
+	  Jochen Friedrich <jochen@nwe.de> and Garst R. Reese <reese@isn.net>
+	* Fixed handling of quoted strings in util/meta_expand.c
+	  Bug report from: Andrzej Krzysztofowicz <ankry@green.mif.pg.gda.pl>
+	* Use /var/run instead of /tmp to store pid of request-route :-(
+	* Test if small modification in modstat.c mscan macro fixes
+	  Alpha problem on 2.0.*
+
+1999-03-17  Philip Blundell  <philb@gnu.org>
+
+	* obj/obj_arm.c: Merge in ARM changes from HCC/Corel tree.  Add
+	support for synthesising GOT and PLT to cope with too-large
+	address offsets in relocs.
+
+	* config.sub: Update from glibc 2.1.
+
+Tue Mar 16 21:11:37 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	* Fixed bug in insmod.c, get_module_version: should also be:
+	  look for "__module_kernel_version", not only: "kernel_version".
+	  Problem reported by Arnaud Installe <a.installe@ieee.org>
+	* Added error message if a module isn't owned by root
+	  (This security check was added early in this series, but
+	   didn't appear in the ChangeLog, thanks for the reminder Arnaud!)
+	* Added two aliases from Tigran Aivazian <tigran@sco.COM>
+	* Warning about conditional paths added to conf.modules.5
+	* Added notification if the module configuration file is
+	  more recent than the module dependencies file.
+	* Added simple-minded tool "create_syms" in depmod directory.
+	  Generates kernel symbol file for "depmod -F symfile".
+
+Tue Mar 16 21:11:37 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	* Added error message if a module isn't owned by root
+	  (This security check was added early in this series, but
+	   didn't appear in the ChangeLog, thanks for the reminder Arnaud!)
+	* Added two aliases from Tigran Aivazian <tigran@sco.COM>
+	* Warning about conditional paths added to conf.modules.5
+	* Added notification if the module configuration file is
+	  more recent than the module dependencies file.
+	* Added simple-minded tool "create_syms" in depmod directory.
+	  Generates kernel symbol file for "depmod -F symfile".
+
+Tue Mar 16 13:36:03 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	* Optimistically named current version "modutils-2.2.2-pre1".
+	* Updated conf.modules(5).
+	* Added "-n" (numeric) to expression evaluation for "if" directives
+	  in configuration files.
+
+Tue Mar 16 00:57:36 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	* Upgraded man pages (and renamed from section(1) to section(8))
+	* Big modprobe rewrite:
+		* For "normal" modprobe requests (i.e. no wildcards)
+		  all information is deduced from the module dependency file
+		  and configuration file. This means that there is no need
+		  to scan the actual directories in order to find the modules.
+		  So, using modprobe is now at least as fast as plain insmod!
+		* There can be an unlimited number of alias levels, where
+		  each alias level can have its own set of "options".
+		  The upper level alias "options" will override the
+		  options defined for "lower"levels.
+
+Fri Mar 12 23:57:19 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	insmod/modprobe.c:
+	* Added (forgotten) "above" and "below" handling to unload()
+	* Discovered and fixed a bug in unload():
+		look for requested name as well as the basic name to handle
+		modules inserted with "insmod -o kernelname basicname.o"
+
+Fri Mar 12 18:17:48 CET 1999  Bjorn Ekwall  <bj0rn@blox.se>
+
+	Summary of changes from lastest 2.1.121 version
+	(with vger.rutgers.edu updates)
+
+	==============================================================
+	Base directory:
+
+	configure.in
+		--disable-combine-rmmod		changed
+		--disable-combine-modprobe	changed
+		--disable-compat-2-0		new!
+
+	Makefile.in (and all Makefile.in in the subdirectories)
+		Cleanup of makefiles, especially realclean, distclean
+
+	==============================================================
+	./depmod
+
+	* All code from 2.1.121 replaced
+	* Restart from latest current C++ version from Jaques Gelinas
+	* Depmod and modprobe separated, modprobe moved to ../insmod
+	* Some depmod cleanups w.r.t. tree handling
+	* All handling of /etc/conf.modules unified and moved to ../util
+	* Kernel symbols read via new get_kernel_info() in ../util/libutil.a
+	* Loading of object file info uses ../obj/libobj.a
+	* Less memory usage by new obj_free() in ../obj/libobj.a
+	* For modules with module_info, use the explicitly exported symbols
+	* Use getopt in depmod, with long options
+	* New depmod options -F -C -b -n -q
+		-F	read kernel symbols from a file instead of kernel:
+			File type: either System.map or copy of /proc/ksyms
+		-C	Use alternate config file instead of /etc/conf.modules
+		-b	Work with a moved directory image of /lib/modules
+		-n	Do nothing, write output on stdout instead
+		-q	Be QUIET, even if there are unresolved symbols
+
+	==============================================================
+	./genksyms
+
+	* lex.c parse.c and parse.h included in tar dist for people
+	  without flex and bison (some such exist).
+	* Makefile dependencies more clear
+
+	==============================================================
+	./include
+
+	General change:	all "new_"-symbols drops "new_"
+
+	New files:
+	* config.h	for the new generic handling of /etc/conf.modules
+			via ../util/config.c, included in ../util/libutil.a
+	* modstat.h	for generic module info via get_kernel_info() in
+			../util/modstat.c, included in ../util/libutil.a
+
+	Modified files:
+	* kerneld.h	Fixed for handling all kerneld protocols
+	* module.h	all "new_"-symbols drops "new_"
+	* obj.h		new obj_free() call added
+	* util.h	merged logger.h, added new meta_expand and GLOB_LIST
+
+	==============================================================
+	./insmod
+
+	General:
+	* modprobe moved here from ../depmod (and converted to C)
+	* logger moved to ../util (for ../util/libutil.a)
+	* All configuration handling moved to ../util/config.c (libutil.a)
+	* All utilities use the same rules for finding modules.
+	  MODPATH is merged with the generic rules, if defined.
+	  MODULECONFIG environment parameter be used to specify config file.
+	* main.c removed, generic functionality in Makefile, insmod.c
+	* Makefile.in cleaned up
+	* Utilities (rmmod, modprobe, lsmod, ksyms) can be combined to one
+	  executable, for floppys/ramdisks and what-not (see README.combined)
+	* Heavy restructuring of most sources to make them less version
+	  dependent. Kernel queries made generic via get_kernel_info().
+	  Version dependence compatibility controlled via ../configure
+	* Merged Debian patches
+
+	insmod.c:
+	* options cleaned up
+	* insmod more SMP-friendly ("-P"): Bill Zumach <zumach+@transarc.com>
+	* module size fix: B. James Phillippe <bryan@terran.org>
+	* Locking (option -L) is now the default action for insmod
+	* Flow in insmod_main now handles versioned modules/kernels better
+
+	ksyms.c:
+	* Rewritten: uses generic get_kernel_info
+	* Can be merged with insmod executable
+
+	lsmod.c:
+	* Rewritten: uses generic get_kernel_info
+	* Usable for non-root users
+	* Can be merged with insmod executable
+
+	modinfo.c:
+	* optind++ in show_module_info, Salvador Ortiz Garcia <sog@msg.com.mx>
+	* unified module path handling via ../util/config.c (libutil.a)
+
+	modprobe.c:
+	* Converted from original C++ to C and much modified since then
+	* Cooperates fully with insmod (but usable as separate program)
+	* Handles the new keywords in /etc/conf.modules:
+	    Conditional decoding and handling of parameters
+		if
+		else
+		elseif
+		endif
+		define
+		include
+	    Additional module dependencies (optimized pre-post- install/remove)
+		above	pull in module(s) on top (such as ppp-compressors)
+		below	push module(s) on stack before myself
+	* Uses getopt with long options
+	* New options:
+		-C	use alternate config file (instead of /etc/conf.modules)
+		-n	Do nothing, just show
+		-v	Be verbose
+		-r	Without module name: Do "autoclean" with complete
+			handling of pre-/post- install/remove commands.
+			Intended to replace "rmmod -a" in crontabs.
+	* Module options from aliases modules will be merged with base
+	  module options and command line options.
+
+	rmmod.c:
+	* Rewritten: uses generic get_kernel_info
+	* Use "-r" option for removing stacks (as in modules-2.0.0)
+	* Can still be merged with insmod executable
+
+	==============================================================
+	./kerneld
+
+	* Most Debian patches applied:
+		kerneld.c
+		Makefile.in
+
+	==============================================================
+	./obj
+
+	* New funcion "obj_free()" added to obj_load.c.
+	  This makes modprobe more "lean" w.r.t. memory usage,
+	  even though it now uses ../obj/libobj.a for loading module info.
+	* Debian patches merged
+
+	==============================================================
+	./util
+
+	* Logging, via logger.c moved here for use of by apps
+	* All handling of config files to config.c for use of by apps.
+	  Many cleanups, modifications and additions:
+	  - uses ftw, partly to survive "modutils-2.1.121 path syntax"
+	  - If MODULECONFIG environment parameter is defined, that
+	    file will be used instead of the default /etc/conf.modules.
+	  - If MODPATH environment parameter is defined, its contents
+	    will override the default paths (/etc/conf.modules rules).
+	  - All config file arguments will be expanded for meta-character.
+	  - New config file keywords decoded:
+		if, else, elseif, endif, define, above, below
+	    Config statements
+		include FILE
+
+		if EXPRESSION
+		else
+		elseif EXPRESSION
+		endif
+
+		    where EXPRESSION can be
+			! EXPRESSION
+			-f FILENAME
+			WORD  where "", "0" or "false" => FALSE, else => TRUE
+			WORD op WORD  (op is one of == != < <= >= >= )
+		    All WORDs are expanded w.r.t. meta-characters
+
+		above module modulelist
+
+		below module modulelist
+
+	* Separate config.c include file "alias.h" for easier editing
+	* New file: modstat.c, contains version independent reading of
+	  kernel module parameters.  Influenced by COMPAT_2_0 in ../configure
+	* New file: meta_expand.c, handles expansion of all meta-character
+	  for config.c.  Uses wordexp() or glob() if available, with
+	  popen("/bin/echo ...") as fallback. Returns GLOB_LIST (array of words)
+	  Thanks for hints from Tim Waugh <tim@cyberelk.demon.co.uk>
+
+	* sys_cm.c, sys_qm.c
+		Debian patch
+
+=============================================================================
+
+Tue Jan 26 23:02:37 PST 1999  B. James Phillippe  <bryan@terran.org>
+
+	* insmod/insmod.c (old_init_module): Adjust size down
+	to compensate for losing mod_use_count.
+
+Tue Nov  3 22:26:18 MET 1998  Ralf Baechle  <ralf@gnu.org>
+
+	* obj/obj_mips.c (arch_apply_relocation): Fix application of R_MIPS_26
+	relocations.
+	* obj/obj_load.c (obj_load): Allocate the table of local symbols large
+	enough to hold all symbols since not all systems have the same idea of
+	what might be a local symbol or not.
+
+Sun Oct 25 19:31:44 MET 1998  Ralf Baechle  <ralf@gnu.org>
+
+	* configure.in: Translate mips* into mips.
+	* configure: Rebuild.
+
+Wed Sep 16 02:45:12 MEST 1998  Ralf Baechle  <ralf@gnu.org>
+
+	* obj/obj_mips.c (arch_load_proc_section): Don't load .reginfo and
+	.mdebug sections.  Fix error messages.
+
+	* obj/obj_load.c (obj_load): Call arch_load_proc_section for section
+	header types > SHT_LOPROC.
+	* obj/obj_alpha.c (arch_load_proc_section): Add default implementation.
+	* obj/obj_arm.c (arch_load_proc_section): Likewise.
+	* obj/obj_i386.c (arch_load_proc_section): Likewise.
+	* obj/obj_m68k.c (arch_load_proc_section): Likewise.
+	* obj/obj_ppc.c (arch_load_proc_section): Likewise.
+	* obj/obj_sparc.c (arch_load_proc_section): Likewise.
+	* obj/obj_sparc64.c (arch_load_proc_section): Likewise.
+
+	* util/sys_qm.c [__mips__]: Make compile for MIPS when 2.1.x
+	headers aren't installed.
+
+	* insmod/insmod.c (usage): Document -n option.
+	* man/insmod.1: Likewise.
+
+	* NEWS: Document changes.
+
+Sun Sep 13 09:52:39 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* Release version 2.1.121.
+
+Sun Sep 13 08:28:37 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* */Makefile: Move to */Makefile.in.
+	* Makeconfig.in: Remove.
+	* configure.in: Output all the new Makefile.in's.
+
+	* insmod/insmod.c (old_process_module_arguments): Use strtoul
+	instead of strtol for processing numbers without overflow.
+	(new_process_module_arguments): Likewise.
+
+Sun Aug 30 16:44:54 1998  Philip Blundell  <philip@vger.rutgers.edu>
+
+	* obj/obj_arm.c, include/elf_arm.h: New files.
+	* configure.in: Translate CPU name of `arm*' to `arm'.
+
+Wed Aug 26 10:11:24 +0200 1998  Matthew Wilcox <Matthew.Wilcox@genedata.com>
+
+	* depmod/modprobe.c (main): Read deps file after option processing.
+
+Sun Aug  2 15:36:55 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* depmod/conf_file.c (default_types): Add video.
+	* insmod/insmod.c (search_module_path): Likewise.
+	* insmod/modinfo.c (search_module_path): Likewise.
+
+	* depmod/modprobe.c (insmod): Fix typo in insmod invocation.
+
+Sun Aug  2 15:35:31 1998  Matt McLean  <keys@yikes.com>
+
+	* obj/obj_ppc.c (arch_apply_relocation): Handle R_PPC_REL32.
+
+Fri Jul 31 17:24:22 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* obj/obj_mips.c (arch_apply_relocation): Move global variable
+	mips_hi16_list into struct mips_file.  Detect R_MIPS_26 overflow.
+
+Fri Jul 31 17:12:35 PDT 1998  Ralf Baechle  <ralf@gnu.ai.mit.edu>
+
+	* include/elf_mips.h, obj/obj_mips.c: New files.
+
+Wed Jul 29 23:06:59 CEST 1998  Geert Uytterhoeven <Geert.Uytterhoeven@cs.kuleuven.ac.be>
+
+	* insmod/ksyms.c (new_ksyms): ret is a size_t.
+
+Fri Jun 26 03:29:38 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* Release version 2.1.107.
+
+	* insmod/insmod.c (main): Recognize -L.
+	* depmod/modprobe.c (insmod): Use -L.
+
+Wed May 20 17:10:54 CEST 1998  Jakub Jelinek  <jj@ultra.linux.cz>
+
+	* include/module.h: new_module_info should not use tgt_long either.
+
+Sat Apr 25 23:48:15 IDT 1998  Alon Ziv  <alonz@cs.technion.ac.il>
+
+	* insmod/modinfo.c (show_parameter): Search the value for min/max.
+	Fix null termination errors.
+	(main): Process all listed files.
+
+Sat Apr 25 13:21:30 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* include/kerneld.h: New file imported from old kernel sources.
+	* kerneld/kdsend.c: Include local kerneld.h.
+	* kerneld/kerneld.c, kerneld/kdstat.c: Likewise.
+	Patch from Krzysztof G. Baranowski <kgb@manjak.knm.org.pl>.
+
+Sat Apr 25 13:07:46 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* insmod/insmod.c (old_process_module_arguments): Balk if the
+	symbol found was resolved from the kernel.
+	(new_process_module_arguments): Likewise.
+	Suggested by Paul Mackerras <paulus@cs.anu.edu.au>.
+
+Sat Apr 25 12:56:43 PDT 1998  Richard Henderson  <rth@cygnus.com>
+
+	* insmod/insmod.c (add_symbols_from): Only add kernel symbols
+	for the undef globals.
+
+Fri Apr  3 12:20:33 +0200 1998  Jakub Jelinek  <jj@ultra.linux.cz>
+
+	* include/module.h: new_module_symbol is not made of tgt_long.
+	* insmod/modinfo.c: Add fc4 to module path.
+
+Wed Mar 25 17:35:11 MET 1998  Jakub Jelinek  <jj@ultra.linux.cz>
+
+	* include/elf_sparc64.h: Handle both old deprecated EM_SPARC64
+	and new EM_SPARCV9.
+
+Fri Feb  6 01:15:23 PST 1998  Richard Henderson  <rth@cygnus.com>
+
+	* Release version 2.1.85.
+
+Fri Feb  6 00:38:56 PST 1998  Richard Henderson  <rth@cygnus.com>
+
+	* depmod/conf_file.c (translate_alias): Translate til closure.
+
+	* obj/obj_reloc.c (obj_allocate_commons): Properly allocate NOBITS
+	even with no commons to instantiate.
+
+Sat Jan 31 00:47:55 EST 1998  Randy McCaskill  <rmccask@comm-data.com>
+
+	* depmod/conf_file.c (translate_alias): Use fnmatch instead of strcmp.
+	(locate_mod_obj): Translate before looking for separators.
+
+Fri Jan 23 01:48:18 PST 1998  Richard Henderson  <rth@cygnus.com>
+
+	* Makefile (TARGETS): New.
+	(clean): Rename distclean.
+
+Fri Jan 23 01:28:04 PST 1998  Richard Henderson  <rth@cygnus.com>
+
+	* insmod/ksyms.c (old_ksyms): Call lseek not llseek.
+
+	* insmod/test/Makefile: New file.
+	* insmod/test/t1a.c, insmod/test/t1b.c: New files.
+
+	* include/obj.h (struct obj_file): Add local_symtab entries.
+	* obj/obj_common.c (obj_add_symbol): Add SYMIDX argument.
+	Handle local symbols into the local_symtab.
+	* obj/obj_load.c (obj_load): Allocate local_symtab.
+	Update obj_add_symbol call.
+	* obj/obj_reloc.c (obj_allocate_commons_and_check_undefineds): Split.
+	(obj_allocate_commons): Search local_symtab.
+	(obj_relocate): Look for locals in the local_symtab.  Delete
+	redundant NOBITS->PROGBITS code.
+	* insmod/insmod.c: Update all calls to obj_add_symbol.
+
+	* configure.in: Dike out Tom's Jan 14 change.
+
+Fri Jan 16 14:42:13 MET 1998  Jakub Jelinek  <jj@sunsite.mff.cuni.cz>
+
+	* insmod/insmod.c (default_module_path): Add fc4 directory.
+
+Thu Jan 15 13:40:20 MET 1998  Jakub Jelinek  <jj@sunsite.mff.cuni.cz>
+
+	* insmod/insmod.c (new_init_module): Add support for
+	initial sections and their removal after init_module exits.
+	* include/module.h (struct new_module): Add runsize entry
+	for the above support.
+	* obj/obj_common.c (obj_load_order_prio): New function,
+	used in sorting sections, take into account .*.init sections.
+	(obj_insert_section_load_order): Optimize sorting of sections.
+
+Wed Jan 14 19:48:37 1998  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* configure.in: Check for 2.1.x kernel includes.
+
+Wed Jan  7 00:50:32 PST 1998  Richard Henderson  <rth@cygnus.com>
+
+	* depmod/depmod.c (load_obj_file) Reword last change to remove
+	comment-in-comment warning.
+
+Sun Jan  4 23:28:36 +0100 1998  Daniel Bergstrom  <daniel@futurniture.se>
+
+	* Makefile (lex.o): Play well with make -j.
+	* insmod/Makefile (install-insmod-rmmod): Succeed if /sbin/rmmod
+	exists.
+	* kerneld/Makefile (kerneld): Add LDLIBS to link line.
+	* man/depmod.1: Sync paths with reality.
+
+Sun Jan  4 15:05:46 -0600 1998  Michael Chastain <mec@shout.net>
+
+	* depmod/conf_file.c (default_types): Add sound.
+	* insmod/insmod.c (default_path): Likewise.
+	* insmod/modinfo.c (default_path): Likewise.
+
+Sat Jan  3 16:18:24 +0100 1998  Florian La Roche <florian@knorke.saar.de>
+
+	* depmod/alias.h: Disable RTC.
+	* depmod/depmod.c (load_obj_file): Don't fail to create modules.dep
+	if an unreadable file is found in the hierarchy.
+
+Mon Dec  8 22:28:39 PST 1997  Richard Henderson  <rth@cygnus.com>
+
+	* Release version 2.1.71.
+
+	* insmod/Makefile: Clean modinfo.
+
+Mon Dec  8 22:06:29 PST 1997  Richard Henderson  <rth@cygnus.com>
+
+	* depmod/alias.h: Add net-pf-[12].
+	Requested by Kirk Petersen <kirk@speakeasy.org>.
+
+	* Makefile (realclean): Alternate target for clean.
+
+Sun Nov 30 16:48:34 PST 1997  Richard Henderson  <rth@cygnus.com>
+
+	* insmod/insmod.c (old_process_module_arguments): Recognize quoted
+	strings in 2.0 as well.
+	Requested by Leonard N. Zubkoff <lnz@dandelion.com>.
+
+Sat Nov 15 00:48:23 EST 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* README: Update build instructions.
+	* NEWS: New file.
+
+Tue Nov 11 11:54:41 EST 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* man/modinfo.1: New file.
+	* TODO: Don't mention modinfo since it now exists.
+
+Tue Oct 21 18:10:45 PST 1997  Richard Henderson  <rth@cygnus.com>
+
+	* configure.in: Correct axp-broken-gas pattern match.
+
+	* insmod/Makefile: When combining insmod+rmmod, install a
+	link not two binaries.  Reported by <ewt@redhat.com>.
+
+Mon Oct 20 12:41:10 EST 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* configure.in: Translate powerpc -> ppc for ARCH.
+	Patch from Ralph E. Bugg <ralp@db.erau.edu>.
+
+Fri Oct 17 01:58:47 EST 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* configure.in: Default --exec-prefix to '', if not given.
+	* Makeconfig.in: Added macros for install dirs.
+	* depmod/Makefile (install): Use dir macros.
+	* genksyms/Makefile (install): Use dir macros.
+	* insmod/Makefile (install): Use dir macros.
+	* kerneld/Makefile (install): Use dir macros.
+	* man/Makefile (install): Use dir macros.
+
+Fri Oct 17 00:38:44 EST 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* configure.in: $build_cpu should be $target_cpu
+	* insmod/insmod.c (main): Support long options. Moved usage info to
+	function usage().
+
+Sun Oct  5 21:54:07 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* Makefile: Let make -k do more work.
+
+Sun Oct  5 21:38:50 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* kerneld/kerneld.c (handle_child): Loop on waitpid, so as not to
+	loose children.
+	Patch from Mike McLagan <mmclagan@invlogic.com>.
+
+Sun Oct  5 21:22:57 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* configure.in: Detect AXP_BROKEN_GAS.  Get the architecture from
+	AC_CANONICAL_SYSTEM, not uname.
+	* Makeconfig.in: Substitute DEFS & ARCH.
+	* Makefile (clean): Rid ourselves of autoconf droppings.
+
+Mon Oct  6 01:30:03 +0000 1997  Tom Dyas  <tdyas@remus.rutgers.edu>
+
+	* configure.in, configure, install-sh, Makeconfig.in: New files.
+	* Makeconfig: Removed.
+	* insmod/modinfo.c: New file. Displays information about a module.
+	* insmod/Makefile: Add modinfo.
+
+Tue Sep 16 20:43:53 +0200 1997  Alain Knaff  <alknaff@innet.lu>
+
+	* insmod/insmod.c (new_process_module_arguments): Properly
+	null-terminate string patches when they are quoted.
+
+Thu Sep 11 08:43:03 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* Release version 2.1.55.
+
+Wed Sep 10 16:34:41 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* genksyms/genksyms.c (crc_prefix): New variable.
+	(export_symbol): Use it.
+	(main): New option -p sets it.
+	* man/genksyms.8: Update documentation.
+	Idea from Jacques Gelinas <jack@solucorp.qc.ca>.
+
+Wed Sep 10 16:09:37 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* insmod/Makefile: Allow insmod & rmmod to run as a combined binary.
+	* insmod/main.c: New file.
+	* Makeconfig (COMBINE_INSMOD_RMMOD): New define.
+	Requested by Erik Troan <ewt@redhat.com>.
+
+Wed Sep 10 15:41:16 PDT 1997  Richard Henderson  <rth@cygnus.com>
+
+	* depmod/depmod.c (load_obj_file): Print error if fopen fails.
+	(main): Continue processing on errors, so that we see all errors
+	all at once.
+	Reported by Gunther Mayer <gunther.mayer@braunschweig.netsurf.de>.
+
+Tue Aug 26 11:14:36 -0400 1997  Telly Mavroidis  <mavroidi@ctc-fund.com>
+
+	* util/sys_qm.c [__sparc__]: Fix typo.
+
+Tue Jul 29 23:02:04 PDT 1997  Richard Henderson  <richard@gnu.ai.mit.edu>
+
+	* include/module.h: Rename sizeof_type to tgt_sizeof_type.  Kill
+	the struct duplication by defining a tgt_long.
+	* insmod/insmod.c: Propogate sizeof_type change.
+
+Tue Jul 29 22:23:16 PDT 1997  Jakub Jelinek  <jj@sunsite.mff.cuni.cz>
+
+	* insmod/insmod.c (search_module_path): Add ipv6.
+
+Tue Jul 29 22:23:16 PDT 1997  Jakub Jelinek  <jj@sunsite.mff.cuni.cz>
+
+	Sparc64 support:
+	* depmod/Makefile (DEFS): Pass in ARCH as well.
+	* insmod/Makefile: Likewise.
+	* obj/Makefile: Likewise.
+
+	* insmod/insmod.c: Don't use native sizeof(type), use constants
+	sizeof_type that correspond to the target.
+	* include/module.h: Detect and cope with sparc64 target and
+	sparc32 host.
+
+	* include/obj.h: libc5 doesn't declare ELF64_ST_INFO either.
+
+	* include/elf_sparc64.h: New file.
+	* obj/obj_sparc64.c: New file.
+
+Sat Jul 19 23:56:02 +0200 1997  Florian La Roche  <florian@knorke.saar.de>
+
+	* depmod/misc.c (resolve_string): Kill assignment warning.
+	* genksyms/genksyms.h: Extern outfile and debugfile properly.
+	* man/modprobe.1: New file.
+
+Wed Apr 16 15:27:17 +1000 1997  Paul Mackerras  <paulus@cs.anu.edu.au>
+
+	* include/elf_ppc.h, obj/obj_ppc.c: New files.
+
+Mon Apr 14 20:33:56 CDT 1997  Richard Henderson  <rth@tamu.edu>
+
+	* depmod/depmod.c (print_deps_file): Fix initial array
+	allocation size.
+
+Sat Apr 12 19:23:25 CDT 1997  Richard Henderson  <rth@tamu.edu>
+
+	* obj/obj_reloc.c (obj_relocate): If AXP_BROKEN_GAS, work
+	around the old gas local symbol LITERAL reloc bug.
+
+Mon Mar 31 23:03:12 EST 1997  David S. Miller  <davem@jenolan.rutgers.edu>
+
+	* genksyms/lex.l (yylex) [case ST_TABLE_5]: Missing break.
+
+Tue Mar 25 21:41:00 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* depmod/depmod.c (old_read_kernel_syms): Get symbols via
+	get_kernel_syms syscall rather than /proc/ksyms.
+
+	* depmod/modprobe.c (is_removable): Final arg to query_module
+	is a size_t, not an int.
+
+Sat Mar 15 19:34:07 PST 1997  H.J. Lu  <hjl@gnu.ai.mit.edu>
+
+	* depmod/conf_file.c (release_all_sets): Set mod_set to NULL.
+	(read_config_file): only call release_all_sets () once.
+	call resolve_string () to expand string.
+
+	* depmod/misc.c (resolve_string): New function that resolves
+	string with `foo`.
+	(what_command): New function that returns the known commands.
+	(expand_command): New funtion that expands pattern or
+	command. Only `uname -r` is supported this time.
+
+	* depmod/misc.h: New prototype for resolve_string ().
+
+	* depmod/modprobe.c (read_deps_file): call resolve_string () to
+	expand string.
+
+	* man/depmod.1: Fix typos. The syntax should be "path[TAG]=PATHNAME"
+	means TAG is appended to PATHNAME.
+
+Thu Mar 13 13:38:12 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* insmod/insmod.c (ncv_strcmp): New function that combines old
+	m_strcmp and k_strcmp -- it's not a simple matter to always have
+	the versioned symbol as the first or second argument.
+	(main): Install ncv_strcmp instead.
+	Reported by David Bourgin <dbourgin@wsc.com>.
+
+	* insmod/insmod.c (get_kernel_version): Take an extra argument to
+	return the full uname string.
+	(old_get_module_version): Likewise.
+	(new_get_module_version): Likewise.
+	(main): Record and compare the full uname string, to handle
+	suffixes like "-ISS" and "-SMP".
+
+Sun Mar  9 23:52:18 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* genksyms/lex.l (yylex): Only use the file component of the input
+	path when generating the output filename.
+	Reported by Markus Dickebohm <m.dickebohm@uni-koeln.de>.
+
+	* depmod/Makefile (clean): Remove modprobe and depmod.
+
+Sun Mar  9 13:55:27 MET 1997  Eddie C. Dost  <ecd@skynet.be>
+
+	* obj/obj_sparc.c (arch_apply_relocation): Handle lots
+	more relocation types.
+
+Tue Mar  4 08:12:58 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* Merge new depmod from Marcin Dalecki
+	<dalecki@sub994.sub.uni-goettingen.de>.
+
+	* insmod/insmod.c (get_kernel_version): Don't assert that the last
+	number of the version be followed by a NUL.
+	(old_get_module_version, new_get_module_version): Likewise.
+	Reported by Keith Owens <kaos@ocs.com.au>
+
+	* insmod/insmod.c: Merge character and string array patches
+	from Jean Tourrilhes <jt@hplb.hpl.hp.com>.
+
+	* kerneld/kerneld.c (kerneld_error): Add missing va_end; use vsnprintf.
+
+Sun Feb  2 13:21:39 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* genksyms/lex.l (yylex): Update documentation on 2.0.x symbol table
+	processing.  Generate phrases for asm blocks as well, as it is more
+	efficient to do it in the lexer.
+	* genksyms/parse.y (opt_asm_phrase, asm_declaration): Recognise
+	the ASM_PHRASE token rather than trying to work it out ourselves.
+
+Sun Feb  2 07:44:00 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* man/kerneld.8: Format for section 8.
+	* man/genksyms.8: Renamed from genksyms.1 to match how it formats.
+	Reported by Martin von Loewis <martin@mira.isdn.cs.tu-berlin.de>.
+
+Tue Jan 28 21:10:07 MET 1997  Janos Farkas  <chexum@shadow.banki.hu>
+
+	* depmod/load_obj.cc (load_obj): Close the file when finished.
+
+Mon Jan 27 10:39:21 MET 1997  Geert Uytterhoeven  <geert@cs.kuleuven.ac.be>
+
+	* depmod/config.cc (aliaslist): Add entries for m68k binfmt_aout,
+	atarimouse and amigamouse.
+
+Sun Jan 26 14:26:00 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	Release version 2.1.23.
+
+Wed Jan 22 16:13:54 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* insmod/insmod.c (main): Don't call create_module at all if noload.
+
+	* insmod/insmod.c (ncv_symbol_hash): New function to not hash the
+	crc portion of the symbol for when the kernel and object file
+	don't agree about symbol versioning.
+	(main): Install it with the special compare functions.
+	* obj/obj_common.c: Move obj_symbol_cmp into obj_file.
+	(obj_elf_hash_n): New function derived from old elf_hash.
+	(obj_add_symbol): Call the functions in obj_file.
+	(obj_find_symbol): Likewise.
+	(obj_set_symbol_compare): Accept a new argument `hash' and if set,
+	rehash all of the existing symbols with the new function.
+
+Wed Jan 22 15:08:33 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* obj/obj_common.c: Split off all of the relocation bits into ...
+	* obj/obj_reloc.c: here.
+	(obj_allocate_commons_and_check_undefineds): Allocate data for
+	NOBITS sections, so that argument initialization and string
+	patching works properly.  Reported by <Alain.Knaff@poboxes.com>.
+	(obj_create_image): Don't treat NOBITS specially.
+	* obj/Makefile (LIBOBJ_OBJS): Add obj_reloc.o.
+
+Fri Jan 17 12:56:58 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* genksyms/parse.y (init_declarator): Use new asm_phrase_opt instead
+	of asm_definition_opt, as the later eats a semicolon.
+
+Fri Jan 17 10:55:31 EST 1997  David Miller <davem@caipfs.rutgers.edu>
+
+	* genksyms/genksyms.c (print_list): Don't assume alloca returns
+	consecutive chunks of down-growing stack.
+	(expand_and_crc_list): Likewise.
+
+	* obj/obj_sparc.c (arch_apply_relocation): Do R_SPARC_WDISP22.
+
+Wed Jan 15 14:04:35 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* insmod/insmod.c (old_init_module): Or in OLD_MOD_AUTOCLEAN
+	when appropriate.
+
+	* insmod/lsmod.c (new_lsmod): Display module use count.
+
+Mon Jan  6 16:06:49 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* obj/obj_m68k.c: #include <stddef.h> for size_t.
+	* obj/obj_sparc.c: Likewise.
+
+	* insmod/rmmod.c (old_get_modules): Fix error check from read.
+
+Sat Jan  4 16:46:09 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	* insmod/insmod.c (main): Check that we did find the module's
+	kernel version rather than reporting version 255.255.255.
+	Reorder obj_load call to remove `may be used uninialized' warning.
+
+	* util/xstrdup.c (xstrdup): Fix `return discards const' warning.
+
+	* insmod/lsmod.c (old_lsmod): Fix error check from read.
+
+	* insmod/ksyms.c (old_ksyms): Initialize kmem_fd.
+
+	* depmod/Makefile (modprobe): Link with $(CC) so that we don't
+	pull in a dependancy for libg++.so etc.
+
+Sat Jan  4 16:27:11 EST 1997  Jacques Gelinas  <jack@solucorp.qc.ca>
+
+	* insmod/insmod.c (old_init_module): Fix comparison against
+	ksymidx.  The 2.0.x init_module syscall expects the submitted
+	module image to skip the mod_use_count_ variable.
+
+	* depmod/config.cc (aliaslist): Add entries for ide-probe and ide-tape.
+
+Fri Jan  3 02:43:00 CST 1997  Richard Henderson  <rth@tamu.edu>
+
+	Snapshot looking towards a 2.1.21 release.

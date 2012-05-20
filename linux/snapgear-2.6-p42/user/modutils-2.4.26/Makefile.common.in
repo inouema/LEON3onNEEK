@@ -1,0 +1,33 @@
+# Common code included in every Makefile
+
+DESTDIR		= 
+
+exec_prefix	= @exec_prefix@
+insmod_static	= @insmod_static@
+mandir		= @mandir@
+prefix		= @prefix@
+sbindir		= @sbindir@
+
+AR		= @AR@
+ARCH		= @ARCH@
+CC		= @CC@
+CFLAGS		= @CFLAGS@
+# HOSTCC and HOSTCFLAGS are provided for compatibility.
+HOSTCC		= @BUILDCC@
+HOSTCFLAGS	= @BUILDCFLAGS@
+BUILDCC		= $(HOSTCC)
+BUILDCFLAGS	= $(HOSTCFLAGS)
+INSTALL		= @INSTALL_LOCAL@
+LDFLAGS		= @LDFLAGS@
+LIBS		= @LIBS@
+MKDIR		= @MKDIR@
+TAINT_URL	= @TAINT_URL@
+PARSERCFLAGS	= @PARSERCFLAGS@
+RANLIB		= @RANLIB@
+STRIP		= @STRIP@
+USE_SYSCALL	= @USE_SYSCALL@
+ZLIB		= @ZLIB@
+ZLIB_STATIC	= @ZLIB_STATIC@
+COMPAT_2_0	= @COMPAT_2_0@
+
+check_gcc = $(shell if $(CC) $(1) -S -o /dev/null -xc /dev/null > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi)

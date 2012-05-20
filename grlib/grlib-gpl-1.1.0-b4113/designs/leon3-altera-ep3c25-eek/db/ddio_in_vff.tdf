@@ -1,0 +1,46 @@
+--altddio_in CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone III" INVERT_INPUT_CLOCKS="OFF" POWER_UP_HIGH="OFF" WIDTH=1 datain dataout_h dataout_l inclock
+--VERSION_BEGIN 11.1SP1 cbx_altddio_in 2011:11:23:21:11:17:SJ cbx_cycloneii 2011:11:23:21:11:17:SJ cbx_maxii 2011:11:23:21:11:17:SJ cbx_mgl 2011:11:23:21:12:03:SJ cbx_stratix 2011:11:23:21:11:17:SJ cbx_stratixii 2011:11:23:21:11:17:SJ cbx_stratixiii 2011:11:23:21:11:17:SJ cbx_stratixv 2011:11:23:21:11:17:SJ cbx_util_mgl 2011:11:23:21:11:17:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2011 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = IO 1 reg 3 
+OPTIONS ALTERA_INTERNAL_OPTION = "ANALYZE_METASTABILITY=OFF;suppress_da_rule_internal=C106;ADV_NETLIST_OPT_ALLOWED=""NEVER_ALLOW"";{-to input_cell_h} DDIO_INPUT_REGISTER=HIGH;{-to input_cell_l} DDIO_INPUT_REGISTER=LOW";
+
+SUBDESIGN ddio_in_vff
+( 
+	datain[0..0]	:	input;
+	dataout_h[0..0]	:	output;
+	dataout_l[0..0]	:	output;
+	inclock	:	input;
+) 
+VARIABLE 
+	input_cell_h[0..0] : dffe;
+	input_cell_l[0..0] : dffe;
+	input_latch_l[0..0] : dffe;
+
+BEGIN 
+	input_cell_h[].clk = inclock;
+	input_cell_h[].d = datain[];
+	input_cell_l[].clk = (! inclock);
+	input_cell_l[].d = datain[];
+	input_latch_l[].clk = inclock;
+	input_latch_l[].d = input_cell_l[].q;
+	dataout_h[] = input_cell_h[].q;
+	dataout_l[] = input_latch_l[].q;
+END;
+--VALID FILE

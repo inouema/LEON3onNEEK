@@ -1,0 +1,76 @@
+--- linux-2.0.00/include/linux/kerneld.h	Tue Jun 11 00:20:38 1996
++++ linux/include/linux/kerneld.h	Tue Jun 11 00:21:07 1996
+@@ -8,6 +8,8 @@
+ #define KERNELD_CANCEL_RELEASE_MODULE 5 /* "rmmod" */
+ #define KERNELD_REQUEST_ROUTE 6 /* from net/ipv4/route.c */
+ #define KERNELD_BLANKER 7 /* from drivers/char/console.c */
++#define KERNELD_GET_PERSIST 8 /* persistent module storage */
++#define KERNELD_SET_PERSIST 9 /* persistent module storage */
+ #define KERNELD_ARP 256 /* from net/ipv4/arp.c */
+ 
+ /*
+@@ -46,7 +48,16 @@
+ #endif /* __KERNEL__ */
+ };
+ 
++struct __persist {
++	int keylen;
++	int arglen;
++	char arr[0];
++};
++
+ #ifdef __KERNEL__
++#include <sys/types.h>
++#include <linux/malloc.h>
++
+ extern int kerneld_send(int msgtype, int ret_size, int msgsz,
+ 		const char *text, const char *ret_val);
+ 
+@@ -127,5 +138,47 @@
+ 			strlen(on_off?"on":"off"), on_off?"on":"off", NULL);
+ }
+ 
++/*
++ * Persistent storage for modules
++ *
++ * Usage:
++ *	int get_persist("a key", &value, sizeof(value));
++ *		Returns > 0 on success (return value == returned size)
++ *
++ *	int set_persist("a key", &value, sizeof(value));
++ *		Returns < 0 on failure
++ *
++ * To remove an entry, use: "set_persist("a key", NULL, 0);"
++ */
++
++static inline int set_persist(char *key, void *value, size_t length)
++{
++	struct __persist *p;
++	int keylen = strlen(key) + 1;
++	int structsize = keylen + length + sizeof(struct __persist);
++	int status;
++
++	if ((p = (struct __persist *)kmalloc(structsize, GFP_ATOMIC)) == NULL)
++		return -ENOMEM;
++	strcpy(p->arr, key);
++	p->keylen = keylen;
++	p->arglen = length;
++	if (length)
++		memcpy(p->arr + keylen, value, length);
++
++	status = kerneld_send(KERNELD_SET_PERSIST,
++			0 | KERNELD_NOWAIT,
++			structsize, (char *)p, NULL);
++
++	kfree(p);
++	return status;
++}
++
++static inline int get_persist(char *key, void *value, size_t length)
++{
++	return kerneld_send(KERNELD_GET_PERSIST,
++			length | KERNELD_WAIT,
++			strlen(key), key, value);
++}
+ #endif /* __KERNEL__ */
+ #endif

@@ -1,0 +1,199 @@
+Index: 0-test13-pre2.1/kernel/module.c
+--- 0-test13-pre2.1/kernel/module.c Wed, 29 Nov 2000 15:29:52 +1100 kaos (linux-2.4/j/28_module.c 1.1.2.1.1.1.7.1.1.1.1.2 644)
++++ 0-test13-pre2.1(w)/kernel/module.c Sun, 17 Dec 2000 10:32:20 +1100 kaos (linux-2.4/j/28_module.c 1.1.2.1.1.1.7.1.1.1.1.2 644)
+@@ -23,6 +23,7 @@
+  * Fix sys_init_module race, Andrew Morton <andrewm@uow.edu.au> Oct 2000
+  *     http://www.uwsg.iu.edu/hypermail/linux/kernel/0008.3/0379.html
+  * Replace xxx_module_symbol with inter_module_xxx.  Keith Owens <kaos@ocs.com.au> Oct 2000
++ * Redefine persist_start/end as read_start/end.  Keith Owens <kaos@ocs.com.au> November 2000
+  *
+  * This source is covered by the GNU GPL, the same as all kernel sources.
+  */
+@@ -324,8 +325,54 @@ err0:
+ 	return error;
+ }
+ 
++/* A negative mod_user_size to sys_init_module indicates that the caller wants
++ * to read data out of an existing module instead of initializing a new module.
++ * This usage overloads the meaning of sys_init_module, but the alternative was
++ * yet another system call and changes to glibc.  sys_init_module already does
++ * much of the work needed to read from an existing module so it was easier to
++ * extend that syscall.  Keith Owens <kaos@ocs.com.au> November 2000
++ */
++
++static int
++read_module_data(unsigned long mod_user_size, struct module *mod_user, struct module *mod_exist)
++{
++	struct module mod;
++	int error;
++	if (!try_inc_mod_count(mod_exist))
++		return(-ENOENT);
++	error = copy_from_user(&mod, mod_user, mod_user_size);
++	if (error) {
++		error = -EFAULT;
++		goto err1;
++	}
++	mod.size_of_struct = mod_user_size;
++	error = -EINVAL;
++	/* read_start and read_end must be present and must point inside the
++	 * existing module.  The module data from read_start to read_end-1 is
++	 * copied back to the user, immediately after the user's struct module.
++	 */
++	if (!mod_member_present(&mod, read_end) ||
++	    !mod_bound(mod.read_start, 0, mod_exist) ||
++	    !mod_bound(mod.read_end, -1, mod_exist) ||
++	    mod.read_start >= mod.read_end) {
++		printk(KERN_ERR "init_module: mod->read_xxx data out of bounds.\n");
++		goto err1;
++	}
++	error = copy_to_user(((char *)mod_user)+mod_user_size,
++		mod.read_start,
++		mod.read_end - mod.read_start);
++	if (error) {
++		error = -EFAULT;
++		goto err1;
++	}
++	error = 0;
++err1:
++	__MOD_DEC_USE_COUNT(mod_exist);
++	return(error);
++}
++
+ /*
+- * Initialize a module.
++ * Initialize a module or read from an existing module.
+  */
+ 
+ asmlinkage long
+@@ -354,11 +401,23 @@ sys_init_module(const char *name_user, s
+ 	   for a newer kernel.  But don't over do it. */
+ 	if ((error = get_user(mod_user_size, &mod_user->size_of_struct)) != 0)
+ 		goto err1;
+-	if (mod_user_size < (unsigned long)&((struct module *)0L)->persist_start
+-	    || mod_user_size > sizeof(struct module) + 16*sizeof(void*)) {
++	/* A negative mod_user_size indicates reading data from an
++	 * existing module.
++	 */
++	for (i = 0; i < 2; ++i) {
++		if (mod_user_size >= (unsigned long)&((struct module *)0L)->read_start
++		    && mod_user_size <= sizeof(struct module) + 16*sizeof(void*))
++			break;
++		mod_user_size = -mod_user_size;	/* Try with negated size */
++	}
++	if (i == 1) {
++		/* Negative size, read from existing module */
++		error = read_module_data(mod_user_size, mod_user, mod);
++		goto err1;
++	}
++	if (i == 2) {
+ 		printk(KERN_ERR "init_module: Invalid module header size.\n"
+-		       KERN_ERR "A new version of the modutils is likely "
+-				"needed.\n");
++		       KERN_ERR "A new version of modutils may be needed.\n");
+ 		error = -EINVAL;
+ 		goto err1;
+ 	}
+Index: 0-test13-pre2.1/include/linux/module.h
+--- 0-test13-pre2.1/include/linux/module.h Tue, 12 Dec 2000 14:20:49 +1100 kaos (linux-2.4/W/33_module.h 1.1.2.1.2.1.2.1.2.1.1.3.1.1.1.1 644)
++++ 0-test13-pre2.1(w)/include/linux/module.h Sun, 17 Dec 2000 10:32:20 +1100 kaos (linux-2.4/W/33_module.h 1.1.2.1.2.1.2.1.2.1.1.3.1.1.1.1 644)
+@@ -47,9 +47,6 @@ struct module_ref
+ 	struct module_ref *next_ref;
+ };
+ 
+-/* TBD */
+-struct module_persist;
+-
+ struct module
+ {
+ 	unsigned long size_of_struct;	/* == sizeof(module) */
+@@ -81,8 +78,8 @@ struct module
+ 	/* Members past this point are extensions to the basic
+ 	   module support and are optional.  Use mod_member_present()
+ 	   to examine them.  */
+-	const struct module_persist *persist_start;
+-	const struct module_persist *persist_end;
++	const char *read_start;		/* Read data from existing module */
++	const char *read_end;
+ 	int (*can_unload)(void);
+ 	int runsize;			/* In modutils, not currently used */
+ 	const char *kallsyms_start;	/* All symbols for kernel debugging */
+@@ -132,7 +129,7 @@ struct module_info
+ 
+ /* Check if an address p with number of entries n is within the body of module m */
+ #define mod_bound(p, n, m) ((unsigned long)(p) >= ((unsigned long)(m) + ((m)->size_of_struct)) && \
+-	         (unsigned long)((p)+(n)) <= (unsigned long)(m) + (m)->size)
++		 (unsigned long)((p)+(n)) <= (unsigned long)(m) + (m)->size)
+ 
+ /* Backwards compatibility definition.  */
+ 
+@@ -208,15 +205,43 @@ const char __module_device[] __attribute
+ 
+ /* Used to verify parameters given to the module.  The TYPE arg should
+    be a string in the following format:
+-   	[min[-max]]{b,h,i,l,s}
++	[min[-max]]{b,h,i,l}[p]
++	[min[-max]]s
++	[min[-max]]csize[p]
+    The MIN and MAX specifiers delimit the length of the array.  If MAX
+    is omitted, it defaults to MIN; if both are omitted, the default is 1.
+-   The final character is a type specifier:
++   The first character is a type specifier:
+ 	b	byte
+ 	h	short
+ 	i	int
+ 	l	long
+-	s	string
++	s	string.  The variable must be char *foo or char *foo[max].
++		max is the number of strings, not the maximum string size, the
++		maximum string size is only limited by memory.  Strings cannot
++		be persistent data, use 'c' instead.
++
++   A type of 'c' is a special case, it must be followed by an array size.  The
++   variable must be char foo[size] or char foo[max][size], size includes the
++   trailing nul.
++
++   If the data is persistent (to be saved across module unload and reload),
++   append 'p' to the end of the TYPE string.
++
++   Strings (type 's') cannot be persistent data.  If no string is supplied then
++   the code has nowhere to store any new data.  Even if a string is supplied, it
++   may be too short to hold the new text.  Allocating a new string will not work.
++
++     char *parm_str;
++     MODULE_PARM(parm_str, "sp");	INVALID!
++     parm_str = (char *) kmalloc(...);
++
++   The resulting string is outside the module body and cannot be read by user
++   space utilities, see sys_init_module().  If you need to store text as a
++   persistent parameter then use type 'c', for example
++
++     #define PARM_STR_SIZE 65
++     char parm_str[PARM_STR_SIZE];
++     MODULE_PARM(parm_str, "c" __MODULE_STRING(PARM_STR_SIZE) "p");
+ */
+ 
+ #define MODULE_PARM(var,type)			\
+@@ -249,12 +274,10 @@ static const struct gtype##_id * __modul
+   __attribute__ ((unused)) = name
+ #define MODULE_DEVICE_TABLE(type,name)		\
+   MODULE_GENERIC_TABLE(type##_device,name)
+-/* not put to .modinfo section to avoid section type conflicts */
+-
+-/* The attributes of a section are set the first time the section is
+-   seen; we want .modinfo to not be allocated.  */
+ 
+-__asm__(".section .modinfo\n\t.previous");
++#define MODULE_GENERIC_STRING(name, string) \
++static const char __module_generic_string_##name## [] \
++  __attribute__ ((section(".modstring"))) = #name "=" string;
+ 
+ /* Define the module variable, and usage macros.  */
+ extern struct module __this_module;
+@@ -281,6 +304,7 @@ static const char __module_using_checksu
+ #define MODULE_PARM_DESC(var,desc)
+ #define MODULE_GENERIC_TABLE(gtype,name)
+ #define MODULE_DEVICE_TABLE(type,name)
++#define MODULE_GENERIC_STRING(name, string)
+ 
+ #ifndef __GENKSYMS__
+ 

@@ -1,0 +1,382 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spi_flash.vhd" "20120118214646.000" "20120128164851.944":
+  entity spi_flash at 40( 1893) + 0 on 259;
+  architecture sim of spi_flash at 69( 2644) + 0 on 260;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spi2ahb.vhd" "20120118214646.000" "20120128164851.784":
+  entity spi2ahb at 28( 1381) + 0 on 255;
+  architecture rtl of spi2ahb at 67( 2207) + 0 on 256;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spictrl.vhd" "20120118214646.000" "20120128164851.558":
+  entity spictrl at 28( 1299) + 0 on 251;
+  architecture rtl of spictrl at 85( 3409) + 0 on 252;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spimctrl.vhd" "20120118214646.000" "20120128164850.440":
+  entity spimctrl at 36( 1746) + 0 on 247;
+  architecture rtl of spimctrl at 74( 3269) + 0 on 248;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2c2ahb_apb.vhd" "20120118214645.000" "20120128164850.227":
+  entity i2c2ahb_apb at 30( 1534) + 0 on 244;
+  architecture rtl of i2c2ahb_apb at 79( 2720) + 0 on 245;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2c2ahbx.vhd" "20120118214645.000" "20120128164849.994":
+  entity i2c2ahbx at 86( 3970) + 0 on 240;
+  architecture rtl of i2c2ahbx at 119( 4656) + 0 on 241;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2cmst_gen.vhd" "20120118214645.000" "20120128164849.728":
+  entity i2cmst_gen at 27( 1230) + 0 on 236;
+  architecture rtl of i2cmst_gen at 68( 2369) + 0 on 237;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2c.vhd" "20120118214645.000" "20120128164849.545":
+  package i2c at 26( 1229) + 0 on 233;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/atactrl_dma.vhd" "20120118214647.000" "20120128164849.133":
+  entity atactrl_dma at 26( 1235) + 0 on 229;
+  architecture rtl of atactrl_dma at 88( 2921) + 0 on 230;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/ocidec2_amba_slave.vhd" "20120118214647.000" "20120128164848.678":
+  entity ocidec2_amba_slave at 26( 1257) + 0 on 225;
+  architecture rtl of ocidec2_amba_slave at 132( 4670) + 0 on 226;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/atahost_amba_slave.vhd" "20120118214647.000" "20120128164848.102":
+  entity atahost_amba_slave at 27( 1295) + 0 on 221;
+  architecture rtl of atahost_amba_slave at 142( 5123) + 0 on 222;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/ata.vhd" "20120118214647.000" "20120128164847.948":
+  package ata at 26( 1250) + 0 on 219;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddr2spax_ahb.vhd" "20120118214647.000" "20120128164846.520":
+  entity ddr2spax_ahb at 27( 1357) + 0 on 215;
+  architecture rtl of ddr2spax_ahb at 66( 2518) + 0 on 216;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddr2buf.vhd" "20120118214647.000" "20120128164845.832":
+  entity ddr2buf at 33( 1532) + 0 on 211;
+  architecture rtl of ddr2buf at 58( 2354) + 0 on 212;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddrspa.vhd" "20120118214647.000" "20120128164845.563":
+  entity ddrspa at 26( 1264) + 0 on 207;
+  architecture rtl of ddrspa at 91( 3367) + 0 on 208;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddrsp32a.vhd" "20120118214647.000" "20120128164844.342":
+  entity ddrsp32a at 26( 1277) + 0 on 203;
+  architecture rtl of ddrsp32a at 68( 2271) + 0 on 204;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddrphy_wrap.vhd" "20120118214647.000" "20120128164843.346":
+  entity ddrphy_wrap at 26( 1257) + 0 on 193;
+  architecture rtl of ddrphy_wrap at 71( 3035) + 0 on 194;
+  entity ddr2phy_wrap at 100( 4021) + 0 on 195;
+  architecture rtl of ddr2phy_wrap at 185( 8647) + 0 on 196;
+  entity ddr2phy_wrap_cbd at 258( 12038) + 0 on 197;
+  architecture rtl of ddr2phy_wrap_cbd at 327( 15803) + 0 on 198;
+  entity ddr2phy_wrap_cbd_wo_pads at 491( 22226) + 0 on 199;
+  architecture rtl of ddr2phy_wrap_cbd_wo_pads at 557( 25794) + 0 on 200;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/grethm.vhd" "20120118214646.000" "20120128164843.155":
+  entity grethm at 25( 1235) + 0 on 190;
+  architecture rtl of grethm at 82( 3260) + 0 on 191;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/greth_gbit.vhd" "20120118214646.000" "20120128164842.805":
+  entity greth_gbit at 26( 1298) + 0 on 186;
+  architecture rtl of greth_gbit at 83( 3211) + 0 on 187;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/greth.vhd" "20120118214646.000" "20120128164842.412":
+  entity greth at 26( 1280) + 0 on 182;
+  architecture rtl of greth at 84( 3234) + 0 on 183;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/jtagtst.vhd" "20120118214647.000" "20120128164842.197":
+  package jtagtst at 28( 1284) + 0 on 179 body;
+  package body jtagtst at 106( 4838) + 0 on 180;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/bscanregs.vhd" "20120118214647.000" "20120128164842.062":
+  entity bscanregs at 26( 1265) + 0 on 175;
+  architecture hier of bscanregs at 53( 1886) + 0 on 176;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/ahbjtag.vhd" "20120118214647.000" "20120128164841.915":
+  entity ahbjtag at 31( 1493) + 0 on 171;
+  architecture struct of ahbjtag at 78( 2859) + 0 on 172;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/libjtagcom.vhd" "20120118214647.000" "20120128164841.710":
+  package libjtagcom at 26( 1282) + 0 on 168;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/grusb_dclsim.vhd" "20120118214646.000" "20120128164841.492":
+  entity grusb_dclsim at 30( 1444) + 0 on 165;
+  architecture behav of grusb_dclsim at 123( 4590) + 0 on 166;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/usbsim.vhd" "20120118214646.000" "20120128164841.199":
+  package usbsim at 29( 1338) + 0 on 161 body;
+  package body usbsim at 410( 16519) + 0 on 162;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/delay_wire.vhd" "20120118214646.000" "20120128164840.869":
+  entity delay_wire at 24( 1150) + 0 on 157;
+  architecture rtl of delay_wire at 39( 1463) + 0 on 158;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/phy.vhd" "20120118214646.000" "20120128164840.507":
+  entity phy at 28( 1255) + 0 on 153;
+  architecture behavioral of phy at 70( 2573) + 0 on 154;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/ata_device.vhd" "20120118214646.000" "20120128164840.247":
+  entity ata_device at 26( 1243) + 0 on 149;
+  architecture behaveioral of ata_device at 54( 2099) + 0 on 150;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/sim.vhd" "20120118214646.000" "20120128164840.029":
+  package sim at 28( 1292) + 0 on 145 body;
+  package body sim at 356( 11913) + 0 on 146;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/dcom_uart.vhd" "20120118214646.000" "20120128164839.803":
+  entity dcom_uart at 26( 1262) + 0 on 141;
+  architecture rtl of dcom_uart at 57( 1922) + 0 on 142;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/apbuart.vhd" "20120118214646.000" "20120128164839.375":
+  entity apbuart at 34( 1596) + 0 on 137;
+  architecture rtl of apbuart at 68( 2415) + 0 on 138;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/uart.vhd" "20120118214646.000" "20120128164839.251":
+  package uart at 26( 1235) + 0 on 134;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/grgprbank.vhd" "20120118214647.000" "20120128164839.108":
+  entity grgprbank at 26( 1249) + 0 on 131;
+  architecture rtl of grgprbank at 52( 1844) + 0 on 132;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbmst2.vhd" "20120118214646.000" "20120128164838.932":
+  entity ahbmst2 at 54( 2776) + 0 on 127;
+  architecture rtl of ahbmst2 at 84( 3336) + 0 on 128;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/gracectrl.vhd" "20120118214646.000" "20120128164838.661":
+  entity gracectrl at 25( 1224) + 0 on 123;
+  architecture rtl of gracectrl at 55( 2167) + 0 on 124;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/wild2ahb.vhd" "20120118214646.000" "20120128164838.239":
+  entity wild2ahb at 38( 1674) + 0 on 119;
+  architecture rtl of wild2ahb at 66( 2415) + 0 on 120;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/svgactrl.vhd" "20120118214647.000" "20120128164837.826":
+  entity svgactrl at 36( 1621) + 0 on 116;
+  architecture rtl of svgactrl at 82( 2963) + 0 on 117;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/charrom.vhd" "20120118214647.000" "20120128164835.845":
+  entity charrom at 25( 1248) + 0 on 112;
+  architecture rtl of charrom at 38( 1511) + 0 on 113;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/apbps2.vhd" "20120118214646.000" "20120128164835.610":
+  entity apbps2 at 34( 1551) + 0 on 109;
+  architecture rtl of apbps2 at 64( 2289) + 0 on 110;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbstat.vhd" "20120118214646.000" "20120128164835.250":
+  entity ahbstat at 28( 1309) + 0 on 105;
+  architecture rtl of ahbstat at 56( 1908) + 0 on 106;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbtrace_mmb.vhd" "20120118214646.000" "20120128164834.750":
+  entity ahbtrace_mmb at 28( 1386) + 0 on 101;
+  architecture rtl of ahbtrace_mmb at 58( 2174) + 0 on 102;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbtrace.vhd" "20120118214646.000" "20120128164834.580":
+  entity ahbtrace at 26( 1231) + 0 on 97;
+  architecture rtl of ahbtrace at 55( 1869) + 0 on 98;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbram.vhd" "20120118214646.000" "20120128164834.259":
+  entity ahbram at 34( 1581) + 0 on 93;
+  architecture rtl of ahbram at 60( 2144) + 0 on 94;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/rstgen.vhd" "20120118214646.000" "20120128164833.975":
+  entity rstgen at 26( 1248) + 0 on 89;
+  architecture rtl of rstgen at 45( 1663) + 0 on 90;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/leon3sh.vhd" "20120118214645.000" "20120128164833.693":
+  entity leon3sh at 26( 1254) + 0 on 85;
+  architecture rtl of leon3sh at 108( 4242) + 0 on 86;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/grfpwxsh.vhd" "20120118214645.000" "20120128164833.478":
+  entity grfpwxsh at 26( 1258) + 0 on 81;
+  architecture rtl of grfpwxsh at 50( 1928) + 0 on 82;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/leon3cg.vhd" "20120118214645.000" "20120128164833.062":
+  entity leon3cg at 26( 1272) + 0 on 77;
+  architecture rtl of leon3cg at 107( 4267) + 0 on 78;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/proc3.vhd" "20120118214645.000" "20120128164832.642":
+  entity proc3 at 26( 1268) + 0 on 73;
+  architecture rtl of proc3 at 121( 4490) + 0 on 74;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/dsu3x.vhd" "20120118214645.000" "20120128164832.093":
+  entity dsu3x at 26( 1269) + 0 on 69;
+  architecture rtl of dsu3x at 66( 2315) + 0 on 70;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/grlfpwx.vhd" "20120118214645.000" "20120128164831.935":
+  entity grlfpwx at 28( 1401) + 0 on 65;
+  architecture rtl of grlfpwx at 53( 2111) + 0 on 66;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/grfpwx.vhd" "20120118214645.000" "20120128164831.749":
+  entity grfpwx at 29( 1441) + 0 on 61;
+  architecture rtl of grfpwx at 55( 2175) + 0 on 62;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/cpu_disasx.vhd" "20120118214645.000" "20120128164829.002":
+  entity cpu_disasx at 26( 1269) + 0 on 57;
+  architecture behav of cpu_disasx at 50( 1832) + 0 on 58;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmu.vhd" "20120118214645.000" "20120128164828.351":
+  entity mmu at 26( 1247) + 0 on 53;
+  architecture rtl of mmu at 61( 2050) + 0 on 54;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmutlb.vhd" "20120118214645.000" "20120128164827.892":
+  entity mmutlb at 26( 1240) + 0 on 49;
+  architecture rtl of mmutlb at 59( 2012) + 0 on 50;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmulrue.vhd" "20120118214645.000" "20120128164827.660":
+  entity mmulrue at 26( 1242) + 0 on 45;
+  architecture rtl of mmulrue at 49( 1717) + 0 on 46;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmu_acache.vhd" "20120118214645.000" "20120128164827.329":
+  entity mmu_acache at 26( 1334) + 0 on 41;
+  architecture rtl of mmu_acache at 63( 2250) + 0 on 42;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmu_icache.vhd" "20120118214645.000" "20120128164826.122":
+  entity mmu_icache at 26( 1303) + 0 on 37;
+  architecture rtl of mmu_icache at 68( 2456) + 0 on 38;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/libproc3.vhd" "20120118214645.000" "20120128164825.563":
+  package libproc3 at 26( 1249) + 0 on 34;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/libiu.vhd" "20120118214645.000" "20120128164825.267":
+  package libiu at 26( 1239) + 0 on 31;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmuiface.vhd" "20120118214645.000" "20120128164825.052":
+  package mmuiface at 26( 1272) + 0 on 28;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/leon3.vhd" "20120118214645.000" "20120128164824.854":
+  package leon3 at 27( 1238) + 0 on 26;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/memctrl/sdmctrl.vhd" "20120118214647.000" "20120128164824.304":
+  entity sdmctrl at 26( 1275) + 0 on 22;
+  architecture rtl of sdmctrl at 55( 1900) + 0 on 23;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/memctrl/sdctrl.vhd" "20120118214647.000" "20120128164823.573":
+  entity sdctrl at 26( 1248) + 0 on 18;
+  architecture rtl of sdctrl at 61( 2051) + 0 on 19;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/arith/div32.vhd" "20120118214645.000" "20120128164823.304":
+  entity div32 at 33( 1625) + 0 on 15;
+  architecture rtl of div32 at 50( 1934) + 0 on 16;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/arith/arith.vhd" "20120118214645.000" "20120128164823.075":
+  package arith at 26( 1244) + 0 on 11 body;
+  package body arith at 99( 3365) + 0 on 12;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/arith/mul32.vhd" "20120118214645.000" "20120128164823.152":
+  entity mul32 at 27( 1298) + 0 on 13;
+  architecture rtl of mul32 at 54( 1876) + 0 on 14;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/memctrl/memctrl.vhd" "20120118214647.000" "20120128164823.415":
+  package memctrl at 26( 1243) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/memctrl/sdctrl64.vhd" "20120118214647.000" "20120128164823.936":
+  entity sdctrl64 at 29( 1415) + 0 on 20;
+  architecture rtl of sdctrl64 at 63( 2191) + 0 on 21;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/memctrl/srctrl.vhd" "20120118214647.000" "20120128164824.585":
+  entity srctrl at 28( 1375) + 0 on 24;
+  architecture rtl of srctrl at 67( 2379) + 0 on 25;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmuconfig.vhd" "20120118214645.000" "20120128164824.975":
+  package mmuconfig at 26( 1257) + 0 on 27;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/libmmu.vhd" "20120118214645.000" "20120128164825.173":
+  package libmmu at 26( 1251) + 0 on 29 body;
+  package body libmmu at 99( 3982) + 0 on 30;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/libcache.vhd" "20120118214645.000" "20120128164825.359":
+  package libcache at 26( 1265) + 0 on 32 body;
+  package body libcache at 669( 23707) + 0 on 33;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/cachemem.vhd" "20120118214645.000" "20120128164825.635":
+  entity cachemem at 26( 1272) + 0 on 35;
+  architecture rtl of cachemem at 68( 2545) + 0 on 36;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmu_dcache.vhd" "20120118214645.000" "20120128164826.533":
+  entity mmu_dcache at 26( 1298) + 0 on 39;
+  architecture rtl of mmu_dcache at 83( 2991) + 0 on 40;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmutlbcam.vhd" "20120118214645.000" "20120128164827.520":
+  entity mmutlbcam at 26( 1246) + 0 on 43;
+  architecture rtl of mmutlbcam at 52( 1806) + 0 on 44;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmulru.vhd" "20120118214645.000" "20120128164827.750":
+  entity mmulru at 26( 1240) + 0 on 47;
+  architecture rtl of mmulru at 50( 1694) + 0 on 48;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmutw.vhd" "20120118214645.000" "20120128164828.221":
+  entity mmutw at 26( 1245) + 0 on 51;
+  architecture rtl of mmutw at 54( 1848) + 0 on 52;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mmu_cache.vhd" "20120118214645.000" "20120128164828.767":
+  entity mmu_cache at 26( 1243) + 0 on 55;
+  architecture rtl of mmu_cache at 93( 3440) + 0 on 56;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/iu3.vhd" "20120118214645.000" "20120128164829.086":
+  entity iu3 at 26( 1250) + 0 on 59;
+  architecture rtl of iu3 at 95( 3442) + 0 on 60;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/mfpwx.vhd" "20120118214645.000" "20120128164831.827":
+  entity mfpwx at 26( 1253) + 0 on 63;
+  architecture rtl of mfpwx at 47( 1789) + 0 on 64;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/tbufmem.vhd" "20120118214645.000" "20120128164832.010":
+  entity tbufmem at 26( 1252) + 0 on 67;
+  architecture rtl of tbufmem at 47( 1683) + 0 on 68;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/dsu3.vhd" "20120118214645.000" "20120128164832.547":
+  entity dsu3 at 33( 1543) + 0 on 71;
+  architecture rtl of dsu3 at 69( 2436) + 0 on 72;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/leon3s.vhd" "20120118214645.000" "20120128164832.842":
+  entity leon3s at 142( 4982) + 0 on 75;
+  architecture rtl of leon3s at 222( 7900) + 0 on 76;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/irqmp.vhd" "20120118214645.000" "20120128164833.258":
+  entity irqmp at 34( 1589) + 0 on 79;
+  architecture rtl of irqmp at 61( 2168) + 0 on 80;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/leon3/grfpushwx.vhd" "20120118214645.000" "20120128164833.576":
+  entity grfpushwx at 8( 294) + 0 on 83;
+  architecture rtl of grfpushwx at 29( 720) + 0 on 84;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/misc.vhd" "20120118214646.000" "20120128164833.878":
+  package misc at 26( 1221) + 0 on 87 body;
+  package body misc at 1025( 34499) + 0 on 88;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/gptimer.vhd" "20120118214646.000" "20120128164834.065":
+  entity gptimer at 35( 1656) + 0 on 91;
+  architecture rtl of gptimer at 70( 2542) + 0 on 92;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbdpram.vhd" "20120118214646.000" "20120128164834.437":
+  entity ahbdpram at 26( 1266) + 0 on 95;
+  architecture rtl of ahbdpram at 58( 2189) + 0 on 96;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahbtrace_mb.vhd" "20120118214647.000" "20120128164834.654":
+  entity ahbtrace_mb at 27( 1328) + 0 on 99;
+  architecture rtl of ahbtrace_mb at 57( 2046) + 0 on 100;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/grgpio.vhd" "20120118214646.000" "20120128164835.039":
+  entity grgpio at 33( 1511) + 0 on 103;
+  architecture rtl of grgpio at 70( 2462) + 0 on 104;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/logan.vhd" "20120118214646.000" "20120128164835.359":
+  entity logan at 26( 1246) + 0 on 107;
+  architecture rtl of logan at 58( 2637) + 0 on 108;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/charrom_package.vhd" "20120118214646.000" "20120128164835.797":
+  package charrom_package at 26( 1258) + 0 on 111;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/apbvga.vhd" "20120118214646.000" "20120128164837.630":
+  entity apbvga at 34( 1515) + 0 on 114;
+  architecture rtl of apbvga at 62( 2352) + 0 on 115;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/wild.vhd" "20120118214646.000" "20120128164838.192":
+  package wild at 41( 1808) + 0 on 118;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/grsysmon.vhd" "20120118214646.000" "20120128164838.473":
+  entity grsysmon at 25( 1216) + 0 on 121;
+  architecture rtl of grsysmon at 86( 3328) + 0 on 122;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/grgpreg.vhd" "20120118214646.000" "20120128164838.832":
+  entity grgpreg at 26( 1244) + 0 on 125;
+  architecture rtl of grgpreg at 60( 2096) + 0 on 126;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/misc/ahb_mst_iface.vhd" "20120118214646.000" "20120128164839.035":
+  entity ahb_mst_iface at 25( 1277) + 0 on 129;
+  architecture rtl of ahb_mst_iface at 49( 1824) + 0 on 130;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/net/net.vhd" "20120118214646.000" "20120128164839.196":
+  package net at 26( 1287) + 0 on 133;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/libdcom.vhd" "20120118214646.000" "20120128164839.331":
+  package libdcom at 26( 1259) + 0 on 135 body;
+  package body libdcom at 107( 3094) + 0 on 136;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/dcom.vhd" "20120118214646.000" "20120128164839.693":
+  entity dcom at 26( 1255) + 0 on 139;
+  architecture struct of dcom at 47( 1713) + 0 on 140;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/uart/ahbuart.vhd" "20120118214646.000" "20120128164839.969":
+  entity ahbuart at 34( 1556) + 0 on 143;
+  architecture struct of ahbuart at 63( 2204) + 0 on 144;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/sram.vhd" "20120118214646.000" "20120128164840.154":
+  entity sram at 28( 1270) + 0 on 147;
+  architecture sim of sram at 53( 1881) + 0 on 148;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/sram16.vhd" "20120118214646.000" "20120128164840.462":
+  entity sram16 at 28( 1281) + 0 on 151;
+  architecture sim of sram16 at 55( 1950) + 0 on 152;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/ahbrep.vhd" "20120118214646.000" "20120128164840.798":
+  entity ahbrep at 32( 1464) + 0 on 155;
+  architecture rtl of ahbrep at 58( 1967) + 0 on 156;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/pwm_check.vhd" "20120118214646.000" "20120128164840.958":
+  entity pwm_check at 34( 1794) + 0 on 159;
+  architecture sim of pwm_check at 55( 2281) + 0 on 160;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/sim/grusbdcsim.vhd" "20120118214646.000" "20120128164841.401":
+  entity grusbdcsim at 31( 1542) + 0 on 163;
+  architecture behav of grusbdcsim at 59( 2497) + 0 on 164;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/jtag.vhd" "20120118214647.000" "20120128164841.635":
+  package jtag at 26( 1226) + 0 on 167;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/jtagcom.vhd" "20120118214647.000" "20120128164841.772":
+  entity jtagcom at 28( 1354) + 0 on 169;
+  architecture rtl of jtagcom at 57( 1998) + 0 on 170;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/ahbjtag_bsd.vhd" "20120118214647.000" "20120128164842.007":
+  entity ahbjtag_bsd at 26( 1300) + 0 on 173;
+  architecture struct of ahbjtag_bsd at 60( 2174) + 0 on 174;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/jtag/bscanregsbd.vhd" "20120118214647.000" "20120128164842.136":
+  entity bscanregsbd at 26( 1271) + 0 on 177;
+  architecture rtl of bscanregsbd at 59( 2440) + 0 on 178;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/ethernet_mac.vhd" "20120118214646.000" "20120128164842.325":
+  package ethernet_mac at 21( 1035) + 0 on 181;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/greth_mb.vhd" "20120118214646.000" "20120128164842.589":
+  entity greth_mb at 26( 1317) + 0 on 184;
+  architecture rtl of greth_mb at 88( 3443) + 0 on 185;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/greth/greth_gbit_mb.vhd" "20120118214646.000" "20120128164842.979":
+  entity greth_gbit_mb at 26( 1335) + 0 on 188;
+  architecture rtl of greth_gbit_mb at 87( 3419) + 0 on 189;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/usb/grusb.vhd" "20120118214647.000" "20120128164843.244":
+  package grusb at 26( 1271) + 0 on 192;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddrsp16a.vhd" "20120118214647.000" "20120128164843.837":
+  entity ddrsp16a at 26( 1277) + 0 on 201;
+  architecture rtl of ddrsp16a at 69( 2301) + 0 on 202;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddrsp64a.vhd" "20120118214647.000" "20120128164844.958":
+  entity ddrsp64a at 26( 1277) + 0 on 205;
+  architecture rtl of ddrsp64a at 68( 2271) + 0 on 206;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddr2spa.vhd" "20120118214647.000" "20120128164845.697":
+  entity ddr2spa at 26( 1286) + 0 on 209;
+  architecture rtl of ddr2spa at 117( 5641) + 0 on 210;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddr2spax.vhd" "20120118214647.000" "20120128164845.980":
+  entity ddr2spax at 27( 1353) + 0 on 213;
+  architecture rtl of ddr2spax at 85( 3150) + 0 on 214;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ddr/ddr2spax_ddr.vhd" "20120118214647.000" "20120128164846.970":
+  entity ddr2spax_ddr at 27( 1353) + 0 on 217;
+  architecture rtl of ddr2spax_ddr at 84( 3267) + 0 on 218;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/ata_inf.vhd" "20120118214647.000" "20120128164848.013":
+  package ata_inf at 26( 1240) + 0 on 220;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/atahost_ahbmst.vhd" "20120118214647.000" "20120128164848.496":
+  entity atahost_ahbmst at 29( 1313) + 0 on 223;
+  architecture rtl of atahost_ahbmst at 49( 1823) + 0 on 224;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/atactrl_nodma.vhd" "20120118214647.000" "20120128164848.993":
+  entity atactrl_nodma at 26( 1247) + 0 on 227;
+  architecture rtl of atactrl_nodma at 78( 2648) + 0 on 228;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/ata/atactrl.vhd" "20120118214647.000" "20120128164849.446":
+  entity atactrl at 26( 1229) + 0 on 231;
+  architecture rtl of atactrl at 68( 2315) + 0 on 232;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2cmst.vhd" "20120118214645.000" "20120128164849.598":
+  entity i2cmst at 57( 2895) + 0 on 234;
+  architecture rtl of i2cmst at 96( 3797) + 0 on 235;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2cslv.vhd" "20120118214645.000" "20120128164849.819":
+  entity i2cslv at 69( 2485) + 0 on 238;
+  architecture rtl of i2cslv at 106( 3383) + 0 on 239;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/i2c/i2c2ahb.vhd" "20120118214645.000" "20120128164850.154":
+  entity i2c2ahb at 28( 1381) + 0 on 242;
+  architecture rtl of i2c2ahb at 68( 2225) + 0 on 243;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spi.vhd" "20120118214646.000" "20120128164850.348":
+  package spi at 26( 1230) + 0 on 246;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spictrlx.vhd" "20120118214646.000" "20120128164850.788":
+  entity spictrlx at 94( 3740) + 0 on 249;
+  architecture rtl of spictrlx at 161( 6361) + 0 on 250;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spi2ahbx.vhd" "20120118214646.000" "20120128164851.617":
+  entity spi2ahbx at 99( 4886) + 0 on 253;
+  architecture rtl of spi2ahbx at 134( 5654) + 0 on 254;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gaisler/spi/spi2ahb_apb.vhd" "20120118214646.000" "20120128164851.849":
+  entity spi2ahb_apb at 30( 1534) + 0 on 257;
+  architecture rtl of spi2ahb_apb at 80( 2704) + 0 on 258;

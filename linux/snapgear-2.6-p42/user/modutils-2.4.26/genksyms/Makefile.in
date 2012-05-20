@@ -1,0 +1,76 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+DEFS = -I. -I$(srcdir) -I$(srcdir)/../include -D_GNU_SOURCE @DEFS@ $(EXTRA_DEFS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(DEFS) -c -o $@ $<
+
+######################################################################
+
+all: genksyms
+
+genksyms: genksyms.o parse.o lex.o ../util/libutil.a
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+parse.o: parse.c
+	$(CC) $(CFLAGS) $(PARSERCFLAGS) $(DEFS) -c -o $@ $<
+
+parse.c: parse.y
+	@echo "expect 6 shift/reduce conflicts and 5 reduce/reduce conflicts."
+	bison -o parse.c -dtv $^
+
+parse.h: parse.c
+
+lex.o: lex.c
+	$(CC) $(CFLAGS) $(PARSERCFLAGS) $(DEFS) -c -o $@ $<
+
+lex.c: lex.l parse.h
+	flex -o$@ -d $^
+
+crc32.tab: makecrc32.c
+	$(BUILDCC) $(BUILDCFLAGS) -o makecrc32 $^
+	./makecrc32 > $@.tmp
+	mv $@.tmp $@
+
+# Cannot rely on timestamps to detect if keywords.c needs to be regenerated or not.
+# Repository checkouts and patch can mangle the timestamps.
+# If keywords.gperf == keywords.gperf_shipped then use keywords.c_shipped, 
+# otherwise regenerate keywords.c using gperf and update the base files.
+
+keywords.c: keywords.gperf keywords.gperf_shipped keywords.c_shipped
+	@cmp $(filter %keywords.gperf_shipped,$^) $(filter %keywords.gperf,$^) && \
+	  cp $(filter %keywords.c_shipped,$^) $@ || \
+	  (set -ex; \
+	   gperf -a -C -E -g -H is_reserved_hash -k 1,3,$$ -N is_reserved_word -p -t $(filter %keywords.gperf,$^) > $@.tmp ; \
+	   rm -f $@; \
+	   sed -e '/Command-line/s/[^ ]*keywords.gperf/keywords.gperf/' $@.tmp > $@; \
+	   rm $@.tmp; \
+	   cp -f $(filter %keywords.gperf,$^) $(filter %keywords.gperf_shipped,$^); \
+	   cp -f $@ $(filter %keywords.c_shipped,$^); \
+	  )
+
+clean:
+	rm -f *.o *.tmp parse.output genksyms makecrc32 keywords.c
+
+realclean: clean
+	rm -f .depend parse.c parse.h lex.c crc32.tab
+
+	# rm -f keywords.c     gperf is not on all distributions
+
+distclean: realclean
+	rm -f Makefile
+
+install install-bin: all
+	$(MKDIR) $(DESTDIR)$(sbindir)
+	$(INSTALL) $(STRIP) genksyms $(DESTDIR)$(sbindir)
+
+# auto-generated dependancies are almost redundant once we add all the
+# rules to get the generated files built first.
+dep depend:
+
+genksyms.o: genksyms.c crc32.tab genksyms.h \
+  $(srcdir)/../include/util.h $(srcdir)/../include/version.h
+lex.o: lex.c keywords.c genksyms.h parse.c $(srcdir)/../include/util.h
+parse.o: parse.c genksyms.h

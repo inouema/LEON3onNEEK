@@ -1,0 +1,7 @@
+
+addfile -vhdl ../../config.vhd
+addfile -vhdl ../../ahbrom.vhd
+addfile -vhdl ../../serializer.vhd
+addfile -vhdl ../../altera_eek_clkgen.vhd
+addfile -vhdl ../../leon3mp.vhd
+addfile -vhdl ../../testbench.vhd

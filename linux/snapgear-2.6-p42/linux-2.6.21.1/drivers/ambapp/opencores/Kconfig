@@ -1,0 +1,46 @@
+
+menu "Vendor Opencores"
+
+config GRLIB_OPENCORES_ETHERMAC
+	tristate "Grlib's opencores ethermac driver" 
+	default y
+	depends on NETDEVICES
+	---help---
+	  Add the driver for the grlib opencore ethermac.
+
+
+config GRLIB_OPENCORES_ETHERMAC_MACMSB
+	hex "MSB 24 bits of ethern number (hex)" 
+	default 00007A
+	depends on GRLIB_OPENCORES_ETHERMAC
+	---help---
+	  Most significant 24 bits of the default MAC address
+	  that is initialized when driver probes. A good guess 
+	  is 00007A.
+
+config GRLIB_OPENCORES_ETHERMAC_MACLSB
+	hex "LSB 24 bits of ethern number (hex)" 
+	default CC0012
+	depends on GRLIB_OPENCORES_ETHERMAC
+	---help---
+	  Least significant 24 bits of the default MAC address
+	  that is initialized when driver probes. A good guess 
+	  is CC0012.
+	  If there is more than one ethernet core, the less
+	  significant bit is incremented.
+
+config GRLIB_OPENCORES_ETHERMAC_FLUSH
+	bool "Flush the BD pages before acessing them" 
+	default y
+	depends on GRLIB_OPENCORES_ETHERMAC
+	---help---
+	  Because opencores does physical address writes the virtual
+	  address space of the processor has to be synced with a flush.
+	  Set to no if you have disable caches or you are shure that
+	  it can work otherwise. 	 
+
+
+endmenu
+
+
+

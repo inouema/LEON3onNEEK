@@ -1,0 +1,14 @@
+Writing C++ applications linux-2.0.x and uClibc.
+ o use the sparc-linux toochain that includes the /opt/sparc-linux/sparc-linux/lib-uclibc-stdc++
+   subdirectory. This subdirectory includes the libstdc++ compiled with uClibc.
+ o uClibc has to be compiled with "wchar support" and "locale support". To do so cd into
+   <uclibc-dir> and type "make menuconf". A predefined uClibc config file is
+   snapgear-p15/vendors/gaisler/leon3/config.uClibc.forcpp.
+ o when compiling an object file add switches
+   -I /opt/sparc-linux/include/c++/3.2.2
+   -I /opt/sparc-linux/include/c++/3.2.2/backward
+   -I /opt/sparc-linux/include/c++/3.2.2/sparc-linux
+ o when linking an executable add -L switch to uClibc's libc.a and
+   -L switch to the correct multilib dir of /opt/sparc-linux/sparc-linux/lib-uclibc-stdc++/<multilib>
+   -Wl,--start-group ... -lc -lstdc++  -Wl,--end-group 
+ 

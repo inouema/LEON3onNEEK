@@ -1,0 +1,389 @@
+AC_INIT(insmod/insmod.c)
+AC_PREFIX_DEFAULT(/usr)
+
+# Canonical system uses CC_FOR_BUILD while Linux may use BUILDCC
+if test -z "$CC_FOR_BUILD"; then
+  CC_FOR_BUILD="$BUILDCC"
+fi
+# Ditto for HOSTCC for compatibility.
+if test -z "$HOSTCC"; then
+  HOSTCC="$HOST_CC"
+fi
+if test -z "$CC_FOR_BUILD"; then
+  CC_FOR_BUILD="$HOSTCC"
+fi
+BUILDCC="$CC_FOR_BUILD"
+export CC_FOR_BUILD
+
+AC_CANONICAL_SYSTEM
+
+# Handle target_cpu for compatibility.
+if test "$host_cpu" != "$target_cpu"; then
+  host_cpu=$target_cpu
+fi
+case "$host_cpu" in
+  alpha*)    ARCH=alpha ;;
+  i?86)      ARCH=i386  ;;
+  arm*)      ARCH=arm   ;;
+  mips*)     ARCH=mips  ;;
+  sh64)      ARCH=sh64  ;;
+  sh*)       ARCH=sh    ;;
+  powerpc)   ARCH=ppc   ;;
+  powerpc64) ARCH=ppc64 ;;
+  hppa2*)    ARCH=hppa64 ;;
+  *)         ARCH=$host_cpu ;;
+esac
+
+for i in rmmod modprobe lsmod ksyms kallsyms
+do eval COMBINE_$i=$i
+done
+AC_ARG_ENABLE(combined,
+[  --enable-combined            Create insmod and rmmod/modprobe/lsmod/ksyms/kallsyms
+                               as one executable.  Default is one combined
+                               module, if you --disable-combined you can still
+                               combine individual modules into insmod with
+                               --enable-combined-X.],
+[if test "$enableval" = "no"; then
+	for i in rmmod modprobe lsmod ksyms kallsyms
+	do eval COMBINE_$i=""
+	done
+fi])
+
+AC_ARG_ENABLE(combined-rmmod,
+[  --enable-combined-rmmod      Create insmod and rmmod as one executable
+                               (default)],
+[if test "$enableval" = "yes"; then
+  COMBINE_rmmod=rmmod
+  else
+  COMBINE_rmmod=""
+fi])
+AC_SUBST(COMBINE_rmmod)
+
+AC_ARG_ENABLE(combined-modprobe,
+[  --enable-combined-modprobe   Create insmod and modprobe as one executable
+                               (default)],
+[if test "$enableval" = "yes"; then
+  COMBINE_modprobe=modprobe
+  else
+  COMBINE_modprobe=""
+fi])
+AC_SUBST(COMBINE_modprobe)
+
+AC_ARG_ENABLE(combined-lsmod,
+[  --enable-combined-lsmod      Create insmod and lsmod as one executable
+                               (default)],
+[if test "$enableval" = "yes"; then
+  COMBINE_lsmod=lsmod
+  else
+  COMBINE_lsmod=""
+fi])
+AC_SUBST(COMBINE_lsmod)
+
+AC_ARG_ENABLE(combined-ksyms,
+[  --enable-combined-ksyms      Create insmod and ksyms as one executable
+                               (default)],
+[if test "$enableval" = "yes"; then
+  COMBINE_ksyms=ksyms
+  else
+  COMBINE_ksyms=""
+fi])
+AC_SUBST(COMBINE_ksyms)
+
+AC_ARG_ENABLE(combined-kallsyms,
+[  --enable-combined-kallsyms   Create insmod and kallsyms as one executable
+                               (default)],
+[if test "$enableval" = "yes"; then
+  COMBINE_kallsyms=kallsyms
+  else
+  COMBINE_kallsyms=""
+fi])
+AC_SUBST(COMBINE_kallsyms)
+
+AC_ARG_ENABLE(compat-2-0,
+[  --disable-compat-2-0         Do not create utilities that can run on a Linux
+                               2.0 system (default)],
+[if test "$enableval" = "yes"; then
+  AC_DEFINE(COMPAT_2_0)
+  COMPAT_2_0="y"
+else
+  COMPAT_2_0="n"
+fi],[COMPAT_2_0="n"])
+AC_SUBST(COMPAT_2_0)
+
+AC_ARG_ENABLE(kerneld,
+[  --disable-kerneld            Do not create kerneld binary (default)],
+[if test "$enableval" = "yes"; then
+  kerneld_SUBDIR=kerneld
+  kerneld_Makefiles="kerneld/Makefile man_kerneld/Makefile"
+fi])
+AC_SUBST(kerneld_SUBDIR)
+
+AC_ARG_ENABLE(insmod-static,
+[  --disable-insmod-static      Do not create insmod.static binary (default)],
+[if test "$enableval" = "yes"; then
+  insmod_static=yes
+else
+  insmod_static=no
+fi],[insmod_static=no])
+AC_SUBST(insmod_static)
+
+COMMON_sparc=yes
+AC_ARG_ENABLE(common-sparc,
+[  --enable-common-sparc        Make all the utilities work on both sparc32 and
+                               sparc64 as one executable (default on sparc is
+                               yes, default on other architectures is no)],
+[if test "$enableval" = "yes"; then
+  COMMON_sparc=yes
+  else
+  COMMON_sparc=no
+fi])
+case "$ARCH" in
+  sparc64) if test "$COMMON_sparc" = "yes"; then ARCH="sparc"; fi ;;
+  sparc*) ;;
+  *) COMMON_sparc=no ;;
+esac
+AC_SUBST(COMMON_sparc)
+
+COMMON_hppa=yes
+AC_ARG_ENABLE(common-hppa,
+[  --enable-common-hppa         Make one executable handle 32 and 64 bit kernel
+                               modules (default on hppa is yes, default on other
+                               architectures is no)],
+[if test "$enableval" = "yes"; then
+  COMMON_hppa=yes
+  else
+  COMMON_hppa=no
+fi])
+case "$ARCH" in
+  hppa64) if test "$COMMON_hppa" = "yes"; then ARCH="hppa"; fi ;;
+  hppa*) ;;
+  *) COMMON_hppa=no ;;
+esac
+AC_SUBST(COMMON_hppa)
+
+COMMON_ppc=yes
+AC_ARG_ENABLE(common-ppc,
+[  --enable-common-ppc          Make one executable handle 32 and 64 bit kernel
+                               modules (default on ppc is yes, default on other
+                               architectures is no)],
+[if test "$enableval" = "yes"; then
+  COMMON_ppc=yes
+  else
+  COMMON_ppc=no
+fi])
+case "$ARCH" in
+  ppc64) if test "$COMMON_ppc" = "yes"; then ARCH="ppc"; fi ;;
+  ppc*) ;;
+  *) COMMON_ppc=no ;;
+esac
+AC_SUBST(COMMON_ppc)
+
+COMMON_s390=yes
+AC_ARG_ENABLE(common-s390,
+[  --enable-common-s390         Make one executable handle 32 and 64 bit kernel
+                               modules (default on s390 is yes, default on other
+                               architectures is no)],
+[if test "$enableval" = "yes"; then
+  COMMON_s390=yes
+  else
+  COMMON_s390=no
+fi])
+case "$ARCH" in
+  s390x) if test "$COMMON_s390" = "yes"; then ARCH="s390"; fi ;;
+  s390*) ;;
+  *) COMMON_s390=no ;;
+esac
+AC_SUBST(COMMON_s390)
+
+COMMON_i386=yes
+AC_ARG_ENABLE(common-i386,
+[  --enable-common-i386         Make one executable handle 32 and 64 bit kernel
+                               modules (default on i386 is yes, default on other
+                               architectures is no)],
+[if test "$enableval" = "yes"; then
+  COMMON_i386=yes
+  else
+  COMMON_i386=no
+fi])
+case "$ARCH" in
+  x86_64) if test "$COMMON_i386" = "yes"; then ARCH="i386"; fi ;;
+  i386*) ;;
+  *) COMMON_i386=no ;;
+esac
+AC_SUBST(COMMON_i386)
+
+AC_SUBST(ARCH)
+
+case "$ARCH" in
+  ia64)	DEFAULT_STRIP=;;
+  *)	DEFAULT_STRIP=-s ;;
+esac
+AC_ARG_ENABLE(strip,
+[  --enable-strip               Strip binaries during install.   Default is no
+                               on IA64 (ski does not like stripped binaries),
+                               yes on other architectures],
+[if test "$enableval" = "yes"; then
+  STRIP=-s
+else
+  STRIP=
+fi],[STRIP=$DEFAULT_STRIP])
+AC_SUBST(STRIP)
+
+# If zlib is required, libz must be linked static, insmod is in /sbin, libz is
+# in /usr/lib and may not be available when insmod is run.  But if insmod is
+# all static then we cannot use -Bdynamic at all, it confuses ld.
+AC_ARG_ENABLE(zlib,
+[  --disable-zlib               Do not handle gzipped objects (default)],
+[if test "$enableval" = "yes"; then
+  AC_DEFINE(CONFIG_USE_ZLIB)
+  ZLIB="-lz"
+fi])
+AC_ARG_WITH(dynamic-zlib,
+[  --without-dynamic-zlib       Link against static zlib (default)],[],
+[with_dynamic_zlib=no])
+if test "$with_dynamic_zlib" = "yes"; then
+  ZLIB_STATIC="$ZLIB"
+else
+  ZLIB_STATIC="-Wl,-Bstatic $ZLIB -Wl,-Bdynamic"
+fi
+
+# Default for use-syscall depends on the presence of query_module in libc.
+AC_CHECK_LIB(c, query_module, [default_syscall=n], [default_syscall=y])
+AC_ARG_ENABLE(use-syscall,
+[  --disable-use-syscall        Do not use _syscall(), use libc functions instead.
+                               Default is disable the use of syscall but only if
+                               libc supports query_module.],
+[if test "$enableval" = "yes"; then
+  USE_SYSCALL="y"
+else
+  USE_SYSCALL="n"
+fi],[USE_SYSCALL="$default_syscall"])
+if test "$USE_SYSCALL" = "y"; then
+  AC_DEFINE(CONFIG_USE_SYSCALL)
+fi
+AC_SUBST(USE_SYSCALL)
+
+AC_ARG_ENABLE(root-check,
+[  --enable-root-check          Check that modules are owned by root before
+                               loading (default)],
+[if test "$enableval" = "yes"; then
+  AC_DEFINE(CONFIG_ROOT_CHECK_OFF, 0)
+else
+  AC_DEFINE(CONFIG_ROOT_CHECK_OFF, 1)
+fi],[AC_DEFINE(CONFIG_ROOT_CHECK_OFF, 0)])
+
+# If the user did not specify CFLAGS, use suitable values for modutils
+if test "$CFLAGS" = ""; then
+  CFLAGS="-O2 -Wall"
+fi
+
+AC_PROG_CC
+AC_PROG_RANLIB
+AC_PROG_LN_S
+
+# AC_PROG_INSTALL is unsuitable for cross compilation.  It generates a
+# hard coded pathname for INSTALL.  Even if we set our own value for
+# INSTALL, acgeneral insists on preceding a relative INSTALL with
+# "../".  Easiest solution is to use another variable inside autoconf
+# and not use AC_PROG_INSTALL.
+#
+if test -z "$INSTALL"; then
+  INSTALL_LOCAL=install
+else
+  INSTALL_LOCAL="$INSTALL"
+fi
+AC_SUBST(INSTALL_LOCAL)
+
+# If the user did not specify BUILDCC, use CC.
+if test -z "$BUILDCC"; then
+  BUILDCC=$CC
+fi
+AC_SUBST(BUILDCC)
+
+# If the user did not specify BUILDCFLAGS, use CFLAGS
+# HOSTCFLAGS are checked for compatibility.
+if test -z "$BUILDCFLAGS"; then
+  if test -z "$HOSTCFLAGS"; then
+    BUILDCFLAGS=$CFLAGS
+  else
+    BUILDCFLAGS=$HOSTCFLAGS
+  fi
+fi
+AC_SUBST(BUILDCFLAGS)
+
+# If the user did not specify AR, use ar
+if test -z "$AR"; then
+  AR=ar
+fi
+AC_SUBST(AR)
+
+# If the user did not specify PARSECFLAGS, use -Wno-uninitialized.
+# Yacc and Lex generated programs raise comments about uninitialized
+# variables when -Wall is used so turn this warning off for the parse
+# programs.
+if test "$PARSERCFLAGS" = ""; then
+  PARSERCFLAGS=-Wno-uninitialized
+fi
+AC_SUBST(PARSERCFLAGS)
+
+# If the user did not specify MKDIR, use mkdir -p.
+if test "$MKDIR" = ""; then
+  MKDIR="mkdir -p"
+fi
+AC_SUBST(MKDIR)
+
+# If the user did not specify TAINT_URL, use http://www.tux.org/lkml/#export-tainted.
+if test "$TAINT_URL" = ""; then
+  TAINT_URL="http://www.tux.org/lkml/\#export-tainted"
+fi
+AC_SUBST(TAINT_URL)
+
+AC_CHECK_FUNC(wordexp, HAVE_WORDEXP="-DHAVE_WORDEXP=1", HAVE_WORDEXP="")
+AC_SUBST(HAVE_WORDEXP)
+
+AC_CHECK_FUNC(glob, HAVE_GLOB="-DHAVE_GLOB=1", HAVE_GLOB="")
+AC_SUBST(HAVE_GLOB)
+
+if test "$ARCH" = "alpha"; then
+  AC_MSG_CHECKING(for broken alpha assembler)
+  cat > conftest.c <<EOF
+[#]line __oline__ "configure"
+static int x, y;
+int main() { return y; }
+EOF
+  if AC_TRY_EVAL(ac_compile); then
+    ac_broken_gas=no
+    if objdump -r conftest.o | grep 'LITERAL.*y.*4$' > /dev/null; then
+      AC_DEFINE(AXP_BROKEN_GAS)
+      ac_broken_gas=yes
+    fi
+    rm -rf conftest*
+  else
+    AC_MSG_ERROR([what, we can't build a simple proggie?])
+  fi
+  AC_MSG_RESULT($ac_broken_gas)
+fi
+
+# If the user did not specify a prefix, then change exec_prefix
+# to be '' so that binaries go into /sbin.
+if test "x$prefix" = "xNONE"; then
+  if test "x$exec_prefix" = "xNONE"; then
+    exec_prefix=""
+  fi
+fi
+
+# If zlib was requested, check if it actually exists.
+if test "$enable_zlib" = "yes"; then
+  modutils_save_LIBS="$LIBS"
+  LIBS="$LIBS $ZLIB_STATIC"
+  AC_CHECK_FUNC(gzopen,,
+		AC_MSG_ERROR([zlib is required for handling gzipped objects]))
+  LIBS="$modutils_save_LIBS"
+fi
+
+AC_SUBST(ZLIB)
+AC_SUBST(ZLIB_STATIC)
+
+AC_OUTPUT(Makefile Makefile.common depmod/Makefile genksyms/Makefile
+	  insmod/Makefile $kerneld_Makefiles obj/Makefile util/Makefile
+	  man/Makefile)

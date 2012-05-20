@@ -1,0 +1,10 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gsi/ssram/g880e18bt.vhd" "20120118214647.000" "20120128164854.177":
+  entity g880e18bt at 5( 147) + 0 on 15;
+  architecture burst_8meg_x18 of g880e18bt at 66( 2770) + 0 on 16;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gsi/ssram/functions.vhd" "20120118214647.000" "20120128164853.432":
+  package functions at 17( 703) + 0 on 11 body;
+  package body functions at 444( 20871) + 0 on 12;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/gsi/ssram/core_burst.vhd" "20120118214647.000" "20120128164853.876":
+  entity vhdl_burst_core at 54( 2992) + 0 on 13;
+  architecture gsi_burst_core of vhdl_burst_core at 105( 5277) + 0 on 14;

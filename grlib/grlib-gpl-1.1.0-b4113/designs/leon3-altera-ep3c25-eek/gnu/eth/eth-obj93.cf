@@ -1,0 +1,30 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/wrapper/greth_gbit_gen.vhd" "20120118214648.000" "20120128164821.783":
+  entity greth_gbit_gen at 25( 1240) + 0 on 28;
+  architecture rtl of greth_gbit_gen at 133( 5437) + 0 on 29;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/grethc.vhd" "20120118214648.000" "20120128164820.619":
+  entity grethc at 26( 1282) + 0 on 24;
+  architecture rtl of grethc at 153( 6423) + 0 on 25;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/greth_tx.vhd" "20120118214648.000" "20120128164820.210":
+  entity greth_tx at 25( 1219) + 0 on 20;
+  architecture rtl of greth_tx at 48( 1814) + 0 on 21;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/eth_edcl_ahb_mst.vhd" "20120118214648.000" "20120128164820.069":
+  entity eth_edcl_ahb_mst at 25( 1286) + 0 on 16;
+  architecture rtl of eth_edcl_ahb_mst at 44( 1742) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/greth_pkg.vhd" "20120118214648.000" "20120128164819.909":
+  package grethpkg at 20( 1035) + 0 on 12 body;
+  package body grethpkg at 414( 13824) + 0 on 13;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/comp/ethcomp.vhd" "20120118214648.000" "20120128164819.856":
+  package ethcomp at 20( 1035) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/eth_rstgen.vhd" "20120118214648.000" "20120128164820.026":
+  entity eth_rstgen at 26( 1256) + 0 on 14;
+  architecture rtl of eth_rstgen at 40( 1536) + 0 on 15;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/eth_ahb_mst.vhd" "20120118214648.000" "20120128164820.123":
+  entity eth_ahb_mst at 25( 1270) + 0 on 18;
+  architecture rtl of eth_ahb_mst at 46( 1774) + 0 on 19;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/core/greth_rx.vhd" "20120118214648.000" "20120128164820.449":
+  entity greth_rx at 25( 1216) + 0 on 22;
+  architecture rtl of greth_rx at 46( 1749) + 0 on 23;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/eth/wrapper/greth_gen.vhd" "20120118214648.000" "20120128164821.646":
+  entity greth_gen at 25( 1222) + 0 on 26;
+  architecture rtl of greth_gen at 133( 5401) + 0 on 27;

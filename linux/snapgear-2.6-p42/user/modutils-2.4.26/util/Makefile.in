@@ -1,0 +1,49 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+DEFS = -I$(srcdir)/../include -D_GNU_SOURCE @DEFS@
+DEFS += -DELF_MACHINE_H='"elf_$(ARCH).h"' -DARCH_$(ARCH) $(EXTRA_DEFS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(DEFS) -c -o $@ $<
+
+######################################################################
+
+all: .depend libutil.a
+
+OBJS = xmalloc.o xrealloc.o xstrcat.o xstrdup.o xsystem.o \
+	logger.o modstat.o \
+	meta_expand.o config.o snap_shot.o arch64.o gzfiles.o sys_nim.o \
+	xftw.o
+ifneq ($(USE_SYSCALL),n)
+OBJS += sys_cm.o sys_dm.o sys_gks.o sys_qm.o
+endif
+ifneq ($(COMPAT_2_0),n)
+OBJS += sys_oim.o
+endif
+
+meta_expand.o: meta_expand.c
+	$(CC) $(CFLAGS) $(DEFS) @HAVE_WORDEXP@ @HAVE_GLOB@ -c $<
+
+libutil.a: $(OBJS)
+	$(AR) rv $@ $?
+	$(RANLIB) $@
+
+clean:
+	rm -f *.o *.a
+
+realclean: clean
+	rm -f .depend
+
+distclean: realclean
+	rm -f Makefile
+
+install-bin: all
+
+dep depend .depend: $(OBJS:.o=.c)
+	$(CC) -M $(CFLAGS) $(DEFS) $^ > .depend
+
+ifeq (.depend,$(wildcard .depend))
+include .depend
+endif

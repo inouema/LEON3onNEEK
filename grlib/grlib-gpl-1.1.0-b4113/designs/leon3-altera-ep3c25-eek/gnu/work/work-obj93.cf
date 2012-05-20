@@ -1,0 +1,28 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "testbench.vhd" "20120118214644.000" "20120128164857.833":
+  entity testbench at 25( 1303) + 0 on 27;
+  architecture behav of testbench at 61( 2347) + 0 on 28;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "altera_eek_clkgen.vhd" "20120118214644.000" "20120128164857.119":
+  entity altera_eek_clkgen at 21( 1037) + 0 on 23;
+  architecture rtl of altera_eek_clkgen at 47( 1617) + 0 on 24;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "ahbrom.vhd" "20120118214644.000" "20120128164856.905":
+  entity ahbrom at 11( 451) + 0 on 19;
+  architecture rtl of ahbrom at 34( 929) + 0 on 20;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/work/debug/cpu_disas.vhd" "20120118214648.000" "20120128164856.775":
+  entity cpu_disas at 26( 1240) + 0 on 14;
+  architecture behav of cpu_disas at 52( 1871) + 0 on 15;
+  entity gaisler_cpu_disas at 79( 2721) + 0 on 16;
+  architecture behav of gaisler_cpu_disas at 105( 3360) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/work/debug/debug.vhd" "20120118214648.000" "20120128164856.679":
+  package debug at 26( 1233) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/work/debug/grtestmod.vhd" "20120118214648.000" "20120128164856.723":
+  entity grtestmod at 56( 2370) + 0 on 12;
+  architecture sim of grtestmod at 86( 3032) + 0 on 13;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "config.vhd" "20120128043236.000" "20120128164856.835":
+  package config at 9( 255) + 0 on 18;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "serializer.vhd" "20120118214644.000" "20120128164857.030":
+  entity serializer at 30( 1343) + 0 on 21;
+  architecture rtl of serializer at 47( 1797) + 0 on 22;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "leon3mp.vhd" "20120118214644.000" "20120128164857.230":
+  entity leon3mp at 24( 1200) + 0 on 25;
+  architecture rtl of leon3mp at 180( 6331) + 0 on 26;

@@ -1,0 +1,540 @@
+
+#####################
+# /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs
+# Last modified: 1328707989.7151781300
+
+dir /home 775 500 500
+dir /home/nfs 775 500 500
+dir /home/httpd 775 500 500
+dir /home/httpd/cgi-bin 775 500 500
+dir /etc 755 500 500
+file /etc/version /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/version 664 500 500
+file /etc/passwd /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/passwd 644 500 500
+file /etc/build-date /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/build-date 664 500 500
+file /etc/ramfs.img /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/ramfs.img 755 500 500
+file /etc/group /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/group 644 500 500
+file /etc/services /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/services 644 500 500
+file /etc/inittab /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/inittab 644 500 500
+dir /etc/init.d 755 500 500
+file /etc/init.d/rcS /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/etc/init.d/rcS 777 500 500
+dir /etc/default 775 500 500
+dir /etc/config 775 500 500
+slink /linuxrc bin/busybox 777 500 500
+slink /init /sbin/init 777 500 500
+dir /dev 775 500 500
+dir /dev/pts 775 500 500
+dir /dev/input 775 500 500
+slink /dev/log /var/tmp/log 777 500 500
+dir /dev/flash 775 500 500
+dir /dev/etherd 775 500 500
+dir /dev/usb 775 500 500
+dir /lib 775 500 500
+file /lib/libnsl-2.5.so /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libnsl-2.5.so 755 500 500
+file /lib/libnss_compat-2.5.so /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libnss_compat-2.5.so 755 500 500
+slink /lib/libnsl.so libnsl.so.1 777 500 500
+slink /lib/libnss_files.so.2 libnss_files-2.5.so 777 500 500
+slink /lib/libnss_compat.so libnss_compat.so.2 777 500 500
+slink /lib/libcrypt.so.1 libcrypt-2.5.so 777 500 500
+dir /lib/modules 775 500 500
+dir /lib/modules/2.6.21.1 775 500 500
+file /lib/libdl-2.5.so /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libdl-2.5.so 755 500 500
+slink /lib/libnsl.so.1 libnsl-2.5.so 777 500 500
+file /lib/libm.so.6 /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libm.so.6 755 500 500
+slink /lib/libdl.so.2 libdl-2.5.so 777 500 500
+file /lib/libcrypt-2.5.so /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libcrypt-2.5.so 755 500 500
+file /lib/libnss_files-2.5.so /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libnss_files-2.5.so 755 500 500
+slink /lib/libcrypt.so libcrypt.so.1 777 500 500
+slink /lib/libnss_files.so libnss_files-2.5.so 777 500 500
+file /lib/ld-linux.so.2 /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/ld-linux.so.2 755 500 500
+slink /lib/libnss_compat.so.2 libnss_compat-2.5.so 777 500 500
+file /lib/libc.so.6 /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libc.so.6 755 500 500
+slink /lib/libdl.so libdl.so.2 777 500 500
+dir /bin 775 500 500
+slink /bin/ed busybox 777 500 500
+slink /bin/chgrp busybox 777 500 500
+slink /bin/iprule busybox 777 500 500
+slink /bin/pidof busybox 777 500 500
+slink /bin/chattr busybox 777 500 500
+slink /bin/date busybox 777 500 500
+slink /bin/mountpoint busybox 777 500 500
+slink /bin/cp busybox 777 500 500
+slink /bin/hush busybox 777 500 500
+slink /bin/cpio busybox 777 500 500
+slink /bin/dumpkmap busybox 777 500 500
+slink /bin/chmod busybox 777 500 500
+slink /bin/df busybox 777 500 500
+slink /bin/ipcalc busybox 777 500 500
+slink /bin/catv busybox 777 500 500
+slink /bin/getopt busybox 777 500 500
+slink /bin/cat busybox 777 500 500
+slink /bin/login busybox 777 500 500
+slink /bin/stty busybox 777 500 500
+slink /bin/ip busybox 777 500 500
+slink /bin/egrep busybox 777 500 500
+slink /bin/hostname busybox 777 500 500
+slink /bin/chown busybox 777 500 500
+slink /bin/ps busybox 777 500 500
+slink /bin/mkdir busybox 777 500 500
+slink /bin/umount busybox 777 500 500
+slink /bin/sleep busybox 777 500 500
+slink /bin/pipe_progress busybox 777 500 500
+slink /bin/sed busybox 777 500 500
+slink /bin/printenv busybox 777 500 500
+slink /bin/gunzip busybox 777 500 500
+slink /bin/mktemp busybox 777 500 500
+slink /bin/ls busybox 777 500 500
+slink /bin/dmesg busybox 777 500 500
+file /bin/busybox /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/bin/busybox 755 500 500
+slink /bin/mknod busybox 777 500 500
+slink /bin/ping6 busybox 777 500 500
+slink /bin/su busybox 777 500 500
+slink /bin/iplink busybox 777 500 500
+slink /bin/pwd busybox 777 500 500
+slink /bin/vi busybox 777 500 500
+slink /bin/netstat busybox 777 500 500
+slink /bin/iptunnel busybox 777 500 500
+slink /bin/usleep busybox 777 500 500
+file /bin/sh /home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/bin/sh 775 500 500
+slink /bin/run-parts busybox 777 500 500
+slink /bin/rmdir busybox 777 500 500
+slink /bin/fgrep busybox 777 500 500
+slink /bin/iproute busybox 777 500 500
+slink /bin/gzip busybox 777 500 500
+slink /bin/addgroup busybox 777 500 500
+slink /bin/lsattr busybox 777 500 500
+slink /bin/fdflush busybox 777 500 500
+slink /bin/sync busybox 777 500 500
+slink /bin/adduser busybox 777 500 500
+slink /bin/mt busybox 777 500 500
+slink /bin/nice busybox 777 500 500
+slink /bin/kill busybox 777 500 500
+slink /bin/ln busybox 777 500 500
+slink /bin/false busybox 777 500 500
+slink /bin/more busybox 777 500 500
+slink /bin/delgroup busybox 777 500 500
+slink /bin/linux64 busybox 777 500 500
+slink /bin/zcat busybox 777 500 500
+slink /bin/deluser busybox 777 500 500
+slink /bin/uname busybox 777 500 500
+slink /bin/ipaddr busybox 777 500 500
+slink /bin/rpm busybox 777 500 500
+slink /bin/watch busybox 777 500 500
+slink /bin/mv busybox 777 500 500
+slink /bin/ping busybox 777 500 500
+slink /bin/setarch busybox 777 500 500
+slink /bin/tar busybox 777 500 500
+slink /bin/dd busybox 777 500 500
+slink /bin/linux32 busybox 777 500 500
+slink /bin/uncompress busybox 777 500 500
+slink /bin/true busybox 777 500 500
+slink /bin/stat busybox 777 500 500
+slink /bin/grep busybox 777 500 500
+slink /bin/mount busybox 777 500 500
+slink /bin/rm busybox 777 500 500
+slink /bin/echo busybox 777 500 500
+slink /bin/touch busybox 777 500 500
+dir /usr 775 500 500
+dir /usr/bin 775 500 500
+slink /usr/bin/softlimit ../../bin/busybox 777 500 500
+slink /usr/bin/sv ../../bin/busybox 777 500 500
+slink /usr/bin/svlogd ../../bin/busybox 777 500 500
+slink /usr/bin/yes ../../bin/busybox 777 500 500
+slink /usr/bin/comm ../../bin/busybox 777 500 500
+slink /usr/bin/traceroute ../../bin/busybox 777 500 500
+slink /usr/bin/dumpleases ../../bin/busybox 777 500 500
+slink /usr/bin/rx ../../bin/busybox 777 500 500
+slink /usr/bin/udpsvd ../../bin/busybox 777 500 500
+slink /usr/bin/kbd_mode ../../bin/busybox 777 500 500
+slink /usr/bin/unzip ../../bin/busybox 777 500 500
+slink /usr/bin/ar ../../bin/busybox 777 500 500
+slink /usr/bin/top ../../bin/busybox 777 500 500
+slink /usr/bin/passwd ../../bin/busybox 777 500 500
+slink /usr/bin/less ../../bin/busybox 777 500 500
+slink /usr/bin/tr ../../bin/busybox 777 500 500
+slink /usr/bin/killall5 ../../bin/busybox 777 500 500
+slink /usr/bin/[[ ../../bin/busybox 777 500 500
+slink /usr/bin/vlock ../../bin/busybox 777 500 500
+slink /usr/bin/tee ../../bin/busybox 777 500 500
+slink /usr/bin/time ../../bin/busybox 777 500 500
+slink /usr/bin/sort ../../bin/busybox 777 500 500
+slink /usr/bin/cksum ../../bin/busybox 777 500 500
+slink /usr/bin/tty ../../bin/busybox 777 500 500
+slink /usr/bin/realpath ../../bin/busybox 777 500 500
+slink /usr/bin/nmeter ../../bin/busybox 777 500 500
+slink /usr/bin/split ../../bin/busybox 777 500 500
+slink /usr/bin/expand ../../bin/busybox 777 500 500
+slink /usr/bin/uptime ../../bin/busybox 777 500 500
+slink /usr/bin/wget ../../bin/busybox 777 500 500
+slink /usr/bin/ftpget ../../bin/busybox 777 500 500
+slink /usr/bin/od ../../bin/busybox 777 500 500
+slink /usr/bin/bzcat ../../bin/busybox 777 500 500
+slink /usr/bin/runsvdir ../../bin/busybox 777 500 500
+slink /usr/bin/reset ../../bin/busybox 777 500 500
+slink /usr/bin/nslookup ../../bin/busybox 777 500 500
+slink /usr/bin/id ../../bin/busybox 777 500 500
+slink /usr/bin/loadfont ../../bin/busybox 777 500 500
+slink /usr/bin/ttysize ../../bin/busybox 777 500 500
+slink /usr/bin/free ../../bin/busybox 777 500 500
+slink /usr/bin/unlzma ../../bin/busybox 777 500 500
+slink /usr/bin/dos2unix ../../bin/busybox 777 500 500
+slink /usr/bin/wc ../../bin/busybox 777 500 500
+slink /usr/bin/fold ../../bin/busybox 777 500 500
+slink /usr/bin/bzip2 ../../bin/busybox 777 500 500
+slink /usr/bin/setsid ../../bin/busybox 777 500 500
+slink /usr/bin/diff ../../bin/busybox 777 500 500
+slink /usr/bin/cryptpw ../../bin/busybox 777 500 500
+slink /usr/bin/readlink ../../bin/busybox 777 500 500
+slink /usr/bin/tcpsvd ../../bin/busybox 777 500 500
+slink /usr/bin/md5sum ../../bin/busybox 777 500 500
+slink /usr/bin/uuencode ../../bin/busybox 777 500 500
+slink /usr/bin/awk ../../bin/busybox 777 500 500
+slink /usr/bin/env ../../bin/busybox 777 500 500
+slink /usr/bin/lzmacat ../../bin/busybox 777 500 500
+slink /usr/bin/strings ../../bin/busybox 777 500 500
+slink /usr/bin/microcom ../../bin/busybox 777 500 500
+slink /usr/bin/fdformat ../../bin/busybox 777 500 500
+slink /usr/bin/dc ../../bin/busybox 777 500 500
+slink /usr/bin/hexdump ../../bin/busybox 777 500 500
+slink /usr/bin/pgrep ../../bin/busybox 777 500 500
+slink /usr/bin/mkfifo ../../bin/busybox 777 500 500
+slink /usr/bin/[ ../../bin/busybox 777 500 500
+slink /usr/bin/ftpput ../../bin/busybox 777 500 500
+slink /usr/bin/xargs ../../bin/busybox 777 500 500
+slink /usr/bin/arping ../../bin/busybox 777 500 500
+slink /usr/bin/logger ../../bin/busybox 777 500 500
+slink /usr/bin/fuser ../../bin/busybox 777 500 500
+slink /usr/bin/sha1sum ../../bin/busybox 777 500 500
+slink /usr/bin/ether-wake ../../bin/busybox 777 500 500
+slink /usr/bin/mesg ../../bin/busybox 777 500 500
+slink /usr/bin/expr ../../bin/busybox 777 500 500
+slink /usr/bin/setkeycodes ../../bin/busybox 777 500 500
+slink /usr/bin/pscan ../../bin/busybox 777 500 500
+slink /usr/bin/nc ../../bin/busybox 777 500 500
+slink /usr/bin/hostid ../../bin/busybox 777 500 500
+slink /usr/bin/pkill ../../bin/busybox 777 500 500
+slink /usr/bin/openvt ../../bin/busybox 777 500 500
+slink /usr/bin/cmp ../../bin/busybox 777 500 500
+slink /usr/bin/renice ../../bin/busybox 777 500 500
+slink /usr/bin/envuidgid ../../bin/busybox 777 500 500
+slink /usr/bin/runsv ../../bin/busybox 777 500 500
+slink /usr/bin/find ../../bin/busybox 777 500 500
+slink /usr/bin/dirname ../../bin/busybox 777 500 500
+slink /usr/bin/tail ../../bin/busybox 777 500 500
+slink /usr/bin/bunzip2 ../../bin/busybox 777 500 500
+slink /usr/bin/unexpand ../../bin/busybox 777 500 500
+slink /usr/bin/last ../../bin/busybox 777 500 500
+slink /usr/bin/cut ../../bin/busybox 777 500 500
+slink /usr/bin/test ../../bin/busybox 777 500 500
+slink /usr/bin/uniq ../../bin/busybox 777 500 500
+slink /usr/bin/chvt ../../bin/busybox 777 500 500
+slink /usr/bin/ipcs ../../bin/busybox 777 500 500
+slink /usr/bin/clear ../../bin/busybox 777 500 500
+slink /usr/bin/who ../../bin/busybox 777 500 500
+slink /usr/bin/deallocvt ../../bin/busybox 777 500 500
+slink /usr/bin/uudecode ../../bin/busybox 777 500 500
+slink /usr/bin/setuidgid ../../bin/busybox 777 500 500
+slink /usr/bin/telnet ../../bin/busybox 777 500 500
+slink /usr/bin/eject ../../bin/busybox 777 500 500
+slink /usr/bin/cal ../../bin/busybox 777 500 500
+slink /usr/bin/envdir ../../bin/busybox 777 500 500
+slink /usr/bin/ipcrm ../../bin/busybox 777 500 500
+slink /usr/bin/seq ../../bin/busybox 777 500 500
+slink /usr/bin/readahead ../../bin/busybox 777 500 500
+slink /usr/bin/nohup ../../bin/busybox 777 500 500
+slink /usr/bin/whoami ../../bin/busybox 777 500 500
+slink /usr/bin/chrt ../../bin/busybox 777 500 500
+slink /usr/bin/logname ../../bin/busybox 777 500 500
+slink /usr/bin/basename ../../bin/busybox 777 500 500
+slink /usr/bin/printf ../../bin/busybox 777 500 500
+slink /usr/bin/unix2dos ../../bin/busybox 777 500 500
+slink /usr/bin/sum ../../bin/busybox 777 500 500
+slink /usr/bin/crontab ../../bin/busybox 777 500 500
+slink /usr/bin/head ../../bin/busybox 777 500 500
+slink /usr/bin/patch ../../bin/busybox 777 500 500
+slink /usr/bin/chpst ../../bin/busybox 777 500 500
+slink /usr/bin/rpm2cpio ../../bin/busybox 777 500 500
+slink /usr/bin/length ../../bin/busybox 777 500 500
+slink /usr/bin/resize ../../bin/busybox 777 500 500
+slink /usr/bin/which ../../bin/busybox 777 500 500
+slink /usr/bin/tftp ../../bin/busybox 777 500 500
+slink /usr/bin/killall ../../bin/busybox 777 500 500
+slink /usr/bin/du ../../bin/busybox 777 500 500
+slink /usr/bin/install ../../bin/busybox 777 500 500
+dir /usr/sbin 775 500 500
+slink /usr/sbin/inetd ../../bin/busybox 777 500 500
+slink /usr/sbin/udhcpd ../../bin/busybox 777 500 500
+slink /usr/sbin/readprofile ../../bin/busybox 777 500 500
+slink /usr/sbin/telnetd ../../bin/busybox 777 500 500
+slink /usr/sbin/chroot ../../bin/busybox 777 500 500
+slink /usr/sbin/rdate ../../bin/busybox 777 500 500
+slink /usr/sbin/crond ../../bin/busybox 777 500 500
+slink /usr/sbin/fbset ../../bin/busybox 777 500 500
+slink /usr/sbin/fakeidentd ../../bin/busybox 777 500 500
+slink /usr/sbin/dnsd ../../bin/busybox 777 500 500
+slink /usr/sbin/chpasswd ../../bin/busybox 777 500 500
+slink /usr/sbin/dhcprelay ../../bin/busybox 777 500 500
+slink /usr/sbin/setlogcons ../../bin/busybox 777 500 500
+slink /usr/sbin/httpd ../../bin/busybox 777 500 500
+dir /proc 775 500 500
+slink /tmp /var/tmp 777 500 500
+dir /mnt 775 500 500
+dir /sbin 775 500 500
+slink /sbin/sysctl ../bin/busybox 777 500 500
+slink /sbin/fsck ../bin/busybox 777 500 500
+slink /sbin/poweroff ../bin/busybox 777 500 500
+slink /sbin/ifconfig ../bin/busybox 777 500 500
+slink /sbin/watchdog ../bin/busybox 777 500 500
+slink /sbin/logread ../bin/busybox 777 500 500
+slink /sbin/ifup ../bin/busybox 777 500 500
+slink /sbin/route ../bin/busybox 777 500 500
+slink /sbin/vconfig ../bin/busybox 777 500 500
+slink /sbin/init ../bin/busybox 777 500 500
+slink /sbin/ifdown ../bin/busybox 777 500 500
+slink /sbin/reboot ../bin/busybox 777 500 500
+slink /sbin/syslogd ../bin/busybox 777 500 500
+slink /sbin/start-stop-daemon ../bin/busybox 777 500 500
+slink /sbin/hdparm ../bin/busybox 777 500 500
+slink /sbin/sulogin ../bin/busybox 777 500 500
+slink /sbin/fdisk ../bin/busybox 777 500 500
+slink /sbin/udhcpc ../bin/busybox 777 500 500
+slink /sbin/makedevs ../bin/busybox 777 500 500
+slink /sbin/slattach ../bin/busybox 777 500 500
+slink /sbin/hwclock ../bin/busybox 777 500 500
+slink /sbin/mdev ../bin/busybox 777 500 500
+slink /sbin/loadkmap ../bin/busybox 777 500 500
+slink /sbin/getty ../bin/busybox 777 500 500
+slink /sbin/fsck.minix ../bin/busybox 777 500 500
+slink /sbin/losetup ../bin/busybox 777 500 500
+slink /sbin/swapon ../bin/busybox 777 500 500
+slink /sbin/zcip ../bin/busybox 777 500 500
+slink /sbin/halt ../bin/busybox 777 500 500
+slink /sbin/swapoff ../bin/busybox 777 500 500
+slink /sbin/switch_root ../bin/busybox 777 500 500
+slink /sbin/nameif ../bin/busybox 777 500 500
+slink /sbin/freeramdisk ../bin/busybox 777 500 500
+slink /sbin/klogd ../bin/busybox 777 500 500
+slink /sbin/raidautorun ../bin/busybox 777 500 500
+slink /sbin/pivot_root ../bin/busybox 777 500 500
+slink /sbin/mkfs.minix ../bin/busybox 777 500 500
+slink /sbin/mkswap ../bin/busybox 777 500 500
+slink /sbin/modprobe ../bin/busybox 777 500 500
+slink /sbin/arp ../bin/busybox 777 500 500
+slink /sbin/runlevel ../bin/busybox 777 500 500
+slink /sbin/adjtimex ../bin/busybox 777 500 500
+slink /sbin/lsmod ../bin/busybox 777 500 500
+slink /sbin/setconsole ../bin/busybox 777 500 500
+dir /sys 775 500 500
+dir /var 755 500 500
+dir /var/tmp 755 500 500
+nod /dev/ram 0600 0 0 b 1 0
+nod /dev/ram1 0600 0 0 b 1 1
+nod /dev/null 0600 0 0 c 1 3
+nod /dev/tty1 0600 0 0 c 4 1
+nod /dev/tty2 0600 0 0 c 4 2
+nod /dev/tty 0600 0 0 c 5 0
+nod /dev/console 0600 0 0 c 5 1
+nod /dev/ttyS0 0600 0 0 c 4 64
+nod /dev/ttyS1 0600 0 0 c 4 65
+nod /dev/random 0600 0 0 c 1 8
+nod /dev/urandom 0600 0 0 c 1 9
+nod /dev/fb0 0600 0 0 c 29 0
+nod /dev/hda 0600 0 0 b 3 0
+nod /dev/hda1 0600 0 0 b 3 1
+nod /dev/hda2 0600 0 0 b 3 2
+nod /dev/hda3 0600 0 0 b 3 3
+nod /dev/hda4 0600 0 0 b 3 4
+nod /dev/hdb 0600 0 0 b 3 64
+nod /dev/hdb1 0600 0 0 b 3 65
+nod /dev/ptmx 0600 0 0 c 5 2
+nod /dev/gpio0 0600 0 0 c 212 0
+nod /dev/gpio1 0600 0 0 c 212 1
+nod /dev/gpio1 0600 0 0 c 212 2
+nod /dev/gpio1 0600 0 0 c 212 3
+nod /dev/ptyp0 0600 0 0 c 2 0
+nod /dev/ptyp1 0600 0 0 c 2 1
+nod /dev/ptyp2 0600 0 0 c 2 2
+nod /dev/ptyp3 0600 0 0 c 2 3
+nod /dev/ptyp4 0600 0 0 c 2 4
+nod /dev/ptyp5 0600 0 0 c 2 5
+nod /dev/ptyp6 0600 0 0 c 2 6
+nod /dev/ptyp7 0600 0 0 c 2 7
+nod /dev/ptyp8 0600 0 0 c 2 8
+nod /dev/ptyp9 0600 0 0 c 2 9
+nod /dev/ptypa 0600 0 0 c 2 10
+nod /dev/ptypb 0600 0 0 c 2 11
+nod /dev/ptypc 0600 0 0 c 2 12
+nod /dev/ptypd 0600 0 0 c 2 13
+nod /dev/ptype 0600 0 0 c 2 14
+nod /dev/ptypf 0600 0 0 c 2 15
+nod /dev/tty0 0600 0 0 c 4 0
+nod /dev/tty1 0600 0 0 c 4 1
+nod /dev/tty2 0600 0 0 c 4 2
+nod /dev/tty3 0600 0 0 c 4 3
+nod /dev/tty4 0600 0 0 c 4 4
+nod /dev/tty5 0600 0 0 c 1 3
+nod /dev/tty6 0600 0 0 c 4 6
+nod /dev/tty7 0600 0 0 c 4 7
+nod /dev/tty8 0600 0 0 c 4 8
+nod /dev/tty9 0600 0 0 c 4 9
+nod /dev/ttyp0 0600 0 0 c 3 0
+nod /dev/ttyp1 0600 0 0 c 3 1
+nod /dev/ttyp2 0600 0 0 c 3 2
+nod /dev/ttyp3 0600 0 0 c 3 3
+nod /dev/ttyp4 0600 0 0 c 3 4
+nod /dev/ttyp5 0600 0 0 c 3 5
+nod /dev/ttyp6 0600 0 0 c 3 6
+nod /dev/ttyp7 0600 0 0 c 3 7
+nod /dev/ttyp8 0600 0 0 c 3 8
+nod /dev/ttyp9 0600 0 0 c 3 9
+nod /dev/ttypa 0600 0 0 c 3 10
+nod /dev/ttypb 0600 0 0 c 3 11
+nod /dev/ttypc 0600 0 0 c 3 12
+nod /dev/ttypd 0600 0 0 c 3 13
+nod /dev/ttype 0600 0 0 c 3 14
+nod /dev/ttypf 0600 0 0 c 3 15
+nod /dev/i2c-0 0600 0 0 c 89 0
+nod /dev/i2c-1 0600 0 0 c 89 1
+nod /dev/i2c-2 0600 0 0 c 89 2
+nod /dev/i2c-3 0600 0 0 c 89 3
+nod /dev/i2c-4 0600 0 0 c 89 4
+nod /dev/i2c-5 0600 0 0 c 89 5
+nod /dev/i2c-6 0600 0 0 c 89 6
+nod /dev/i2c-7 0600 0 0 c 89 7
+nod /dev/i2c-8 0600 0 0 c 89 8
+nod /dev/i2c-9 0600 0 0 c 89 9
+nod /dev/i2c-10 0600 0 0 c 89 10
+nod /dev/i2c-11 0600 0 0 c 89 11
+nod /dev/i2c-12 0600 0 0 c 89 12
+nod /dev/i2c-13 0600 0 0 c 89 13
+nod /dev/i2c-14 0600 0 0 c 89 14
+nod /dev/i2c-15 0600 0 0 c 89 15
+nod /dev/i2c-16 0600 0 0 c 89 16
+nod /dev/i2c-17 0600 0 0 c 89 17
+nod /dev/i2c-18 0600 0 0 c 89 18
+nod /dev/i2c-19 0600 0 0 c 89 19
+nod /dev/i2c-20 0600 0 0 c 89 20
+nod /dev/i2c-21 0600 0 0 c 89 21
+nod /dev/i2c-22 0600 0 0 c 89 22
+nod /dev/i2c-23 0600 0 0 c 89 23
+nod /dev/i2c-24 0600 0 0 c 89 24
+nod /dev/i2c-25 0600 0 0 c 89 25
+nod /dev/i2c-26 0600 0 0 c 89 26
+nod /dev/i2c-27 0600 0 0 c 89 27
+nod /dev/i2c-28 0600 0 0 c 89 28
+nod /dev/i2c-29 0600 0 0 c 89 29
+nod /dev/i2c-30 0600 0 0 c 89 30
+nod /dev/i2c-31 0600 0 0 c 89 31
+nod /dev/etherd/err 0600 0 0 c 152 2
+nod /dev/etherd/discover 0600 0 0 c 152 3
+nod /dev/etherd/interfaces 0600 0 0 c 152 4
+nod /dev/etherd/revalidate 0600 0 0 c 152 5
+nod /dev/etherd/flush 0600 0 0 c 152 6
+nod /dev/etherd/e0.0 0600 0 0 b 152 0
+nod /dev/etherd/e0.1 0600 0 0 b 152 1
+nod /dev/etherd/e0.2 0600 0 0 b 152 2
+nod /dev/etherd/e0.3 0600 0 0 b 152 3
+nod /dev/etherd/e0.4 0600 0 0 b 152 4
+nod /dev/etherd/e0.5 0600 0 0 b 152 5
+nod /dev/etherd/e0.6 0600 0 0 b 152 6
+nod /dev/etherd/e0.7 0600 0 0 b 152 7
+nod /dev/etherd/e0.8 0600 0 0 b 152 8
+nod /dev/etherd/e0.9 0600 0 0 b 152 9
+nod /dev/etherd/e0.10 0600 0 0 b 152 10
+nod /dev/etherd/e0.11 0600 0 0 b 152 11
+nod /dev/etherd/e0.12 0600 0 0 b 152 12
+nod /dev/etherd/e0.13 0600 0 0 b 152 13
+nod /dev/etherd/e0.14 0600 0 0 b 152 14
+nod /dev/etherd/e0.15 0600 0 0 b 152 15
+nod /dev/sda 0600 0 0 b 8 0
+nod /dev/sda1 0600 0 0 b 8 1
+nod /dev/sda2 0600 0 0 b 8 2
+nod /dev/sda3 0600 0 0 b 8 3
+nod /dev/sdb 0600 0 0 b 8 16
+nod /dev/sdb1 0600 0 0 b 8 17
+nod /dev/sdb2 0600 0 0 b 8 18
+nod /dev/sdb3 0600 0 0 b 16 19
+nod /dev/sdc 0600 0 0 b 8 32
+nod /dev/sdc1 0600 0 0 b 8 33
+nod /dev/sdc2 0600 0 0 b 8 34
+nod /dev/sdc3 0600 0 0 b 8 35
+nod /dev/sdd 0600 0 0 b 8 48
+nod /dev/sdd1 0600 0 0 b 8 49
+nod /dev/sdd2 0600 0 0 b 8 50
+nod /dev/sdd3 0600 0 0 b 8 51
+nod /dev/sde 0600 0 0 b 8 64
+nod /dev/sde1 0600 0 0 b 8 65
+nod /dev/sde2 0600 0 0 b 8 66
+nod /dev/sde3 0600 0 0 b 8 67
+nod /dev/sdf 0600 0 0 b 8 80
+nod /dev/sdf1 0600 0 0 b 8 81
+nod /dev/sdf2 0600 0 0 b 8 82
+nod /dev/sdf3 0600 0 0 b 8 83
+nod /dev/input/mouse 0600 0 0 c 10 149
+nod /dev/input/keyboard 0600 0 0 c 10 150
+nod /dev/input/mouse0 0600 0 0 c 13 32
+nod /dev/input/mouse1 0600 0 0 c 13 33
+nod /dev/input/mouse2 0600 0 0 c 13 34
+nod /dev/input/mouse3 0600 0 0 c 13 35
+nod /dev/input/mouse4 0600 0 0 c 13 36
+nod /dev/input/mouse5 0600 0 0 c 13 37
+nod /dev/input/mouse6 0600 0 0 c 13 38
+nod /dev/input/mouse7 0600 0 0 c 13 39
+nod /dev/input/mouse8 0600 0 0 c 13 40
+nod /dev/input/mouse9 0600 0 0 c 13 41
+nod /dev/input/mouse10 0600 0 0 c 13 42
+nod /dev/input/mouse11 0600 0 0 c 13 43
+nod /dev/input/mouse12 0600 0 0 c 13 44
+nod /dev/input/mouse13 0600 0 0 c 13 45
+nod /dev/input/mouse14 0600 0 0 c 13 46
+nod /dev/input/mice 0600 0 0 c 13 63
+nod /dev/input/event0 0600 0 0 c 13 64
+nod /dev/input/event1 0600 0 0 c 13 65
+nod /dev/input/event2 0600 0 0 c 13 66
+nod /dev/input/event3 0600 0 0 c 13 67
+nod /dev/input/event4 0600 0 0 c 13 68
+nod /dev/input/event5 0600 0 0 c 13 69
+nod /dev/input/event6 0600 0 0 c 13 70
+nod /dev/input/event7 0600 0 0 c 13 71
+nod /dev/input/event8 0600 0 0 c 13 72
+nod /dev/input/event9 0600 0 0 c 13 73
+nod /dev/input/event10 0600 0 0 c 13 74
+nod /dev/input/event11 0600 0 0 c 13 75
+nod /dev/input/event12 0600 0 0 c 13 76
+nod /dev/input/event13 0600 0 0 c 13 77
+nod /dev/input/event14 0600 0 0 c 13 78
+nod /dev/usb/hiddev0 0600 0 0 c 180 96
+nod /dev/usb/hiddev1 0600 0 0 c 180 97
+nod /dev/usb/hiddev2 0600 0 0 c 180 98
+nod /dev/usb/hiddev3 0600 0 0 c 180 99
+nod /dev/usb/hiddev4 0600 0 0 c 180 100
+nod /dev/usb/hiddev5 0600 0 0 c 180 101
+nod /dev/usb/hiddev6 0600 0 0 c 180 102
+nod /dev/usb/hiddev7 0600 0 0 c 180 103
+nod /dev/usb/hiddev8 0600 0 0 c 180 104
+nod /dev/usb/hiddev9 0600 0 0 c 180 105
+nod /dev/usb/hiddev10 0600 0 0 c 180 106
+nod /dev/usb/hiddev11 0600 0 0 c 180 107
+nod /dev/video0 0600 0 0 c 81 0
+nod /dev/video1 0600 0 0 c 81 1
+nod /dev/video2 0600 0 0 c 81 2
+nod /dev/video3 0600 0 0 v 81 3
+nod /dev/video4 0600 0 0 c 81 4
+nod /dev/video5 0600 0 0 c 81 5
+nod /dev/video6 0600 0 0 c 81 6
+nod /dev/video7 0600 0 0 v 81 7
+nod /dev/mtd0 0600 0 0 c 90 0
+nod /dev/mtdr0 0600 0 0 c 90 1
+nod /dev/mtd1 0600 0 0 c 90 2
+nod /dev/mtdr1 0600 0 0 c 90 3
+nod /dev/mtd2 0600 0 0 c 90 4
+nod /dev/mtdr2 0600 0 0 c 90 5
+nod /dev/mtd3 0600 0 0 c 90 6
+nod /dev/mtdr3 0600 0 0 c 90 7
+nod /dev/mtd4 0600 0 0 c 90 8
+nod /dev/mtdr4 0600 0 0 c 90 9
+nod /dev/mtd4 0600 0 0 c 90 10
+nod /dev/mtdr4 0600 0 0 c 90 11
+nod /dev/xsysace 0600 0 0 b 254 0
+nod /dev/xsysace1 0600 0 0 b 254 1
+nod /dev/xsysace2 0600 0 0 b 254 2
+nod /dev/xsysace3 0600 0 0 b 254 3

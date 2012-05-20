@@ -1,0 +1,8 @@
+#mainmenu_name 'Gaisler/Leon2mmu options'
+#mainmenu_option next_comment
+#comment 'Gaisler/Leon2mmu options'
+#
+#source vendors/gaisler/common/config.in
+#
+#endmenu
+

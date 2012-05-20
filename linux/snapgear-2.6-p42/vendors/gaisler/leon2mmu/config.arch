@@ -1,0 +1,16 @@
+.EXPORT_ALL_VARIABLES:
+############################################################################
+
+#
+# Vendor specific settings
+#
+
+KERNEL_EXTRA_CFLAGS = 
+VENDOR_CFLAGS = 
+BOOTFLAGS = 
+
+############################################################################
+
+include $(ROOTDIR)/vendors/config/sparc/config.arch
+
+############################################################################

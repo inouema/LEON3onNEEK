@@ -1,0 +1,15 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/tech/dware/simprims/DW_Foundation_comp_arith.vhd" "20120118214647.000" "20120128164811.472":
+  package dw_foundation_comp_arith at 1( 0) + 0 on 20;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/tech/dware/simprims/DW_Foundation_arith.vhd" "20120118214647.000" "20120128164811.440":
+  package dw_foundation_arith at 2( 1) + 0 on 18;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/tech/dware/simprims/DWpackages.vhd" "20120118214647.000" "20120128164811.360":
+  package dwpackages at 2( 1) + 0 on 11;
+  entity dw_mult_pipe at 9( 56) + 0 on 12;
+  architecture simple of dw_mult_pipe at 33( 1240) + 0 on 13;
+  entity dw02_mult at 80( 2260) + 0 on 14;
+  architecture behav of dw02_mult at 96( 2762) + 0 on 15;
+  entity dw02_mult_2_stage at 114( 3100) + 0 on 16;
+  architecture behav of dw02_mult_2_stage at 131( 3555) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/tech/dware/simprims/DW_Foundation_comp.vhd" "20120118214647.000" "20120128164811.452":
+  package dw_foundation_comp at 1( 0) + 0 on 19;

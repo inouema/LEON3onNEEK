@@ -1,0 +1,24 @@
+
+#------------------------------------------------------------------------------
+# Amba device driver configuration
+#------------------------------------------------------------------------------
+
+menu "Grlib: Amba device driver configuration"
+
+config AMBA_PROC
+	bool "/proc filesystem for amba" 
+	---help---
+	Add /proc filesystem support to provide informations on 
+	the amba bus and detected devices in /proc/bus/amba/
+
+config AMBA_PNP_PRINT
+	bool "Print AMBA PnP info"
+	---help---
+	Enabling this option will result in the AMBA Plug&Play information
+	to be printed on the console on startup.
+
+source "drivers/ambapp/gaisler/Kconfig"
+source "drivers/ambapp/opencores/Kconfig"
+
+endmenu
+

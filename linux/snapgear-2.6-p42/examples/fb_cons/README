@@ -1,0 +1,39 @@
+Frame buffer virtual console example, using the 
+Gaisler SVGA controller & PS/2 keyboard
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Quick example on how to config shells to be available on 
+virtual framebuffer console and at serial console (ttyS0).
+No login is used.
+
+Start with the default leon3mmu config.
+
+Boot loader config
+^^^^^^^^^^^^^^^^^^
+Set kernel parameters to (CONFIG_KERNEL_COMMAND_LINE):
+ console=fb0 video=grvga:1024x768@60,16,2000000
+
+
+Linux Kernel config
+^^^^^^^^^^^^^^^^^^^
+CONFIG_FB
+CONFIG_FB_GRVGA
+CONFIG_FRAMEBUFFER_CONSOLE
+CONFIG_FONTS
+CONFIG_FONT_8x16
+
+CONFIG_INPUT_KEYBOARD
+CONFIG_KEYBOARD_ATKBD
+CONFIG_SERIO_LEON3
+
+User apps
+^^^^^^^^^^^^^^^^^^
+ ¤ busybox, with init and inittab support:
+    CONFIG_USER_BUSYBOX_INIT
+    CONFIG_USER_BUSYBOX_USE_INITTAB
+ 
+
+Filesystem files
+^^^^^^^^^^^^^^^^
+See inittab and rcS files under etc.
+

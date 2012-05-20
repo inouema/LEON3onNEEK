@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#./configure --host=sparc-elf --includedir=/home/daniel/linux/toffe/snapgear-p17-gresb/uClibc/include CPPFLAGS=-I/home/daniel/linux/toffe/snapgear-p17-gresb/uClibc/include
+
+cd 0.*
+
+./configure \
+		--host=sparc-linux \
+		--includedir=$(ROOTDIR)/uClibc/include \
+		"LDFLAGS=-g -nostartfiles -L$(ROOTDIR)/lib/uClibc/lib -L$(ROOTDIR)/lib/libnet -Wl,-Bstatic -mno-relax -elf2flt -mpic-none -lcrypt -nodefaultlibs" \
+		"CFLAGS=-mv8 -msoft-float" \
+		"LIBS=$(ROOTDIR)/lib/uClibc/lib/crt1.o $(ROOTDIR)/lib/uClibc/lib/crti.o -lc -lgcc $(ROOTDIR)/lib/uClibc/lib/crtn.o" \
+		CPPFLAGS=-I$(ROOTDIR)/uClibc/include

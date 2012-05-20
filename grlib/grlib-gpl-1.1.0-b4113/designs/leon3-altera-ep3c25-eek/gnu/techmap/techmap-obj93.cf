@@ -1,0 +1,323 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram_2pbw.vhd" "20120118214650.000" "20120128164819.718":
+  entity syncram_2pbw at 27( 1306) + 0 on 251;
+  architecture rtl of syncram_2pbw at 52( 2142) + 0 on 252;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/scanreg.vhd" "20120118214650.000" "20120128164819.523":
+  entity scanregi at 26( 1284) + 0 on 241;
+  architecture tmap of scanregi at 50( 1769) + 0 on 242;
+  entity scanrego at 72( 2596) + 0 on 243;
+  architecture tmap of scanrego at 96( 3081) + 0 on 244;
+  entity scanregto at 118( 3760) + 0 on 245;
+  architecture tmap of scanregto at 147( 4410) + 0 on 246;
+  entity scanregio at 171( 5195) + 0 on 247;
+  architecture tmap of scanregio at 202( 5904) + 0 on 248;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/techmult.vhd" "20120118214650.000" "20120128164819.348":
+  entity techmult at 26( 1245) + 0 on 237;
+  architecture rtl of techmult at 52( 2201) + 0 on 238;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram128.vhd" "20120118214650.000" "20120128164819.219":
+  entity syncram128 at 27( 1299) + 0 on 233;
+  architecture rtl of syncram128 at 48( 1928) + 0 on 234;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram128bw.vhd" "20120118214650.000" "20120128164819.054":
+  entity syncram128bw at 27( 1302) + 0 on 229;
+  architecture rtl of syncram128bw at 47( 1911) + 0 on 230;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/outpad_ddr.vhd" "20120118214650.000" "20120128164818.921":
+  entity outpad_ddr at 29( 1515) + 0 on 219;
+  architecture rtl of outpad_ddr at 54( 2034) + 0 on 220;
+  entity outpad_ddrv at 86( 2990) + 0 on 221;
+  architecture rtl of outpad_ddrv at 109( 3535) + 0 on 222;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grgates.vhd" "20120118214650.000" "20120128164818.760":
+  entity grmux2 at 25( 1245) + 0 on 205;
+  architecture rtl of grmux2 at 34( 1497) + 0 on 206;
+  entity grmux2v at 64( 2217) + 0 on 207;
+  architecture rtl of grmux2v at 75( 2547) + 0 on 208;
+  entity grdff at 84( 2728) + 0 on 209;
+  architecture rtl of grdff at 92( 2948) + 0 on 210;
+  entity gror2 at 118( 3509) + 0 on 211;
+  architecture rtl of gror2 at 126( 3729) + 0 on 212;
+  entity grand12 at 151( 4223) + 0 on 213;
+  architecture rtl of grand12 at 159( 4445) + 0 on 214;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grpci2_phy_net.vhd" "20120118214650.000" "20120128164818.540":
+  entity grpci2_phy_net at 20( 957) + 0 on 201;
+  architecture struct of grpci2_phy_net at 291( 13897) + 0 on 202;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/ringosc.vhd" "20120118214650.000" "20120128164818.420":
+  entity ringosc at 25( 1271) + 0 on 197;
+  architecture rtl of ringosc at 37( 1499) + 0 on 198;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/cpu_disas_net.vhd" "20120118214650.000" "20120128164818.007":
+  entity cpu_disas_net at 26( 1275) + 0 on 191;
+  architecture behav of cpu_disas_net at 52( 1890) + 0 on 192;
+  entity fpu_disas_net at 80( 2818) + 0 on 193;
+  architecture behav of fpu_disas_net at 111( 3638) + 0 on 194;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/leon4_net.vhd" "20120118214650.000" "20120128164817.816":
+  entity leon4_net at 20( 1035) + 0 on 187;
+  architecture rtl of leon4_net at 142( 6703) + 0 on 188;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grlfpw_net.vhd" "20120118214650.000" "20120128164817.419":
+  entity grlfpw_net at 27( 1242) + 0 on 183;
+  architecture rtl of grlfpw_net at 114( 4817) + 0 on 184;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grspwc_net.vhd" "20120118214650.000" "20120128164817.127":
+  entity grspwc_net at 26( 1322) + 0 on 179;
+  architecture rtl of grspwc_net at 128( 5116) + 0 on 180;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/toutpad.vhd" "20120118214650.000" "20120128164816.991":
+  entity toutpad at 26( 1259) + 0 on 171;
+  architecture rtl of toutpad at 40( 1681) + 0 on 172;
+  entity toutpadv at 140( 5176) + 0 on 173;
+  architecture rtl of toutpadv at 156( 5672) + 0 on 174;
+  entity toutpadvv at 164( 5885) + 0 on 175;
+  architecture rtl of toutpadvv at 179( 6401) + 0 on 176;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/outpad.vhd" "20120118214650.000" "20120128164816.836":
+  entity outpad at 26( 1247) + 0 on 163;
+  architecture rtl of outpad at 39( 1638) + 0 on 164;
+  entity outpadv at 116( 4762) + 0 on 165;
+  architecture rtl of outpadv at 129( 5201) + 0 on 166;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/lvds_combo.vhd" "20120118214650.000" "20120128164816.610":
+  entity lvds_combo at 26( 1288) + 0 on 157;
+  architecture rtl of lvds_combo at 43( 1849) + 0 on 158;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/iopad.vhd" "20120118214650.000" "20120128164816.450":
+  entity iopad at 26( 1241) + 0 on 145;
+  architecture rtl of iopad at 40( 1706) + 0 on 146;
+  entity iopadv at 144( 5396) + 0 on 147;
+  architecture rtl of iopadv at 160( 5937) + 0 on 148;
+  entity iopadvv at 168( 6152) + 0 on 149;
+  architecture rtl of iopadvv at 184( 6720) + 0 on 150;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/inpad_ds.vhd" "20120118214650.000" "20120128164816.276":
+  entity inpad_ds at 26( 1250) + 0 on 137;
+  architecture rtl of inpad_ds at 37( 1549) + 0 on 138;
+  entity inpad_dsv at 77( 3031) + 0 on 139;
+  architecture rtl of inpad_dsv at 90( 3415) + 0 on 140;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/clkpad_ds.vhd" "20120118214650.000" "20120128164816.124":
+  entity clkpad_ds at 26( 1252) + 0 on 131;
+  architecture rtl of clkpad_ds at 38( 1556) + 0 on 132;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/nandtree.vhd" "20120118214650.000" "20120128164815.966":
+  entity nandtree at 25( 1243) + 0 on 127;
+  architecture rtl of nandtree at 41( 1573) + 0 on 128;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/tap.vhd" "20120118214650.000" "20120128164815.793":
+  entity tap at 27( 1261) + 0 on 123;
+  architecture rtl of tap at 70( 2472) + 0 on 124;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncfifo.vhd" "20120118214650.000" "20120128164815.642":
+  entity syncfifo at 26( 1249) + 0 on 119;
+  architecture rtl of syncfifo at 49( 1860) + 0 on 120;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram_2p.vhd" "20120118214650.000" "20120128164815.224":
+  entity syncram_2p at 26( 1262) + 0 on 115;
+  architecture rtl of syncram_2p at 51( 2041) + 0 on 116;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram.vhd" "20120118214650.000" "20120128164814.948":
+  entity syncram at 26( 1256) + 0 on 111;
+  architecture rtl of syncram at 47( 1857) + 0 on 112;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/ddr_oreg.vhd" "20120118214650.000" "20120128164814.361":
+  entity ddr_oreg at 25( 1266) + 0 on 101;
+  architecture rtl of ddr_oreg at 43( 1642) + 0 on 102;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/clkand.vhd" "20120118214650.000" "20120128164814.243":
+  entity clkand at 26( 1225) + 0 on 95;
+  architecture rtl of clkand at 42( 1583) + 0 on 96;
+  entity clkrand at 88( 2831) + 0 on 97;
+  architecture rtl of clkrand at 103( 3124) + 0 on 98;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/clkgen.vhd" "20120118214650.000" "20120128164814.050":
+  entity clkgen at 26( 1246) + 0 on 91;
+  architecture struct of clkgen at 65( 2677) + 0 on 92;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/allpads.vhd" "20120118214650.000" "20120128164813.937":
+  package allpads at 26( 1235) + 0 on 89;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/allmem.vhd" "20120118214650.000" "20120128164813.821":
+  package allmem at 26( 1238) + 0 on 87;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/allclkgen.vhd" "20120118214650.000" "20120128164813.680":
+  package allclkgen at 26( 1253) + 0 on 85;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/ddr_phy_cycloneiii.vhd" "20120118214648.000" "20120128164813.448":
+  entity cycloneiii_ddr_phy at 1( 0) + 0 on 79;
+  architecture rtl of cycloneiii_ddr_phy at 57( 2250) + 0 on 80;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/admout.vhd" "20120118214649.000" "20120128164813.331":
+  entity admout at 1( 0) + 0 on 75;
+  architecture rtl of admout at 20( 372) + 0 on 76;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/adqsout.vhd" "20120118214649.000" "20120128164813.208":
+  entity adqsout at 1( 0) + 0 on 71;
+  architecture rtl of adqsout at 20( 434) + 0 on 72;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/aclkout.vhd" "20120118214648.000" "20120128164813.095":
+  entity aclkout at 1( 0) + 0 on 67;
+  architecture rtl of aclkout at 17( 285) + 0 on 68;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/altera_mf/tap_altera_mf.vhd" "20120118214650.000" "20120128164812.910":
+  entity altera_tap at 26( 1276) + 0 on 63;
+  architecture rtl of altera_tap at 50( 1911) + 0 on 64;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/altera_mf/memory_altera_mf.vhd" "20120118214650.000" "20120128164812.705":
+  entity altera_syncram_dp at 27( 1261) + 0 on 51;
+  architecture behav of altera_syncram_dp at 53( 2031) + 0 on 52;
+  entity altera_syncram at 89( 3100) + 0 on 53;
+  architecture behav of altera_syncram at 105( 3516) + 0 on 54;
+  entity altera_syncram128bw at 140( 4663) + 0 on 55;
+  architecture behav of altera_syncram128bw at 162( 5222) + 0 on 56;
+  entity altera_syncram256bw at 205( 6501) + 0 on 57;
+  architecture behav of altera_syncram256bw at 227( 7060) + 0 on 58;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/sim_pll.vhd" "20120118214649.000" "20120128164812.567":
+  entity sim_pll at 26( 1285) + 0 on 45;
+  architecture sim of sim_pll at 59( 2000) + 0 on 46;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/ddr_phy_inferred.vhd" "20120118214650.000" "20120128164812.224":
+  entity gen_ddr_phy_oreg at 29( 1472) + 0 on 33;
+  architecture rtl of gen_ddr_phy_oreg at 47( 1807) + 0 on 34;
+  entity gen_ddr_phy_ireg at 84( 2584) + 0 on 35;
+  architecture rtl of gen_ddr_phy_ireg at 99( 2870) + 0 on 36;
+  entity gen_ddr_phy_reg at 122( 3510) + 0 on 37;
+  architecture rtl of gen_ddr_phy_reg at 132( 3672) + 0 on 38;
+  entity generic_ddr_phy at 143( 3999) + 0 on 39;
+  architecture rtl of generic_ddr_phy at 194( 6148) + 0 on 40;
+  entity generic_ddr2_phy_wo_pads at 452( 16975) + 0 on 41;
+  architecture rtl of generic_ddr2_phy_wo_pads at 510( 19680) + 0 on 42;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/ddr_inferred.vhd" "20120118214649.000" "20120128164812.088":
+  entity gen_iddr_reg at 26( 1275) + 0 on 25;
+  architecture rtl of gen_iddr_reg at 42( 1597) + 0 on 26;
+  entity gen_oddr_reg at 62( 2021) + 0 on 27;
+  architecture rtl of gen_oddr_reg at 77( 2310) + 0 on 28;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/gencomp/netcomp.vhd" "20120118214648.000" "20120128164811.773":
+  package netcomp at 26( 1250) + 0 on 12;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/gencomp/gencomp.vhd" "20120118214648.000" "20120128164811.607":
+  package gencomp at 26( 1275) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/memory_inferred.vhd" "20120118214650.000" "20120128164811.885":
+  entity generic_syncram at 26( 1246) + 0 on 13;
+  architecture behavioral of generic_syncram at 42( 1669) + 0 on 14;
+  entity generic_syncram_reg at 65( 2128) + 0 on 15;
+  architecture behavioral of generic_syncram_reg at 81( 2555) + 0 on 16;
+  entity generic_syncram_2p at 108( 3185) + 0 on 17;
+  architecture behav of generic_syncram_2p at 130( 3699) + 0 on 18;
+  entity generic_syncram_2p_reg at 160( 4420) + 0 on 19;
+  architecture behav of generic_syncram_2p_reg at 182( 4938) + 0 on 20;
+  entity generic_regfile_3p at 214( 5783) + 0 on 21;
+  architecture rtl of generic_regfile_3p at 237( 6529) + 0 on 22;
+  entity generic_regfile_4p at 280( 7644) + 0 on 23;
+  architecture rtl of generic_regfile_4p at 306( 8531) + 0 on 24;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/mul_inferred.vhd" "20120118214650.000" "20120128164812.132":
+  entity gen_mul_61x61 at 26( 1250) + 0 on 29;
+  architecture rtl of gen_mul_61x61 at 40( 1622) + 0 on 30;
+  entity gen_mult_pipe at 69( 2238) + 0 on 31;
+  architecture simple of gen_mult_pipe at 90( 3129) + 0 on 32;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/inferred/ddrphy_datapath.vhd" "20120118214650.000" "20120128164812.466":
+  entity ddrphy_datapath at 26( 1300) + 0 on 43;
+  architecture rtl of ddrphy_datapath at 92( 3653) + 0 on 44;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/dware/mul_dware.vhd" "20120118214649.000" "20120128164812.633":
+  entity mul_dw at 26( 1231) + 0 on 47;
+  architecture rtl of mul_dw at 47( 2063) + 0 on 48;
+  entity dw_mul_61x61 at 71( 2660) + 0 on 49;
+  architecture rtl of dw_mul_61x61 at 84( 3016) + 0 on 50;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/altera_mf/clkgen_altera_mf.vhd" "20120118214650.000" "20120128164812.835":
+  entity altera_pll at 21( 1037) + 0 on 59;
+  architecture rtl of altera_pll at 47( 1574) + 0 on 60;
+  entity clkgen_altera_mf at 111( 3990) + 0 on 61;
+  architecture rtl of clkgen_altera_mf at 144( 4873) + 0 on 62;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/apll.vhd" "20120118214649.000" "20120128164812.965":
+  entity apll at 1( 0) + 0 on 65;
+  architecture syn of apll at 32( 610) + 0 on 66;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/actrlout.vhd" "20120118214649.000" "20120128164813.173":
+  entity actrlout at 1( 0) + 0 on 69;
+  architecture rtl of actrlout at 20( 335) + 0 on 70;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/adqout.vhd" "20120118214649.000" "20120128164813.289":
+  entity adqout at 1( 0) + 0 on 73;
+  architecture rtl of adqout at 23( 491) + 0 on 74;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/alt/adqin.vhd" "20120118214649.000" "20120128164813.399":
+  entity adqin at 1( 0) + 0 on 77;
+  architecture rtl of adqin at 24( 524) + 0 on 78;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/cycloneiii/cycloneiii_clkgen.vhd" "20120118214648.000" "20120128164813.605":
+  entity cyclone3_pll at 21( 1037) + 0 on 81;
+  architecture rtl of cyclone3_pll at 47( 1576) + 0 on 82;
+  entity clkgen_cycloneiii at 128( 4767) + 0 on 83;
+  architecture rtl of clkgen_cycloneiii at 162( 5686) + 0 on 84;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/allddr.vhd" "20120118214650.000" "20120128164813.750":
+  package allddr at 26( 1268) + 0 on 86;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/allmul.vhd" "20120118214650.000" "20120128164813.898":
+  package allmul at 26( 1234) + 0 on 88;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/alltap.vhd" "20120118214650.000" "20120128164813.995":
+  package alltap at 27( 1294) + 0 on 90;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/clkmux.vhd" "20120118214650.000" "20120128164814.172":
+  entity clkmux at 26( 1243) + 0 on 93;
+  architecture rtl of clkmux at 42( 1600) + 0 on 94;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/ddr_ireg.vhd" "20120118214650.000" "20120128164814.292":
+  entity ddr_ireg at 25( 1265) + 0 on 99;
+  architecture rtl of ddr_ireg at 43( 1643) + 0 on 100;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/ddrphy.vhd" "20120118214650.000" "20120128164814.432":
+  entity ddrphy at 26( 1237) + 0 on 103;
+  architecture rtl of ddrphy at 84( 3636) + 0 on 104;
+  entity ddr2pads at 219( 7630) + 0 on 105;
+  architecture rtl of ddr2pads at 284( 10940) + 0 on 106;
+  entity ddr2phy at 410( 15704) + 0 on 107;
+  architecture rtl of ddr2phy at 500( 20269) + 0 on 108;
+  entity ddr2phy_wo_pads at 711( 29339) + 0 on 109;
+  architecture rtl of ddr2phy_wo_pads at 794( 33599) + 0 on 110;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram64.vhd" "20120118214650.000" "20120128164815.143":
+  entity syncram64 at 27( 1296) + 0 on 113;
+  architecture rtl of syncram64 at 48( 1922) + 0 on 114;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram_dp.vhd" "20120118214650.000" "20120128164815.486":
+  entity syncram_dp at 26( 1265) + 0 on 117;
+  architecture rtl of syncram_dp at 54( 2151) + 0 on 118;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/regfile_3p.vhd" "20120118214650.000" "20120128164815.721":
+  entity regfile_3p at 26( 1266) + 0 on 121;
+  architecture rtl of regfile_3p at 50( 2110) + 0 on 122;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/techbuf.vhd" "20120118214650.000" "20120128164815.907":
+  entity techbuf at 25( 1263) + 0 on 125;
+  architecture rtl of techbuf at 38( 1567) + 0 on 126;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/clkpad.vhd" "20120118214650.000" "20120128164816.051":
+  entity clkpad at 26( 1246) + 0 on 129;
+  architecture rtl of clkpad at 39( 1642) + 0 on 130;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/inpad.vhd" "20120118214650.000" "20120128164816.195":
+  entity inpad at 26( 1244) + 0 on 133;
+  architecture rtl of inpad at 39( 1559) + 0 on 134;
+  entity inpadv at 107( 4210) + 0 on 135;
+  architecture rtl of inpadv at 119( 4533) + 0 on 136;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/iodpad.vhd" "20120118214650.000" "20120128164816.352":
+  entity iodpad at 26( 1255) + 0 on 141;
+  architecture rtl of iodpad at 39( 1620) + 0 on 142;
+  entity iodpadv at 117( 4150) + 0 on 143;
+  architecture rtl of iodpadv at 131( 4592) + 0 on 144;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/iopad_ds.vhd" "20120118214650.000" "20120128164816.534":
+  entity iopad_ds at 26( 1266) + 0 on 151;
+  architecture rtl of iopad_ds at 39( 1666) + 0 on 152;
+  entity iopad_dsv at 104( 3521) + 0 on 153;
+  architecture rtl of iopad_dsv at 119( 4002) + 0 on 154;
+  entity iopad_dsvv at 127( 4227) + 0 on 155;
+  architecture rtl of iopad_dsvv at 142( 4733) + 0 on 156;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/odpad.vhd" "20120118214650.000" "20120128164816.727":
+  entity odpad at 26( 1255) + 0 on 159;
+  architecture rtl of odpad at 39( 1597) + 0 on 160;
+  entity odpadv at 130( 4584) + 0 on 161;
+  architecture rtl of odpadv at 143( 4973) + 0 on 162;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/outpad_ds.vhd" "20120118214650.000" "20120128164816.918":
+  entity outpad_ds at 26( 1266) + 0 on 167;
+  architecture rtl of outpad_ds at 38( 1593) + 0 on 168;
+  entity outpad_dsv at 81( 2988) + 0 on 169;
+  architecture rtl of outpad_dsv at 95( 3415) + 0 on 170;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/skew_outpad.vhd" "20120118214650.000" "20120128164817.077":
+  entity skew_outpad at 26( 1263) + 0 on 177;
+  architecture rtl of skew_outpad at 39( 1656) + 0 on 178;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grspwc2_net.vhd" "20120118214650.000" "20120128164817.270":
+  entity grspwc2_net at 26( 1324) + 0 on 181;
+  architecture rtl of grspwc2_net at 137( 5529) + 0 on 182;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grfpw_net.vhd" "20120118214650.000" "20120128164817.629":
+  entity grfpw_net at 27( 1250) + 0 on 185;
+  architecture rtl of grfpw_net at 114( 4882) + 0 on 186;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/mul_61x61.vhd" "20120118214650.000" "20120128164817.961":
+  entity mul_61x61 at 26( 1236) + 0 on 189;
+  architecture rtl of mul_61x61 at 42( 1648) + 0 on 190;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/grusbhc_net.vhd" "20120118214650.000" "20120128164818.077":
+  entity grusbhc_net at 25( 1247) + 0 on 195;
+  architecture rtl of grusbhc_net at 193( 10101) + 0 on 196;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/ssrctrl_net.vhd" "20120118214650.000" "20120128164818.461":
+  entity ssrctrl_net at 24( 1224) + 0 on 199;
+  architecture rtl of ssrctrl_net at 106( 4879) + 0 on 200;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/system_monitor.vhd" "20120118214650.000" "20120128164818.662":
+  entity system_monitor at 26( 1266) + 0 on 203;
+  architecture struct of system_monitor at 89( 3379) + 0 on 204;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/inpad_ddr.vhd" "20120118214650.000" "20120128164818.845":
+  entity inpad_ddr at 28( 1429) + 0 on 215;
+  architecture rtl of inpad_ddr at 53( 1945) + 0 on 216;
+  entity inpad_ddrv at 80( 2678) + 0 on 217;
+  architecture rtl of inpad_ddrv at 105( 3249) + 0 on 218;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/iopad_ddr.vhd" "20120118214650.000" "20120128164818.988":
+  entity iopad_ddr at 28( 1453) + 0 on 223;
+  architecture rtl of iopad_ddr at 54( 2136) + 0 on 224;
+  entity iopad_ddrv at 79( 3070) + 0 on 225;
+  architecture rtl of iopad_ddrv at 103( 3719) + 0 on 226;
+  entity iopad_ddrvv at 111( 3975) + 0 on 227;
+  architecture rtl of iopad_ddrvv at 135( 4649) + 0 on 228;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram256bw.vhd" "20120118214650.000" "20120128164819.126":
+  entity syncram256bw at 27( 1302) + 0 on 231;
+  architecture rtl of syncram256bw at 47( 1911) + 0 on 232;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncram156bw.vhd" "20120118214650.000" "20120128164819.272":
+  entity syncram156bw at 28( 1341) + 0 on 235;
+  architecture rtl of syncram156bw at 45( 1893) + 0 on 236;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/spictrl_net.vhd" "20120118214650.000" "20120128164819.472":
+  entity spictrl_net at 26( 1275) + 0 on 239;
+  architecture rtl of spictrl_net at 79( 3046) + 0 on 240;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/techmap/maps/syncrambw.vhd" "20120118214650.000" "20120128164819.630":
+  entity syncrambw at 27( 1290) + 0 on 249;
+  architecture rtl of syncrambw at 49( 1967) + 0 on 250;

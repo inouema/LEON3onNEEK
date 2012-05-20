@@ -1,0 +1,64 @@
+mainmenu_name 'SnapGear Embedded Linux Configuration'
+mainmenu_option next_comment
+comment 'Vendor/Product Selection'
+comment 'Select the Vendor you wish to target'
+choice 'Vendor' "gaisler CONFIG_DEFAULTS_GAISLER \
+" gaisler
+comment 'Select the Product you wish to target'
+if [ "$CONFIG_DEFAULTS_GAISLER" = "y" ]; then
+choice 'gaisler Products' "leon2mmu CONFIG_DEFAULTS_GAISLER_LEON2MMU \
+leon3mmu CONFIG_DEFAULTS_GAISLER_LEON3MMU \
+" leon3mmu
+fi
+comment 'Select the options for a selected Product'
+#mainmenu_name 'Gaisler/Leon2mmu options'
+#mainmenu_option next_comment
+#comment 'Gaisler/Leon2mmu options'
+#
+#source vendors/gaisler/common/config.in
+#
+#endmenu
+
+mainmenu_name 'Gaisler/Leon2/3 MMU options'
+mainmenu_option next_comment
+comment 'Gaisler/Leon2/3 MMU options'
+
+source vendors/gaisler/common/config.in
+
+endmenu
+endmenu
+mainmenu_option next_comment
+comment 'Kernel/Library/Defaults Selection'
+choice 'Kernel Version' "linux-2.6.21.1 CONFIG_DEFAULTS_KERNEL_2_6_21_1 \
+linux-2.6.29 CONFIG_DEFAULTS_KERNEL_2_6_29 \
+" linux-2.6.29
+choice 'Libc Version' "glibc-from-compiler CONFIG_DEFAULTS_LIBC_GLIBC_FROM_COMPILER \
+uclibc-from-compiler CONFIG_DEFAULTS_LIBC_UCLIBC_FROM_COMPILER \
+none CONFIG_DEFAULTS_LIBC_NONE \
+" glibc-from-compiler
+bool 'Default all settings (lose changes)'	CONFIG_DEFAULTS_OVERRIDE
+bool 'Customize Kernel Settings'			CONFIG_DEFAULTS_KERNEL
+bool 'Customize Vendor/User Settings'		CONFIG_DEFAULTS_VENDOR
+bool 'Update Default Vendor Settings'		CONFIG_DEFAULTS_VENDOR_UPDATE
+endmenu
+
+
+
+mainmenu_option next_comment
+comment 'Template Configurations'
+if [ "$CONFIG_DEFAULTS_GAISLER_LEON3MMU" = "y" ]; then
+choice 'Templates for leon3mmu' " \
+none CONFIG_TEMPLATE_LEON3MMU_NONE \
+gr_l4itx_busybox CONFIG_TEMPLATE_LEON3MMU_GR_L4ITX_BUSYBOX \
+gr_l4itx_serial CONFIG_TEMPLATE_LEON3MMU_GR_L4ITX_SERIAL \
+gr_l4itx_video CONFIG_TEMPLATE_LEON3MMU_GR_L4ITX_VIDEO \
+gr_xc3s_1500 CONFIG_TEMPLATE_LEON3MMU_GR_XC3S_1500 \
+haps_51 CONFIG_TEMPLATE_LEON3MMU_HAPS_51 \
+leon3_altera_ep2s60_ddr CONFIG_TEMPLATE_LEON3MMU_LEON3_ALTERA_EP2S60_DDR \
+netfilter CONFIG_TEMPLATE_LEON3MMU_NETFILTER \
+nfs_root CONFIG_TEMPLATE_LEON3MMU_NFS_ROOT \
+vga_ps2 CONFIG_TEMPLATE_LEON3MMU_VGA_PS2 \
+" none
+fi
+bool 'Update configurations with above selection'			CONFIG_TEMPLATES_UPDATE
+endmenu

@@ -1,0 +1,37 @@
+dummy: all
+
+ARITH_MULTIDIR=
+ifeq ($(CONFIG_DEFAULTS_GAISLER_LEON2_MV8),y)
+ ifneq ($(CONFIG_DEFAULTS_GAISLER_LEON2_FPU),y)
+     ARITH_MULTIDIR=soft/v8/$(ARITH_MULTIDIR_PICNONE)
+ else    
+     ARITH_MULTIDIR=v8/$(ARITH_MULTIDIR_PICNONE)
+ endif
+else
+ ifneq ($(CONFIG_DEFAULTS_GAISLER_LEON2_FPU),y)
+     ARITH_MULTIDIR=soft/$(ARITH_MULTIDIR_PICNONE)
+ else    
+     ARITH_MULTIDIR=
+ endif
+endif
+
+config-lib:
+	echo "### stdc++ copy library to uClibc directory"  
+ifdef UCLINUX_BUILD_USER
+ ifeq ($(CROSS_COMPILE),sparc-linux-)
+  ifneq ($(findstring glibc,$(LIBCDIR)),glibc)
+	echo "### stdc++ copy library to uClibc directory"
+	#if [ -d $(ROOTDIR)/lib/$(LIBCDIR)/lib ] ; then \
+	#cp /opt/sparc-linux/sparc-linux/lib-uclibc-stdc++/$(ARITH_MULTIDIR)libstdc++* $(ROOTDIR)/lib/$(LIBCDIR)/lib; \
+	#cp /opt/sparc-linux/sparc-linux/lib-uclibc-stdc++/$(ARITH_MULTIDIR)libsupc++* $(ROOTDIR)/lib/$(LIBCDIR)/lib; \
+	#cp /opt/sparc-linux/sparc-linux/lib-uclibc-stdc++/$(ARITH_MULTIDIR)libgcc.a $(ROOTDIR)/lib/$(LIBCDIR)/lib/libgcc_forstdc++.a; \
+        #fi
+  endif
+ endif
+endif
+ 
+ifdef UCLINUX_BUILD_USER
+ ifneq ($(findstring glibc,$(LIBCDIR)),glibc)
+  #CXX += -v -I /opt/sparc-linux/include/c++/3.2.2 -I /opt/sparc-linux/include/c++/3.2.2/backward -I /opt/sparc-linux/include/c++/3.2.2/sparc-linux
+ endif
+endif

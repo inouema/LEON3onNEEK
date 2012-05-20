@@ -1,0 +1,16 @@
+#!/bin/sh
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devpts devpts /dev/pts
+mount -t tmpfs -o size=1M tmpfs /var/tmp
+
+hostname sparky
+
+/sbin/ifconfig lo up 127.0.0.1 netmask 255.0.0.0
+/sbin/ifconfig eth0 up 192.168.0.80
+
+route add 127.0.0.1 dev lo
+route add default dev eth0
+
+/bin/portmap &
+#mount -o nolock -o ro -t nfs 192.168.0.15:/home /home/nfs

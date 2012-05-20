@@ -1,0 +1,41 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/ocidec2_controller.vhd" "20120118214648.000" "20120128164822.999":
+  entity ocidec2_controller at 66( 3486) + 0 on 35;
+  architecture structural of ocidec2_controller at 135( 5726) + 0 on 36;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_controller.vhd" "20120118214648.000" "20120128164822.784":
+  entity atahost_controller at 64( 3337) + 0 on 31;
+  architecture structural of atahost_controller at 178( 7878) + 0 on 32;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_pio_tctrl.vhd" "20120118214648.000" "20120128164822.628":
+  entity atahost_pio_tctrl at 103( 4480) + 0 on 27;
+  architecture structural of atahost_pio_tctrl at 147( 6299) + 0 on 28;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_dma_actrl.vhd" "20120118214648.000" "20120128164822.443":
+  entity atahost_dma_actrl at 74( 3647) + 0 on 23;
+  architecture structural of atahost_dma_actrl at 139( 6306) + 0 on 24;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/ro_cnt.vhd" "20120118214648.000" "20120128164822.298":
+  entity ro_cnt at 54( 2808) + 0 on 19;
+  architecture structural of ro_cnt at 77( 3621) + 0 on 20;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/i2c/i2coc.vhd" "20120118214648.000" "20120128164822.229":
+  package i2coc at 29( 1894) + 0 on 16;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/i2c/i2c_master_bit_ctrl.vhd" "20120118214648.000" "20120128164821.948":
+  entity i2c_master_bit_ctrl at 169( 8745) + 0 on 12;
+  architecture structural of i2c_master_bit_ctrl at 204( 9822) + 0 on 13;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/occomp/occomp.vhd" "20120118214648.000" "20120128164821.909":
+  package occomp at 20( 957) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/i2c/i2c_master_byte_ctrl.vhd" "20120118214648.000" "20120128164822.143":
+  entity i2c_master_byte_ctrl at 78( 4037) + 0 on 14;
+  architecture structural of i2c_master_byte_ctrl at 119( 5334) + 0 on 15;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/ud_cnt.vhd" "20120118214648.000" "20120128164822.246":
+  entity ud_cnt at 55( 2809) + 0 on 17;
+  architecture structural of ud_cnt at 82( 3703) + 0 on 18;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_dma_fifo.vhd" "20120118214648.000" "20120128164822.354":
+  entity atahost_dma_fifo at 26( 1285) + 0 on 21;
+  architecture rtl of atahost_dma_fifo at 49( 2054) + 0 on 22;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_dma_tctrl.vhd" "20120118214648.000" "20120128164822.569":
+  entity atahost_dma_tctrl at 101( 4296) + 0 on 25;
+  architecture structural of atahost_dma_tctrl at 138( 5793) + 0 on 26;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_pio_actrl.vhd" "20120118214648.000" "20120128164822.699":
+  entity atahost_pio_actrl at 71( 3473) + 0 on 29;
+  architecture structural of atahost_pio_actrl at 128( 5447) + 0 on 30;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/opencores/ata/atahost_pio_controller.vhd" "20120118214648.000" "20120128164822.905":
+  entity atahost_pio_controller at 64( 3345) + 0 on 33;
+  architecture structural of atahost_pio_controller at 134( 5887) + 0 on 34;

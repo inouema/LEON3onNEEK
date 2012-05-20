@@ -1,0 +1,32 @@
+#include <stdlib.h>
+
+/* eiselekd: remove later */
+#define __SYSCALL_CLOBBERS "g2", "g3", "g4", "g5", "g7",		\
+	"f0", "f1", "f2", "f3", "f4", "f5", "f6", "f7",			\
+	"f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15",		\
+	"f16", "f17", "f18", "f19", "f20", "f21", "f22", "f23",		\
+	"f24", "f25", "f26", "f27", "f28", "f29", "f30", "f31",		\
+	"cc", "memory"
+
+void sys_printk(char *arg1,int len) 
+{									\
+	register long __o0 __asm__ ("o0") = (long)(arg1);		\
+	register long __o1 __asm__ ("o1") = (long)(len);		\
+	register long __g1 __asm__ ("g1") = 52;		\
+	__asm __volatile ("ta	0x10;"\
+                          "nop;" : "=r" (__g1), "=r" (__o0) :	\
+			  "0" (__g1), "1" (__o0), "r" (__o1) :			\
+			  __SYSCALL_CLOBBERS);				
+}
+
+int main(int argc,char **argv) {
+  int i = 0;
+  
+  char *p = "Hello from sys_printk\n";
+  sys_printk(p,strlen(p));
+  
+  for (i = 0;i < argc;i++) {
+    printf("args:%s\n",argv[i]);
+  } 
+  return 0;
+}

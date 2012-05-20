@@ -1,0 +1,394 @@
+ -- Copyright (C) 1991-2011 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		2.5V
+ --					Bank 2:		2.5V
+ --					Bank 3:		2.5V
+ --					Bank 4:		2.5V
+ --					Bank 5:		2.5V
+ --					Bank 6:		2.5V
+ --					Bank 7:		2.5V
+ --					Bank 8:		2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
+CHIP  "leon3mp"  ASSIGNED TO AN: EP3C25F324C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+hc_aud_xck                   : A1        : output : 2.5 V             :         : 8         : Y              
+ssram_clk                    : A2        : output : 2.5 V             :         : 8         : Y              
+data[26]                     : A3        : bidir  : 2.5 V             :         : 8         : Y              
+data[23]                     : A4        : bidir  : 2.5 V             :         : 8         : Y              
+data[30]                     : A5        : bidir  : 2.5 V             :         : 8         : Y              
+address[20]                  : A6        : output : 2.5 V             :         : 8         : Y              
+address[19]                  : A7        : output : 2.5 V             :         : 8         : Y              
+data[18]                     : A8        : bidir  : 2.5 V             :         : 8         : Y              
+hc_aud_adcdat                : A9        : input  : 2.5 V             :         : 8         : Y              
+gpio[2]                      : A10       : input  : 2.5 V             :         : 7         : Y              
+address[12]                  : A11       : output : 2.5 V             :         : 7         : Y              
+address[10]                  : A12       : output : 2.5 V             :         : 7         : Y              
+address[8]                   : A13       : output : 2.5 V             :         : 7         : Y              
+address[6]                   : A14       : output : 2.5 V             :         : 7         : Y              
+address[4]                   : A15       : output : 2.5 V             :         : 7         : Y              
+address[2]                   : A16       : output : 2.5 V             :         : 7         : Y              
+data[6]                      : A17       : bidir  : 2.5 V             :         : 7         : Y              
+data[9]                      : A18       : bidir  : 2.5 V             :         : 7         : Y              
+hc_vga_data[3]               : B1        : output : 2.5 V             :         : 1         : Y              
+hc_vga_data[2]               : B2        : output : 2.5 V             :         : 1         : Y              
+data[27]                     : B3        : bidir  : 2.5 V             :         : 8         : Y              
+data[24]                     : B4        : bidir  : 2.5 V             :         : 8         : Y              
+data[29]                     : B5        : bidir  : 2.5 V             :         : 8         : Y              
+data[31]                     : B6        : bidir  : 2.5 V             :         : 8         : Y              
+data[20]                     : B7        : bidir  : 2.5 V             :         : 8         : Y              
+data[19]                     : B8        : bidir  : 2.5 V             :         : 8         : Y              
+clk                          : B9        : input  : 2.5 V             :         : 8         : Y              
+dsubren                      : B10       : input  : 2.5 V             :         : 7         : Y              
+address[13]                  : B11       : output : 2.5 V             :         : 7         : Y              
+address[11]                  : B12       : output : 2.5 V             :         : 7         : Y              
+address[9]                   : B13       : output : 2.5 V             :         : 7         : Y              
+address[7]                   : B14       : output : 2.5 V             :         : 7         : Y              
+address[5]                   : B15       : output : 2.5 V             :         : 7         : Y              
+address[3]                   : B16       : output : 2.5 V             :         : 7         : Y              
+address[25]                  : B17       : output : 2.5 V             :         : 6         : Y              
+address[21]                  : B18       : output : 2.5 V             :         : 6         : Y              
+hc_td_d[6]                   : C1        : bidir  : 2.5 V             :         : 1         : Y              
+hc_td_d[5]                   : C2        : bidir  : 2.5 V             :         : 1         : Y              
+rstoutn                      : C3        : output : 2.5 V             :         : 1         : Y              
+GND                          : C4        : gnd    :                   :         :           :                
+data[21]                     : C5        : bidir  : 2.5 V             :         : 8         : Y              
+GND                          : C6        : gnd    :                   :         :           :                
+data[15]                     : C7        : bidir  : 2.5 V             :         : 8         : Y              
+GND                          : C8        : gnd    :                   :         :           :                
+address[17]                  : C9        : output : 2.5 V             :         : 8         : Y              
+address[14]                  : C10       : output : 2.5 V             :         : 7         : Y              
+GND                          : C11       : gnd    :                   :         :           :                
+data[8]                      : C12       : bidir  : 2.5 V             :         : 7         : Y              
+GND                          : C13       : gnd    :                   :         :           :                
+hc_vga_clock                 : C14       : output : 2.5 V             :         : 7         : Y              
+GND                          : C15       : gnd    :                   :         :           :                
+data[0]                      : C16       : bidir  : 2.5 V             :         : 7         : Y              
+address[22]                  : C17       : output : 2.5 V             :         : 6         : Y              
+address[23]                  : C18       : output : 2.5 V             :         : 6         : Y              
+data[17]                     : D1        : bidir  : 2.5 V             :         : 1         : Y              
+data[3]                      : D2        : bidir  : 2.5 V             :         : 1         : Y              
+hc_id_i2cdat                 : D3        : bidir  : 2.5 V             :         : 1         : Y              
+VCCIO8                       : D4        : power  :                   : 2.5V    : 8         :                
+data[28]                     : D5        : bidir  : 2.5 V             :         : 8         : Y              
+VCCIO8                       : D6        : power  :                   : 2.5V    : 8         :                
+data[11]                     : D7        : bidir  : 2.5 V             :         : 8         : Y              
+VCCIO8                       : D8        : power  :                   : 2.5V    : 8         :                
+address[18]                  : D9        : output : 2.5 V             :         : 8         : Y              
+address[15]                  : D10       : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : D11       : power  :                   : 2.5V    : 7         :                
+data[1]                      : D12       : bidir  : 2.5 V             :         : 7         : Y              
+VCCIO7                       : D13       : power  :                   : 2.5V    : 7         :                
+hc_nclk                      : D14       : output : 2.5 V             :         : 7         : Y              
+VCCIO7                       : D15       : power  :                   : 2.5V    : 7         :                
+data[7]                      : D16       : bidir  : 2.5 V             :         : 7         : Y              
+oen                          : D17       : output : 2.5 V             :         : 6         : Y              
+writen                       : D18       : output : 2.5 V             :         : 6         : Y              
+hc_i2c_sdat                  : E1        : bidir  : 2.5 V             :         : 1         : Y              
+romsn                        : E2        : output : 2.5 V             :         : 1         : Y              
+GND                          : E3        : gnd    :                   :         :           :                
+VCCA3                        : E4        : power  :                   : 2.5V    :           :                
+GNDA3                        : E5        : gnd    :                   :         :           :                
+data[13]                     : E6        : bidir  : 2.5 V             :         : 8         : Y              
+data[25]                     : E7        : bidir  : 2.5 V             :         : 8         : Y              
+data[22]                     : E8        : bidir  : 2.5 V             :         : 8         : Y              
+ssram_oen                    : E9        : output : 2.5 V             :         : 8         : Y              
+address[16]                  : E10       : output : 2.5 V             :         : 8         : Y              
+data[2]                      : E11       : bidir  : 2.5 V             :         : 7         : Y              
+address[1]                   : E12       : output : 2.5 V             :         : 7         : Y              
+data[4]                      : E13       : bidir  : 2.5 V             :         : 7         : Y              
+data[5]                      : E14       : bidir  : 2.5 V             :         : 7         : Y              
+VCCD_PLL2                    : E15       : power  :                   : 1.2V    :           :                
+GND                          : E16       : gnd    :                   :         :           :                
+hc_aud_bclk                  : E17       : output : 2.5 V             :         : 6         : Y              
+hc_uart_rxd                  : E18       : input  : 2.5 V             :         : 6         : Y              
+gpio[0]                      : F1        : input  : 2.5 V             :         : 1         : Y              
+gpio[1]                      : F2        : input  : 2.5 V             :         : 1         : Y              
+hc_i2c_sclk                  : F3        : output : 2.5 V             :         : 1         : Y              
+VCCIO1                       : F4        : power  :                   : 2.5V    : 1         :                
+VCCD_PLL3                    : F5        : power  :                   : 1.2V    :           :                
+data[12]                     : F6        : bidir  : 2.5 V             :         : 8         : Y              
+ssram_adscn                  : F7        : output : 2.5 V             :         : 8         : Y              
+data[10]                     : F8        : bidir  : 2.5 V             :         : 8         : Y              
+ssram_cen                    : F9        : output : 2.5 V             :         : 8         : Y              
+ssram_bw[2]                  : F10       : output : 2.5 V             :         : 7         : Y              
+ssram_bw[3]                  : F11       : output : 2.5 V             :         : 7         : Y              
+ssram_bw[0]                  : F12       : output : 2.5 V             :         : 7         : Y              
+ssram_bw[1]                  : F13       : output : 2.5 V             :         : 7         : Y              
+VCCA2                        : F14       : power  :                   : 2.5V    :           :                
+GNDA2                        : F15       : gnd    :                   :         :           :                
+VCCIO6                       : F16       : power  :                   : 2.5V    : 6         :                
+hc_rx_clk                    : F17       : input  : 2.5 V             :         : 6         : Y              
+hc_td_27mhz                  : F18       : input  : 2.5 V             :         : 6         : Y              
+hc_vga_data[5]               : G1        : output : 2.5 V             :         : 1         : Y              
+hc_vga_data[4]               : G2        : output : 2.5 V             :         : 1         : Y              
+GND                          : G3        : gnd    :                   :         :           :                
+VCCIO1                       : G4        : power  :                   : 2.5V    : 1         :                
+nSTATUS                      : G5        :        :                   :         : 1         :                
+data[14]                     : G6        : bidir  : 2.5 V             :         : 8         : Y              
+VCCINT                       : G7        : power  :                   : 1.2V    :           :                
+VCCINT                       : G8        : power  :                   : 1.2V    :           :                
+GND                          : G9        : gnd    :                   :         :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+VCCINT                       : G11       : power  :                   : 1.2V    :           :                
+VCCINT                       : G12       : power  :                   : 1.2V    :           :                
+ssram_wen                    : G13       : output : 2.5 V             :         : 7         : Y              
+address[24]                  : G14       : output : 2.5 V             :         : 6         : Y              
+VCCIO6                       : G15       : power  :                   : 2.5V    : 6         :                
+GND                          : G16       : gnd    :                   :         :           :                
+hc_rx_col                    : G17       : input  : 2.5 V             :         : 6         : Y              
+hc_rx_dv                     : G18       : input  : 2.5 V             :         : 6         : Y              
+hc_td_reset                  : H1        : output : 2.5 V             :         : 1         : Y              
+hc_td_d[7]                   : H2        : bidir  : 2.5 V             :         : 1         : Y              
+data[16]                     : H3        : bidir  : 2.5 V             :         : 1         : Y              
+~ALTERA_DCLK~                : H4        : output : 2.5 V             :         : 1         : N              
+nCONFIG                      : H5        :        :                   :         : 1         :                
+hc_id_i2cscl                 : H6        : output : 2.5 V             :         : 1         : Y              
+VCCINT                       : H7        : power  :                   : 1.2V    :           :                
+GND                          : H8        : gnd    :                   :         :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+GND                          : H11       : gnd    :                   :         :           :                
+VCCINT                       : H12       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H13       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :         : 6         :                
+hc_vga_hs                    : H15       : output : 2.5 V             :         : 6         : Y              
+hc_td_d[0]                   : H16       : bidir  : 2.5 V             :         : 6         : Y              
+hc_uart_txd                  : H17       : output : 2.5 V             :         : 6         : Y              
+hc_eth_reset_n               : H18       : output : 2.5 V             :         : 6         : Y              
+altera_reserved_tck          : J1        : input  : 2.5 V             :         : 1         : N              
+altera_reserved_tms          : J2        : input  : 2.5 V             :         : 1         : N              
+GND                          : J3        : gnd    :                   :         :           :                
+VCCIO1                       : J4        : power  :                   : 2.5V    : 1         :                
+altera_reserved_tdo          : J5        : output : 2.5 V             :         : 1         : N              
+altera_reserved_tdi          : J6        : input  : 2.5 V             :         : 1         : N              
+VCCINT                       : J7        : power  :                   : 1.2V    :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+GND                          : J11       : gnd    :                   :         :           :                
+VCCINT                       : J12       : power  :                   : 1.2V    :           :                
+hc_vga_vs                    : J13       : output : 2.5 V             :         : 6         : Y              
+MSEL3                        : J14       :        :                   :         : 6         :                
+VCCIO6                       : J15       : power  :                   : 2.5V    : 6         :                
+GND                          : J16       : gnd    :                   :         :           :                
+MSEL2                        : J17       :        :                   :         : 6         :                
+MSEL1                        : J18       :        :                   :         : 6         :                
+hc_vga_data[7]               : K1        : output : 2.5 V             :         : 2         : Y              
+hc_vga_data[6]               : K2        : output : 2.5 V             :         : 2         : Y              
+GND                          : K3        : gnd    :                   :         :           :                
+VCCIO2                       : K4        : power  :                   : 2.5V    : 2         :                
+hc_td_vs                     : K5        : input  : 2.5 V             :         : 2         : Y              
+nCE                          : K6        :        :                   :         : 1         :                
+VCCINT                       : K7        : power  :                   : 1.2V    :           :                
+GND                          : K8        : gnd    :                   :         :           :                
+GND                          : K9        : gnd    :                   :         :           :                
+GND                          : K10       : gnd    :                   :         :           :                
+GND                          : K11       : gnd    :                   :         :           :                
+VCCINT                       : K12       : power  :                   : 1.2V    :           :                
+MSEL0                        : K13       :        :                   :         : 6         :                
+CONF_DONE                    : K14       :        :                   :         : 6         :                
+VCCIO5                       : K15       : power  :                   : 2.5V    : 5         :                
+GND                          : K16       : gnd    :                   :         :           :                
+hc_vga_data[0]               : K17       : output : 2.5 V             :         : 5         : Y              
+hc_adc_busy                  : K18       : input  : 2.5 V             :         : 5         : Y              
+hc_vga_data[9]               : L1        : output : 2.5 V             :         : 2         : Y              
+hc_vga_data[8]               : L2        : output : 2.5 V             :         : 2         : Y              
+hc_rx_crs                    : L3        : input  : 2.5 V             :         : 2         : Y              
+hc_rx_err                    : L4        : input  : 2.5 V             :         : 2         : Y              
+hc_td_hs                     : L5        : input  : 2.5 V             :         : 2         : Y              
+hc_sd_cmd                    : L6        : bidir  : 2.5 V             :         : 2         : Y              
+VCCINT                       : L7        : power  :                   : 1.2V    :           :                
+GND                          : L8        : gnd    :                   :         :           :                
+GND                          : L9        : gnd    :                   :         :           :                
+GND                          : L10       : gnd    :                   :         :           :                
+GND                          : L11       : gnd    :                   :         :           :                
+VCCINT                       : L12       : power  :                   : 1.2V    :           :                
+hc_vd                        : L13       : output : 2.5 V             :         : 5         : Y              
+hc_tx_d[1]                   : L14       : output : 2.5 V             :         : 5         : Y              
+hc_tx_d[2]                   : L15       : output : 2.5 V             :         : 5         : Y              
+hc_lcd_data[3]               : L16       : output : 2.5 V             :         : 5         : Y              
+hc_tx_en                     : L17       : output : 2.5 V             :         : 5         : Y              
+hc_adc_dout                  : L18       : input  : 2.5 V             :         : 5         : Y              
+hc_aud_adclrck               : M1        : output : 2.5 V             :         : 2         : Y              
+hc_sd_clk                    : M2        : bidir  : 2.5 V             :         : 2         : Y              
+hc_sd_dat                    : M3        : bidir  : 2.5 V             :         : 2         : Y              
+VCCIO2                       : M4        : power  :                   : 2.5V    : 2         :                
+hc_ps2_clk                   : M5        : bidir  : 2.5 V             :         : 2         : Y              
+hc_scen                      : M6        : output : 2.5 V             :         : 3         : Y              
+VCCINT                       : M7        : power  :                   : 1.2V    :           :                
+VCCINT                       : M8        : power  :                   : 1.2V    :           :                
+VCCINT                       : M9        : power  :                   : 1.2V    :           :                
+GND                          : M10       : gnd    :                   :         :           :                
+VCCINT                       : M11       : power  :                   : 1.2V    :           :                
+VCCINT                       : M12       : power  :                   : 1.2V    :           :                
+hc_lcd_data[6]               : M13       : output : 2.5 V             :         : 4         : Y              
+hc_hd                        : M14       : output : 2.5 V             :         : 5         : Y              
+VCCIO5                       : M15       : power  :                   : 2.5V    : 5         :                
+GND                          : M16       : gnd    :                   :         :           :                
+hc_lcd_data[4]               : M17       : output : 2.5 V             :         : 5         : Y              
+hc_tx_d[0]                   : M18       : output : 2.5 V             :         : 5         : Y              
+GND+                         : N1        :        :                   :         : 2         :                
+resetn                       : N2        : input  : 2.5 V             :         : 2         : Y              
+GND                          : N3        : gnd    :                   :         :           :                
+VCCIO2                       : N4        : power  :                   : 2.5V    : 2         :                
+VCCA1                        : N5        : power  :                   : 2.5V    :           :                
+hc_lcd_data[5]               : N6        : output : 2.5 V             :         : 3         : Y              
+hc_mdio                      : N7        : bidir  : 2.5 V             :         : 3         : Y              
+hc_sd_dat3                   : N8        : bidir  : 2.5 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 3         :                
+hc_vga_blank                 : N10       : output : 2.5 V             :         : 4         : Y              
+hc_vga_sync                  : N11       : output : 2.5 V             :         : 4         : Y              
+errorn                       : N12       : output : 2.5 V             :         : 4         : Y              
+hc_lcd_data[7]               : N13       : output : 2.5 V             :         : 4         : Y              
+VCCA4                        : N14       : power  :                   : 2.5V    :           :                
+hc_td_d[2]                   : N15       : bidir  : 2.5 V             :         : 5         : Y              
+hc_td_d[1]                   : N16       : bidir  : 2.5 V             :         : 5         : Y              
+hc_adc_penirq_n              : N17       : input  : 2.5 V             :         : 5         : Y              
+hc_tx_clk                    : N18       : input  : 2.5 V             :         : 5         : Y              
+hc_rx_d[1]                   : P1        : input  : 2.5 V             :         : 2         : Y              
+hc_rx_d[0]                   : P2        : input  : 2.5 V             :         : 2         : Y              
+GND                          : P3        : gnd    :                   :         :           :                
+VCCD_PLL1                    : P4        : power  :                   : 1.2V    :           :                
+GNDA1                        : P5        : gnd    :                   :         :           :                
+ddr_ad[6]                    : P6        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_ad[5]                    : P7        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_ad[4]                    : P8        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[4]                    : P9        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[14]                   : P10       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+hc_vga_data[1]               : P11       : output : 2.5 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P12       :        :                   :         : 4         :                
+dsuact                       : P13       : output : 2.5 V             :         : 4         : Y              
+GNDA4                        : P14       : gnd    :                   :         :           :                
+VCCD_PLL4                    : P15       : power  :                   : 1.2V    :           :                
+GND                          : P16       : gnd    :                   :         :           :                
+hc_tx_d[3]                   : P17       : output : 2.5 V             :         : 5         : Y              
+hc_mdc                       : P18       : output : 2.5 V             :         : 5         : Y              
+hc_aud_dacdat                : R1        : output : 2.5 V             :         : 2         : Y              
+hc_aud_daclrck               : R2        : output : 2.5 V             :         : 2         : Y              
+hc_rx_d[3]                   : R3        : input  : 2.5 V             :         : 2         : Y              
+hc_lcd_data[0]               : R4        : output : 2.5 V             :         : 2         : Y              
+hc_adc_cs_n                  : R5        : output : 2.5 V             :         : 2         : Y              
+VCCIO3                       : R6        : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : R7        : power  :                   : 2.5V    : 3         :                
+ddr_dq[2]                    : R8        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+VCCIO3                       : R9        : power  :                   : 2.5V    : 3         :                
+VCCIO4                       : R10       : power  :                   : 2.5V    : 4         :                
+ddr_dq[13]                   : R11       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+VCCIO4                       : R12       : power  :                   : 2.5V    : 4         :                
+ddr_cke                      : R13       : output : SSTL-2 Class I    :         : 4         : Y              
+VCCIO4                       : R14       : power  :                   : 2.5V    : 4         :                
+VCCIO5                       : R15       : power  :                   : 2.5V    : 5         :                
+hc_td_d[3]                   : R16       : bidir  : 2.5 V             :         : 5         : Y              
+hc_den                       : R17       : output : 2.5 V             :         : 5         : Y              
+hc_grest                     : R18       : output : 2.5 V             :         : 5         : Y              
+hc_ps2_dat                   : T1        : bidir  : 2.5 V             :         : 2         : Y              
+hc_sda                       : T2        : bidir  : 2.5 V             :         : 2         : Y              
+hc_rx_d[2]                   : T3        : input  : 2.5 V             :         : 2         : Y              
+ddr_casb                     : T4        : output : SSTL-2 Class I    :         : 3         : Y              
+GND                          : T5        : gnd    :                   :         :           :                
+VREFB3N0                     : T6        :        :                   : 1.25V   : 3         :                
+GND                          : T7        : gnd    :                   :         :           :                
+ddr_dqs[1]                   : T8        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+GND                          : T9        : gnd    :                   :         :           :                
+GND                          : T10       : gnd    :                   :         :           :                
+VREFB4N0                     : T11       :        :                   : 1.25V   : 4         :                
+GND                          : T12       : gnd    :                   :         :           :                
+ddr_ad[8]                    : T13       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ad[7]                    : T14       : output : SSTL-2 Class I    :         : 4         : Y              
+GND                          : T15       : gnd    :                   :         :           :                
+hc_td_d[4]                   : T16       : bidir  : 2.5 V             :         : 5         : Y              
+hc_lcd_data[1]               : T17       : output : 2.5 V             :         : 5         : Y              
+hc_lcd_data[2]               : T18       : output : 2.5 V             :         : 5         : Y              
+ddr_ad[0]                    : U1        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_clk                      : U2        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_dqs[0]                   : U3        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[0]                    : U4        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_ad[1]                    : U5        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[5]                    : U6        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_ad[2]                    : U7        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_ad[3]                    : U8        : output : SSTL-2 Class I    :         : 3         : Y              
+GND+                         : U9        :        :                   :         : 3         :                
+GND+                         : U10       :        :                   :         : 4         :                
+ddr_dq[10]                   : U11       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_dq[9]                    : U12       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_dq[8]                    : U13       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_dq[12]                   : U14       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_web                      : U15       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ad[12]                   : U16       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ad[10]                   : U17       : output : SSTL-2 Class I    :         : 4         : Y              
+hc_adc_din                   : U18       : output : 2.5 V             :         : 4         : Y              
+ddr_csb                      : V1        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_clkn                     : V2        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_dm[0]                    : V3        : output : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[1]                    : V4        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[3]                    : V5        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[6]                    : V6        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dq[7]                    : V7        : bidir  : SSTL-2 Class I    :         : 3         : Y              
+ddr_dm[1]                    : V8        : output : SSTL-2 Class I    :         : 3         : Y              
+GND+                         : V9        :        :                   :         : 3         :                
+GND+                         : V10       :        :                   :         : 4         :                
+ddr_ba[0]                    : V11       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ba[1]                    : V12       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ad[9]                    : V13       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_dq[15]                   : V14       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_dq[11]                   : V15       : bidir  : SSTL-2 Class I    :         : 4         : Y              
+ddr_rasb                     : V16       : output : SSTL-2 Class I    :         : 4         : Y              
+ddr_ad[11]                   : V17       : output : SSTL-2 Class I    :         : 4         : Y              
+hc_adc_dclk                  : V18       : output : 2.5 V             :         : 4         : Y              

@@ -1,0 +1,54 @@
+
+menu "Vendor Gaisler"
+
+config GRLIB_GAISLER_GPIO
+	bool "Grlib gpio driver" 
+	default y
+	---help---
+	  Add the driver for the grlib gpio core.
+
+config GRLIB_GAISLER_APBUART
+	bool "Grlib apbuart driver" 
+	default y
+	---help---
+	  Add the driver for the grlib apbuart serial core.
+
+config GRLIB_GAISLER_APBUART_CONSOLE
+	bool "Grlib apbuart serial console"
+	depends on GRLIB_GAISLER_APBUART
+	select SERIAL_CORE_CONSOLE
+	help
+	  Running a console on grlib uart
+
+	  
+config GRLIB_GAISLER_GRETH
+	tristate "Grlib's ethermac driver" 
+	default y
+	depends on NETDEVICES
+        select CRC32
+	---help---
+	  Add the driver for the grlib ethermac.
+
+
+config GRLIB_GAISLER_GRETH_MACMSB
+	hex "MSB 24 bits of ethern number (hex)" 
+	default 00007A
+	depends on GRLIB_GAISLER_GRETH
+	---help---
+	  Most significant 24 bits of the default MAC address
+	  that is initialized when driver probes. A good guess 
+	  is 00007A.
+
+config GRLIB_GAISLER_GRETH_MACLSB
+	hex "LSB 24 bits of ethern number (hex)" 
+	default CC0012
+	depends on GRLIB_GAISLER_GRETH
+	---help---
+	  Least significant 24 bits of the default MAC address
+	  that is initialized when driver probes. A good guess 
+	  is CC0012.
+
+	            
+endmenu
+
+

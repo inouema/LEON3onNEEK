@@ -1,0 +1,11 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/micron/ddr/mt46v16m16.vhd" "20120118214647.000" "20120128164856.151":
+  entity mt46v16m16 at 41( 1708) + 0 on 16;
+  architecture behave of mt46v16m16 at 96( 3640) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/micron/sdram/components.vhd" "20120118214647.000" "20120128164855.551":
+  package components at 21( 824) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/micron/sdram/mt48lc16m16a2.vhd" "20120118214647.000" "20120128164855.621":
+  package mti_pkg at 13( 314) + 0 on 12 body;
+  package body mti_pkg at 28( 752) + 0 on 13;
+  entity mt48lc16m16a2 at 193( 6624) + 0 on 14;
+  architecture behave of mt48lc16m16a2 at 253( 8722) + 0 on 15;

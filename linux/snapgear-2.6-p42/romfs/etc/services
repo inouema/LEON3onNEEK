@@ -1,0 +1,73 @@
+# Network services
+# See http://www.iana.org/assignments/port-numbers
+#
+
+echo		  7/tcp
+echo		  7/udp
+daytime		 13/tcp
+daytime		 13/udp
+ftp-data	 20/tcp	   #File Transfer [Default Data]
+ftp-data	 20/udp	   #File Transfer [Default Data]
+ftp		 21/tcp	   #File Transfer [Control]
+ftp		 21/udp	   #File Transfer [Control]
+ssh		 22/tcp	   #Secure Shell Login
+ssh		 22/udp	   #Secure Shell Login
+telnet		 23/tcp
+telnet		 23/udp
+smtp		 25/tcp	   mail		#Simple Mail Transfer
+smtp		 25/udp	   mail		#Simple Mail Transfer
+time		 37/tcp	   timserver
+time		 37/udp	   timserver
+nameserver	 42/tcp	   name		#Host Name Server
+nameserver	 42/udp	   name		#Host Name Server
+nicname		 43/tcp	   whois
+nicname		 43/udp	   whois
+domain		 53/tcp	   #Domain Name Server
+domain		 53/udp	   #Domain Name Server
+whois++		 63/tcp
+whois++		 63/udp
+bootps		 67/tcp	   dhcps	#Bootstrap Protocol Server
+bootps		 67/udp	   dhcps	#Bootstrap Protocol Server
+bootpc		 68/tcp	   dhcpc	#Bootstrap Protocol Client
+bootpc		 68/udp	   dhcpc	#Bootstrap Protocol Client
+tftp		 69/tcp	   #Trivial File Transfer
+tftp		 69/udp	   #Trivial File Transfer
+gopher		 70/tcp
+gopher		 70/udp
+finger		 79/tcp
+finger		 79/udp
+http		 80/tcp	   www www-http	#World Wide Web HTTP
+http		 80/udp	   www www-http	#World Wide Web HTTP
+kerberos-sec	 88/tcp	   kerberos	# krb5	# Kerberos (v5)
+kerberos-sec	 88/udp	   kerberos	# krb5	# Kerberos (v5)
+mit-dov		 91/tcp	   #MIT Dover Spooler
+mit-dov		 91/udp	   #MIT Dover Spooler
+rtelnet		107/tcp	   #Remote Telnet Service
+rtelnet		107/udp	   #Remote Telnet Service
+pop3		110/tcp	   #Post Office Protocol - Version 3
+pop3		110/udp	   #Post Office Protocol - Version 3
+auth		113/tcp	   ident tap	#Authentication Service
+auth		113/udp	   ident tap	#Authentication Service
+sftp		115/tcp	   #Simple File Transfer Protocol
+sftp		115/udp	   #Simple File Transfer Protocol
+sqlserv		118/tcp	   #SQL Services
+sqlserv		118/udp	   #SQL Services
+ntp		123/tcp	   #Network Time Protocol
+ntp		123/udp	   #Network Time Protocol
+netbios-ns	137/tcp	   #NETBIOS Name Service
+netbios-ns	137/udp	   #NETBIOS Name Service
+netbios-dgm	138/tcp	   #NETBIOS Datagram Service
+netbios-dgm	138/udp	   #NETBIOS Datagram Service
+netbios-ssn	139/tcp	   #NETBIOS Session Service
+netbios-ssn	139/udp	   #NETBIOS Session Service
+emfis-data	140/tcp	   #EMFIS Data Service
+sqlsrv		156/tcp	   #SQL Service
+sqlsrv		156/udp	   #SQL Service
+snmp		161/tcp
+snmp		161/udp
+snmptrap	162/tcp	   snmp-trap
+snmptrap	162/udp	   snmp-trap
+https		443/tcp
+https		443/udp
+ftp-proxy	8021/tcp   # FTP proxy
+natd		8668/divert # Network Address Translation

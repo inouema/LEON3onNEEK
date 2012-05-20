@@ -1,0 +1,9 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/hynix/ddr2/components.vhd" "20120118214647.000" "20120128164855.526":
+  package components at 21( 821) + 0 on 15;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/hynix/ddr2/HY5PS121621F_PACK.vhd" "20120118214647.000" "20120128164854.676":
+  package hy5ps121621f_pack at 16( 823) + 0 on 11 body;
+  package body hy5ps121621f_pack at 242( 6412) + 0 on 12;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/hynix/ddr2/HY5PS121621F.vhd" "20120118214647.000" "20120128164854.818":
+  entity hy5ps121621f at 19( 1029) + 0 on 13;
+  architecture behavioral_model_hy5ps121621f of hy5ps121621f at 59( 2521) + 0 on 14;

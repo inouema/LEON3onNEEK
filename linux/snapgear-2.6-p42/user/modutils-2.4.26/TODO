@@ -1,0 +1,34 @@
+From modutils-2.2.2-pre6:
+
+	- Are there more optimizations to do for handling meta-characters?
+	  Example: look for $VAR in the environment instead of "/bin/echo"
+
+	- Check for full (and consistent) set of options for all apps,
+	  especially depmod vs. modprobe (and insmod too)
+
+
+Remaining from modutils-2.1.121:
+
+insmod:
+
+	- Persistant module parameters.
+
+util: (alias.h)
+insmod: (modprobe.c)
+depmod: (depmod.c)
+
+	- Finalize MODULE_SUPPORTED_DEVICE info so that we can replace
+	  the hardcoded alias array with info gleened from the modules
+	  themselves.
+	* Bjorn says: One way is to use the "include" directive...
+	  Otherwise, an extension to the modules.dep file format could
+	  handle most of this problem:
+	  "/lib/modules/.../isofs.o: [type=fs device=iso9660] dependencies"
+
+config file:
+
+	- Enable _really_ fine module selection by looking at $BOOTFILE
+	  or maybe kernel build number for the benefit of kernel hackers.
+	* Bjorn says: This is mostly solved with the "include", "define"
+	  and "if" directives for /etc/modules.conf.  Note that the kmod
+	  environment to modprobe is _very_ sparse...

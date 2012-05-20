@@ -1,0 +1,1269 @@
+
+/home/inouema/work/LEON/linux/snapgear-2.6-p42/romfs/lib/libdl-2.5.so:     ファイル形式 elf32-sparc
+
+セクション .init の逆アセンブル:
+
+00000d0c <_init>:
+_init():
+ d0c:	9d e3 bf a0 	save  %sp, -96, %sp
+ d10:	40 00 00 37 	call  dec <frame_dummy>
+ d14:	01 00 00 00 	nop 
+ d18:	40 00 04 22 	call  1da0 <__do_global_ctors_aux>
+ d1c:	01 00 00 00 	nop 
+ d20:	81 c7 e0 08 	ret 
+ d24:	81 e8 00 00 	restore 
+セクション .text の逆アセンブル:
+
+00000d28 <__do_global_dtors_aux-0x8>:
+     d28:	81 c3 e0 08 	retl 
+     d2c:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00000d30 <__do_global_dtors_aux>:
+__do_global_dtors_aux():
+     d30:	9d e3 bf 98 	save  %sp, -104, %sp
+     d34:	23 00 00 00 	sethi  %hi(0), %l1
+     d38:	2f 00 00 4c 	sethi  %hi(0x13000), %l7
+     d3c:	7f ff ff fb 	call  d28 <_init+0x1c>
+     d40:	ae 05 e2 c4 	add  %l7, 0x2c4, %l7	! 132c4 <__FRAME_END__+0x113d4>
+     d44:	82 14 60 0c 	or  %l1, 0xc, %g1
+     d48:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     d4c:	c6 08 80 00 	ldub  [ %g2 ], %g3
+     d50:	80 a0 e0 00 	cmp  %g3, 0
+     d54:	12 80 00 21 	bne  dd8 <__do_global_dtors_aux+0xa8>
+     d58:	03 00 00 00 	sethi  %hi(0), %g1
+     d5c:	82 10 60 a8 	or  %g1, 0xa8, %g1	! a8 <GLIBC_2.0+0xa8>
+     d60:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     d64:	80 a0 a0 00 	cmp  %g2, 0
+     d68:	02 80 00 06 	be  d80 <__do_global_dtors_aux+0x50>
+     d6c:	03 00 00 00 	sethi  %hi(0), %g1
+     d70:	82 10 60 88 	or  %g1, 0x88, %g1	! 88 <GLIBC_2.0+0x88>
+     d74:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     d78:	40 00 4c f6 	call  14150 <__cxa_finalize@plt>
+     d7c:	d0 00 80 00 	ld  [ %g2 ], %o0
+     d80:	03 00 00 00 	sethi  %hi(0), %g1
+     d84:	82 10 60 08 	or  %g1, 8, %g1	! 8 <GLIBC_2.0+0x8>
+     d88:	c2 05 c0 01 	ld  [ %l7 + %g1 ], %g1
+     d8c:	c4 00 40 00 	ld  [ %g1 ], %g2
+     d90:	c4 00 80 00 	ld  [ %g2 ], %g2
+     d94:	80 a0 a0 00 	cmp  %g2, 0
+     d98:	22 80 00 0d 	be,a   dcc <__do_global_dtors_aux+0x9c>
+     d9c:	82 14 60 0c 	or  %l1, 0xc, %g1
+     da0:	a0 10 00 01 	mov  %g1, %l0
+     da4:	c2 04 00 00 	ld  [ %l0 ], %g1
+     da8:	82 00 60 04 	add  %g1, 4, %g1
+     dac:	9f c0 80 00 	call  %g2
+     db0:	c2 24 00 00 	st  %g1, [ %l0 ]
+     db4:	c2 04 00 00 	ld  [ %l0 ], %g1
+     db8:	c4 00 40 00 	ld  [ %g1 ], %g2
+     dbc:	80 a0 a0 00 	cmp  %g2, 0
+     dc0:	12 bf ff fb 	bne  dac <__do_global_dtors_aux+0x7c>
+     dc4:	82 00 60 04 	add  %g1, 4, %g1
+     dc8:	82 14 60 0c 	or  %l1, 0xc, %g1
+     dcc:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+     dd0:	84 10 20 01 	mov  1, %g2
+     dd4:	c4 28 c0 00 	stb  %g2, [ %g3 ]
+     dd8:	81 c7 e0 08 	ret 
+     ddc:	81 e8 00 00 	restore 
+
+00000de0 <call___do_global_dtors_aux>:
+call___do_global_dtors_aux():
+     de0:	9d e3 bf 98 	save  %sp, -104, %sp
+     de4:	81 c7 e0 08 	ret 
+     de8:	81 e8 00 00 	restore 
+
+00000dec <frame_dummy>:
+frame_dummy():
+     dec:	9d e3 bf 98 	save  %sp, -104, %sp
+     df0:	03 00 00 00 	sethi  %hi(0), %g1
+     df4:	2f 00 00 4c 	sethi  %hi(0x13000), %l7
+     df8:	7f ff ff cc 	call  d28 <_init+0x1c>
+     dfc:	ae 05 e2 08 	add  %l7, 0x208, %l7	! 13208 <__FRAME_END__+0x11318>
+     e00:	82 10 60 04 	or  %g1, 4, %g1
+     e04:	f0 05 c0 01 	ld  [ %l7 + %g1 ], %i0
+     e08:	05 00 00 00 	sethi  %hi(0), %g2
+     e0c:	c2 06 00 00 	ld  [ %i0 ], %g1
+     e10:	80 a0 60 00 	cmp  %g1, 0
+     e14:	02 80 00 08 	be  e34 <frame_dummy+0x48>
+     e18:	84 10 a0 b0 	or  %g2, 0xb0, %g2
+     e1c:	c2 05 c0 02 	ld  [ %l7 + %g2 ], %g1
+     e20:	80 a0 60 00 	cmp  %g1, 0
+     e24:	02 80 00 04 	be  e34 <frame_dummy+0x48>
+     e28:	01 00 00 00 	nop 
+     e2c:	10 80 4c d5 	b  14180 <_Jv_RegisterClasses@plt>
+     e30:	81 e8 00 00 	restore 
+     e34:	01 00 00 00 	nop 
+     e38:	81 c7 e0 08 	ret 
+     e3c:	81 e8 00 00 	restore 
+
+00000e40 <call_frame_dummy>:
+call_frame_dummy():
+     e40:	9d e3 bf 98 	save  %sp, -104, %sp
+     e44:	81 c7 e0 08 	ret 
+     e48:	81 e8 00 00 	restore 
+     e4c:	81 c3 e0 08 	retl 
+     e50:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00000e54 <dlopen_doit>:
+dlopen_doit():
+     e54:	9d e3 bf 88 	save  %sp, -120, %sp
+     e58:	03 3f ff fb 	sethi  %hi(0xffffec00), %g1
+     e5c:	09 00 00 00 	sethi  %hi(0), %g4
+     e60:	07 00 00 00 	sethi  %hi(0), %g3
+     e64:	c4 06 20 04 	ld  [ %i0 + 4 ], %g2
+     e68:	82 10 62 f0 	or  %g1, 0x2f0, %g1
+     e6c:	2f 00 00 4c 	sethi  %hi(0x13000), %l7
+     e70:	7f ff ff f7 	call  e4c <call_frame_dummy+0xc>
+     e74:	ae 05 e1 90 	add  %l7, 0x190, %l7	! 13190 <__FRAME_END__+0x112a0>
+     e78:	88 11 20 84 	or  %g4, 0x84, %g4
+     e7c:	86 10 e0 14 	or  %g3, 0x14, %g3
+     e80:	94 10 20 05 	mov  5, %o2
+     e84:	80 88 80 01 	btst  %g2, %g1
+     e88:	12 80 00 12 	bne  ed0 <dlopen_doit+0x7c>
+     e8c:	21 00 00 00 	sethi  %hi(0), %l0
+     e90:	c4 06 00 00 	ld  [ %i0 ], %g2
+     e94:	19 00 00 00 	sethi  %hi(0), %o4
+     e98:	09 00 00 00 	sethi  %hi(0), %g4
+     e9c:	1b 00 00 00 	sethi  %hi(0), %o5
+     ea0:	82 14 20 98 	or  %l0, 0x98, %g1
+     ea4:	07 00 00 00 	sethi  %hi(0), %g3
+     ea8:	98 13 20 a0 	or  %o4, 0xa0, %o4
+     eac:	88 11 20 a4 	or  %g4, 0xa4, %g4
+     eb0:	9a 13 60 9c 	or  %o5, 0x9c, %o5
+     eb4:	de 05 c0 01 	ld  [ %l7 + %g1 ], %o7
+     eb8:	80 a0 a0 00 	cmp  %g2, 0
+     ebc:	86 10 e0 18 	or  %g3, 0x18, %g3
+     ec0:	12 80 00 11 	bne  f04 <dlopen_doit+0xb0>
+     ec4:	90 10 00 02 	mov  %g2, %o0
+     ec8:	10 80 00 0f 	b  f04 <dlopen_doit+0xb0>
+     ecc:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+     ed0:	d2 05 c0 03 	ld  [ %l7 + %g3 ], %o1
+     ed4:	40 00 4c a2 	call  1415c <__dcgettext@plt>
+     ed8:	d0 05 c0 04 	ld  [ %l7 + %g4 ], %o0
+     edc:	82 14 20 98 	or  %l0, 0x98, %g1
+     ee0:	96 10 00 08 	mov  %o0, %o3
+     ee4:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     ee8:	c2 00 a0 b4 	ld  [ %g2 + 0xb4 ], %g1
+     eec:	90 10 20 00 	clr  %o0
+     ef0:	92 10 20 00 	clr  %o1
+     ef4:	9f c0 40 00 	call  %g1
+     ef8:	94 10 20 00 	clr  %o2
+     efc:	10 bf ff e6 	b  e94 <dlopen_doit+0x40>
+     f00:	c4 06 00 00 	ld  [ %i0 ], %g2
+     f04:	c6 05 c0 0c 	ld  [ %l7 + %o4 ], %g3
+     f08:	c2 00 c0 00 	ld  [ %g3 ], %g1
+     f0c:	c2 23 a0 5c 	st  %g1, [ %sp + 0x5c ]
+     f10:	80 a0 00 02 	cmp  %g0, %g2
+     f14:	d4 05 c0 0d 	ld  [ %l7 + %o5 ], %o2
+     f18:	96 60 20 00 	subx  %g0, 0, %o3
+     f1c:	c8 05 c0 04 	ld  [ %l7 + %g4 ], %g4
+     f20:	c4 06 20 04 	ld  [ %i0 + 4 ], %g2
+     f24:	da 02 80 00 	ld  [ %o2 ], %o5
+     f28:	13 20 00 00 	sethi  %hi(0x80000000), %o1
+     f2c:	92 10 80 09 	or  %g2, %o1, %o1
+     f30:	c2 03 e0 c4 	ld  [ %o7 + 0xc4 ], %g1
+     f34:	96 0a ff fe 	and  %o3, -2, %o3
+     f38:	d8 01 00 00 	ld  [ %g4 ], %o4
+     f3c:	9f c0 40 00 	call  %g1
+     f40:	d4 06 20 0c 	ld  [ %i0 + 0xc ], %o2
+     f44:	d0 26 20 08 	st  %o0, [ %i0 + 8 ]
+     f48:	81 c7 e0 08 	ret 
+     f4c:	81 e8 00 00 	restore 
+
+00000f50 <dlopen@@GLIBC_2.1>:
+dlopen@@GLIBC_2.1():
+     f50:	9d e3 bf 80 	save  %sp, -128, %sp
+     f54:	03 00 00 00 	sethi  %hi(0), %g1
+     f58:	2f 00 00 4c 	sethi  %hi(0x13000), %l7
+     f5c:	7f ff ff bc 	call  e4c <call_frame_dummy+0xc>
+     f60:	ae 05 e0 a4 	add  %l7, 0xa4, %l7	! 130a4 <__FRAME_END__+0x111b4>
+     f64:	82 10 60 8c 	or  %g1, 0x8c, %g1
+     f68:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     f6c:	07 00 00 00 	sethi  %hi(0), %g3
+     f70:	88 07 e0 08 	add  %i7, 8, %g4
+     f74:	c2 00 80 00 	ld  [ %g2 ], %g1
+     f78:	86 10 e0 10 	or  %g3, 0x10, %g3
+     f7c:	92 07 bf e0 	add  %fp, -32, %o1
+     f80:	94 10 00 04 	mov  %g4, %o2
+     f84:	80 a0 60 00 	cmp  %g1, 0
+     f88:	12 80 00 0b 	bne  fb4 <dlopen@@GLIBC_2.1+0x64>
+     f8c:	90 10 00 18 	mov  %i0, %o0
+     f90:	f0 3f bf e0 	std  %i0, [ %fp + -32 ]
+     f94:	c8 27 bf ec 	st  %g4, [ %fp + -20 ]
+     f98:	40 00 01 5e 	call  1510 <_dlerror_run>
+     f9c:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+     fa0:	80 a2 20 00 	cmp  %o0, 0
+     fa4:	12 80 00 07 	bne  fc0 <dlopen@@GLIBC_2.1+0x70>
+     fa8:	90 10 20 00 	clr  %o0
+     fac:	10 80 00 05 	b  fc0 <dlopen@@GLIBC_2.1+0x70>
+     fb0:	d0 07 bf e8 	ld  [ %fp + -24 ], %o0
+     fb4:	c2 00 40 00 	ld  [ %g1 ], %g1
+     fb8:	9f c0 40 00 	call  %g1
+     fbc:	92 10 00 19 	mov  %i1, %o1
+     fc0:	81 c7 e0 08 	ret 
+     fc4:	91 e8 00 08 	restore  %g0, %o0, %o0
+     fc8:	81 c3 e0 08 	retl 
+     fcc:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00000fd0 <dlclose_doit>:
+dlclose_doit():
+     fd0:	9d e3 bf 90 	save  %sp, -112, %sp
+     fd4:	03 00 00 00 	sethi  %hi(0), %g1
+     fd8:	2f 00 00 4c 	sethi  %hi(0x13000), %l7
+     fdc:	7f ff ff fb 	call  fc8 <dlopen@@GLIBC_2.1+0x78>
+     fe0:	ae 05 e0 24 	add  %l7, 0x24, %l7	! 13024 <__FRAME_END__+0x11134>
+     fe4:	82 10 60 98 	or  %g1, 0x98, %g1
+     fe8:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+     fec:	c6 00 a0 c8 	ld  [ %g2 + 0xc8 ], %g3
+     ff0:	9f c0 c0 00 	call  %g3
+     ff4:	90 10 00 18 	mov  %i0, %o0
+     ff8:	01 00 00 00 	nop 
+     ffc:	81 c7 e0 08 	ret 
+    1000:	81 e8 00 00 	restore 
+
+00001004 <dlclose>:
+dlclose():
+    1004:	9d e3 bf 90 	save  %sp, -112, %sp
+    1008:	03 00 00 00 	sethi  %hi(0), %g1
+    100c:	2f 00 00 4b 	sethi  %hi(0x12c00), %l7
+    1010:	7f ff ff ee 	call  fc8 <dlopen@@GLIBC_2.1+0x78>
+    1014:	ae 05 e3 f0 	add  %l7, 0x3f0, %l7	! 12ff0 <__FRAME_END__+0x11100>
+    1018:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    101c:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1020:	07 00 00 00 	sethi  %hi(0), %g3
+    1024:	c4 00 80 00 	ld  [ %g2 ], %g2
+    1028:	86 10 e0 1c 	or  %g3, 0x1c, %g3
+    102c:	92 10 00 18 	mov  %i0, %o1
+    1030:	80 a0 a0 00 	cmp  %g2, 0
+    1034:	12 80 00 07 	bne  1050 <dlclose+0x4c>
+    1038:	90 10 00 18 	mov  %i0, %o0
+    103c:	40 00 01 35 	call  1510 <_dlerror_run>
+    1040:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+    1044:	80 a0 00 08 	cmp  %g0, %o0
+    1048:	10 80 00 05 	b  105c <dlclose+0x58>
+    104c:	90 60 20 00 	subx  %g0, 0, %o0
+    1050:	c2 00 a0 04 	ld  [ %g2 + 4 ], %g1
+    1054:	9f c0 40 00 	call  %g1
+    1058:	01 00 00 00 	nop 
+    105c:	81 c7 e0 08 	ret 
+    1060:	91 e8 00 08 	restore  %g0, %o0, %o0
+
+00001064 <dlsym_doit>:
+dlsym_doit():
+    1064:	9d e3 bf 90 	save  %sp, -112, %sp
+    1068:	d0 06 00 00 	ld  [ %i0 ], %o0
+    106c:	d2 06 20 04 	ld  [ %i0 + 4 ], %o1
+    1070:	40 00 4c 35 	call  14144 <_dl_sym@plt>
+    1074:	d4 06 20 08 	ld  [ %i0 + 8 ], %o2
+    1078:	d0 26 20 0c 	st  %o0, [ %i0 + 0xc ]
+    107c:	81 c7 e0 08 	ret 
+    1080:	81 e8 00 00 	restore 
+    1084:	81 c3 e0 08 	retl 
+    1088:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+0000108c <dlsym>:
+dlsym():
+    108c:	9d e3 bf 80 	save  %sp, -128, %sp
+    1090:	03 00 00 00 	sethi  %hi(0), %g1
+    1094:	2f 00 00 4b 	sethi  %hi(0x12c00), %l7
+    1098:	7f ff ff fb 	call  1084 <dlsym_doit+0x20>
+    109c:	ae 05 e3 68 	add  %l7, 0x368, %l7	! 12f68 <__FRAME_END__+0x11078>
+    10a0:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    10a4:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    10a8:	07 00 00 00 	sethi  %hi(0), %g3
+    10ac:	88 07 e0 08 	add  %i7, 8, %g4
+    10b0:	c4 00 80 00 	ld  [ %g2 ], %g2
+    10b4:	86 10 e0 90 	or  %g3, 0x90, %g3
+    10b8:	94 10 00 04 	mov  %g4, %o2
+    10bc:	80 a0 a0 00 	cmp  %g2, 0
+    10c0:	90 10 00 18 	mov  %i0, %o0
+    10c4:	92 10 00 19 	mov  %i1, %o1
+    10c8:	12 80 00 18 	bne  1128 <dlsym+0x9c>
+    10cc:	a0 10 20 00 	clr  %l0
+    10d0:	c2 05 c0 03 	ld  [ %l7 + %g3 ], %g1
+    10d4:	90 00 62 c0 	add  %g1, 0x2c0, %o0
+    10d8:	c4 00 65 c8 	ld  [ %g1 + 0x5c8 ], %g2
+    10dc:	c8 27 bf e8 	st  %g4, [ %fp + -24 ]
+    10e0:	9f c0 80 00 	call  %g2
+    10e4:	f0 3f bf e0 	std  %i0, [ %fp + -32 ]
+    10e8:	03 00 00 00 	sethi  %hi(0), %g1
+    10ec:	82 10 60 20 	or  %g1, 0x20, %g1	! 20 <GLIBC_2.0+0x20>
+    10f0:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    10f4:	40 00 01 07 	call  1510 <_dlerror_run>
+    10f8:	92 07 bf e0 	add  %fp, -32, %o1
+    10fc:	80 a2 20 00 	cmp  %o0, 0
+    1100:	22 80 00 02 	be,a   1108 <dlsym+0x7c>
+    1104:	e0 07 bf ec 	ld  [ %fp + -20 ], %l0
+    1108:	03 00 00 00 	sethi  %hi(0), %g1
+    110c:	82 10 60 90 	or  %g1, 0x90, %g1	! 90 <GLIBC_2.0+0x90>
+    1110:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1114:	c2 00 a5 cc 	ld  [ %g2 + 0x5cc ], %g1
+    1118:	9f c0 40 00 	call  %g1
+    111c:	90 00 a2 c0 	add  %g2, 0x2c0, %o0
+    1120:	10 80 00 05 	b  1134 <dlsym+0xa8>
+    1124:	90 10 00 10 	mov  %l0, %o0
+    1128:	c2 00 a0 08 	ld  [ %g2 + 8 ], %g1
+    112c:	9f c0 40 00 	call  %g1
+    1130:	01 00 00 00 	nop 
+    1134:	81 c7 e0 08 	ret 
+    1138:	91 e8 00 08 	restore  %g0, %o0, %o0
+
+0000113c <dlvsym_doit>:
+dlvsym_doit():
+    113c:	9d e3 bf 90 	save  %sp, -112, %sp
+    1140:	d0 06 00 00 	ld  [ %i0 ], %o0
+    1144:	d2 06 20 04 	ld  [ %i0 + 4 ], %o1
+    1148:	d4 06 20 08 	ld  [ %i0 + 8 ], %o2
+    114c:	40 00 4b ef 	call  14108 <_dl_vsym@plt>
+    1150:	d6 06 20 0c 	ld  [ %i0 + 0xc ], %o3
+    1154:	d0 26 20 10 	st  %o0, [ %i0 + 0x10 ]
+    1158:	81 c7 e0 08 	ret 
+    115c:	81 e8 00 00 	restore 
+    1160:	81 c3 e0 08 	retl 
+    1164:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001168 <dlvsym>:
+dlvsym():
+    1168:	9d e3 bf 78 	save  %sp, -136, %sp
+    116c:	03 00 00 00 	sethi  %hi(0), %g1
+    1170:	2f 00 00 4b 	sethi  %hi(0x12c00), %l7
+    1174:	7f ff ff fb 	call  1160 <dlvsym_doit+0x24>
+    1178:	ae 05 e2 8c 	add  %l7, 0x28c, %l7	! 12e8c <__FRAME_END__+0x10f9c>
+    117c:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    1180:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1184:	07 00 00 00 	sethi  %hi(0), %g3
+    1188:	88 07 e0 08 	add  %i7, 8, %g4
+    118c:	c4 00 80 00 	ld  [ %g2 ], %g2
+    1190:	86 10 e0 90 	or  %g3, 0x90, %g3
+    1194:	96 10 00 04 	mov  %g4, %o3
+    1198:	80 a0 a0 00 	cmp  %g2, 0
+    119c:	90 10 00 18 	mov  %i0, %o0
+    11a0:	92 10 00 19 	mov  %i1, %o1
+    11a4:	94 10 00 1a 	mov  %i2, %o2
+    11a8:	12 80 00 19 	bne  120c <dlvsym+0xa4>
+    11ac:	a0 10 20 00 	clr  %l0
+    11b0:	c2 05 c0 03 	ld  [ %l7 + %g3 ], %g1
+    11b4:	90 00 62 c0 	add  %g1, 0x2c0, %o0
+    11b8:	c4 00 65 c8 	ld  [ %g1 + 0x5c8 ], %g2
+    11bc:	c8 27 bf e4 	st  %g4, [ %fp + -28 ]
+    11c0:	f0 3f bf d8 	std  %i0, [ %fp + -40 ]
+    11c4:	9f c0 80 00 	call  %g2
+    11c8:	f4 27 bf e0 	st  %i2, [ %fp + -32 ]
+    11cc:	03 00 00 00 	sethi  %hi(0), %g1
+    11d0:	82 10 60 24 	or  %g1, 0x24, %g1	! 24 <GLIBC_2.0+0x24>
+    11d4:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    11d8:	40 00 00 ce 	call  1510 <_dlerror_run>
+    11dc:	92 07 bf d8 	add  %fp, -40, %o1
+    11e0:	80 a2 20 00 	cmp  %o0, 0
+    11e4:	22 80 00 02 	be,a   11ec <dlvsym+0x84>
+    11e8:	e0 07 bf e8 	ld  [ %fp + -24 ], %l0
+    11ec:	03 00 00 00 	sethi  %hi(0), %g1
+    11f0:	82 10 60 90 	or  %g1, 0x90, %g1	! 90 <GLIBC_2.0+0x90>
+    11f4:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    11f8:	c2 00 a5 cc 	ld  [ %g2 + 0x5cc ], %g1
+    11fc:	9f c0 40 00 	call  %g1
+    1200:	90 00 a2 c0 	add  %g2, 0x2c0, %o0
+    1204:	10 80 00 05 	b  1218 <dlvsym+0xb0>
+    1208:	90 10 00 10 	mov  %l0, %o0
+    120c:	c2 00 a0 0c 	ld  [ %g2 + 0xc ], %g1
+    1210:	9f c0 40 00 	call  %g1
+    1214:	01 00 00 00 	nop 
+    1218:	81 c7 e0 08 	ret 
+    121c:	91 e8 00 08 	restore  %g0, %o0, %o0
+    1220:	81 c3 e0 08 	retl 
+    1224:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001228 <init>:
+init():
+    1228:	9d e3 bf 90 	save  %sp, -112, %sp
+    122c:	03 00 00 00 	sethi  %hi(0), %g1
+    1230:	2f 00 00 4b 	sethi  %hi(0x12c00), %l7
+    1234:	7f ff ff fb 	call  1220 <dlvsym+0xb8>
+    1238:	ae 05 e1 cc 	add  %l7, 0x1cc, %l7	! 12dcc <__FRAME_END__+0x10edc>
+    123c:	82 10 60 80 	or  %g1, 0x80, %g1
+    1240:	05 00 00 00 	sethi  %hi(0), %g2
+    1244:	07 00 00 00 	sethi  %hi(0), %g3
+    1248:	c2 05 c0 01 	ld  [ %l7 + %g1 ], %g1
+    124c:	84 10 a0 2c 	or  %g2, 0x2c, %g2
+    1250:	80 a0 60 00 	cmp  %g1, 0
+    1254:	02 80 00 08 	be  1274 <init+0x4c>
+    1258:	86 10 e0 30 	or  %g3, 0x30, %g3
+    125c:	d0 05 c0 02 	ld  [ %l7 + %g2 ], %o0
+    1260:	9f c0 40 00 	call  %g1
+    1264:	d2 05 c0 03 	ld  [ %l7 + %g3 ], %o1
+    1268:	80 a2 20 00 	cmp  %o0, 0
+    126c:	02 80 00 09 	be  1290 <init+0x68>
+    1270:	01 00 00 00 	nop 
+    1274:	03 00 00 00 	sethi  %hi(0), %g1
+    1278:	05 00 00 00 	sethi  %hi(0), %g2
+    127c:	82 10 60 34 	or  %g1, 0x34, %g1
+    1280:	84 10 a0 38 	or  %g2, 0x38, %g2
+    1284:	c8 05 c0 01 	ld  [ %l7 + %g1 ], %g4
+    1288:	c6 05 c0 02 	ld  [ %l7 + %g2 ], %g3
+    128c:	c6 21 00 00 	st  %g3, [ %g4 ]
+    1290:	81 c7 e0 08 	ret 
+    1294:	81 e8 00 00 	restore 
+
+00001298 <dlerror>:
+dlerror():
+    1298:	9d e3 bf 88 	save  %sp, -120, %sp
+    129c:	03 00 00 00 	sethi  %hi(0), %g1
+    12a0:	2f 00 00 4b 	sethi  %hi(0x12c00), %l7
+    12a4:	7f ff ff df 	call  1220 <dlvsym+0xb8>
+    12a8:	ae 05 e1 5c 	add  %l7, 0x15c, %l7	! 12d5c <__FRAME_END__+0x10e6c>
+    12ac:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    12b0:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    12b4:	c4 00 80 00 	ld  [ %g2 ], %g2
+    12b8:	80 a0 a0 00 	cmp  %g2, 0
+    12bc:	12 80 00 90 	bne  14fc <dlerror+0x264>
+    12c0:	c0 27 bf ec 	clr  [ %fp + -20 ]
+    12c4:	03 00 00 00 	sethi  %hi(0), %g1
+    12c8:	82 10 60 7c 	or  %g1, 0x7c, %g1	! 7c <GLIBC_2.0+0x7c>
+    12cc:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    12d0:	80 a0 a0 00 	cmp  %g2, 0
+    12d4:	02 80 00 5e 	be  144c <dlerror+0x1b4>
+    12d8:	03 00 00 00 	sethi  %hi(0), %g1
+    12dc:	05 00 00 00 	sethi  %hi(0), %g2
+    12e0:	82 10 60 3c 	or  %g1, 0x3c, %g1
+    12e4:	84 10 a0 28 	or  %g2, 0x28, %g2
+    12e8:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    12ec:	40 00 4b 7e 	call  140e4 <__pthread_once@plt>
+    12f0:	d2 05 c0 02 	ld  [ %l7 + %g2 ], %o1
+    12f4:	03 00 00 00 	sethi  %hi(0), %g1
+    12f8:	82 10 60 94 	or  %g1, 0x94, %g1	! 94 <GLIBC_2.0+0x94>
+    12fc:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+    1300:	80 a0 e0 00 	cmp  %g3, 0
+    1304:	02 80 00 07 	be  1320 <dlerror+0x88>
+    1308:	90 10 20 00 	clr  %o0
+    130c:	03 00 00 00 	sethi  %hi(0), %g1
+    1310:	82 10 60 2c 	or  %g1, 0x2c, %g1	! 2c <GLIBC_2.0+0x2c>
+    1314:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1318:	9f c0 c0 00 	call  %g3
+    131c:	d0 00 80 00 	ld  [ %g2 ], %o0
+    1320:	b0 92 20 00 	orcc  %o0, 0, %i0
+    1324:	02 80 00 15 	be  1378 <dlerror+0xe0>
+    1328:	03 00 00 00 	sethi  %hi(0), %g1
+    132c:	c2 06 20 04 	ld  [ %i0 + 4 ], %g1
+    1330:	80 a0 60 00 	cmp  %g1, 0
+    1334:	22 80 00 18 	be,a   1394 <dlerror+0xfc>
+    1338:	d2 06 20 10 	ld  [ %i0 + 0x10 ], %o1
+    133c:	e0 06 20 10 	ld  [ %i0 + 0x10 ], %l0
+    1340:	80 a4 20 00 	cmp  %l0, 0
+    1344:	02 80 00 71 	be  1508 <dlerror+0x270>
+    1348:	d0 07 bf ec 	ld  [ %fp + -20 ], %o0
+    134c:	03 00 00 00 	sethi  %hi(0), %g1
+    1350:	82 10 60 44 	or  %g1, 0x44, %g1	! 44 <GLIBC_2.0+0x44>
+    1354:	d2 05 c0 01 	ld  [ %l7 + %g1 ], %o1
+    1358:	40 00 4b 69 	call  140fc <strcmp@plt>
+    135c:	90 10 00 10 	mov  %l0, %o0
+    1360:	80 a2 20 00 	cmp  %o0, 0
+    1364:	12 80 00 5d 	bne  14d8 <dlerror+0x240>
+    1368:	01 00 00 00 	nop 
+    136c:	c0 26 20 10 	clr  [ %i0 + 0x10 ]
+    1370:	10 80 00 66 	b  1508 <dlerror+0x270>
+    1374:	d0 07 bf ec 	ld  [ %fp + -20 ], %o0
+    1378:	82 10 60 38 	or  %g1, 0x38, %g1
+    137c:	f0 05 c0 01 	ld  [ %l7 + %g1 ], %i0
+    1380:	c2 06 20 04 	ld  [ %i0 + 4 ], %g1
+    1384:	80 a0 60 00 	cmp  %g1, 0
+    1388:	32 bf ff ee 	bne,a   1340 <dlerror+0xa8>
+    138c:	e0 06 20 10 	ld  [ %i0 + 0x10 ], %l0
+    1390:	d2 06 20 10 	ld  [ %i0 + 0x10 ], %o1
+    1394:	80 a2 60 00 	cmp  %o1, 0
+    1398:	02 80 00 5c 	be  1508 <dlerror+0x270>
+    139c:	d0 07 bf ec 	ld  [ %fp + -20 ], %o0
+    13a0:	c2 06 00 00 	ld  [ %i0 ], %g1
+    13a4:	80 a0 60 00 	cmp  %g1, 0
+    13a8:	02 80 00 35 	be  147c <dlerror+0x1e4>
+    13ac:	d2 27 bf ec 	st  %o1, [ %fp + -20 ]
+    13b0:	03 00 00 00 	sethi  %hi(0), %g1
+    13b4:	82 10 60 84 	or  %g1, 0x84, %g1	! 84 <GLIBC_2.0+0x84>
+    13b8:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    13bc:	40 00 4b 68 	call  1415c <__dcgettext@plt>
+    13c0:	94 10 20 05 	mov  5, %o2
+    13c4:	a0 10 00 08 	mov  %o0, %l0
+    13c8:	40 00 4b 53 	call  14114 <strerror@plt>
+    13cc:	d0 06 00 00 	ld  [ %i0 ], %o0
+    13d0:	c2 06 20 0c 	ld  [ %i0 + 0xc ], %g1
+    13d4:	c4 48 40 00 	ldsb  [ %g1 ], %g2
+    13d8:	03 00 00 00 	sethi  %hi(0), %g1
+    13dc:	80 a0 a0 00 	cmp  %g2, 0
+    13e0:	02 80 00 04 	be  13f0 <dlerror+0x158>
+    13e4:	82 10 60 48 	or  %g1, 0x48, %g1
+    13e8:	03 00 00 00 	sethi  %hi(0), %g1
+    13ec:	82 10 60 4c 	or  %g1, 0x4c, %g1	! 4c <GLIBC_2.0+0x4c>
+    13f0:	d6 05 c0 01 	ld  [ %l7 + %g1 ], %o3
+    13f4:	03 00 00 00 	sethi  %hi(0), %g1
+    13f8:	82 10 60 50 	or  %g1, 0x50, %g1	! 50 <GLIBC_2.0+0x50>
+    13fc:	9a 10 00 08 	mov  %o0, %o5
+    1400:	d2 05 c0 01 	ld  [ %l7 + %g1 ], %o1
+    1404:	98 10 00 10 	mov  %l0, %o4
+    1408:	90 07 bf ec 	add  %fp, -20, %o0
+    140c:	40 00 4b 48 	call  1412c <__asprintf@plt>
+    1410:	d4 06 20 0c 	ld  [ %i0 + 0xc ], %o2
+    1414:	80 a2 3f ff 	cmp  %o0, -1
+    1418:	02 80 00 0a 	be  1440 <dlerror+0x1a8>
+    141c:	03 00 00 00 	sethi  %hi(0), %g1
+    1420:	82 10 60 44 	or  %g1, 0x44, %g1	! 44 <GLIBC_2.0+0x44>
+    1424:	d2 05 c0 01 	ld  [ %l7 + %g1 ], %o1
+    1428:	40 00 4b 35 	call  140fc <strcmp@plt>
+    142c:	d0 06 20 10 	ld  [ %i0 + 0x10 ], %o0
+    1430:	80 a2 20 00 	cmp  %o0, 0
+    1434:	12 80 00 2d 	bne  14e8 <dlerror+0x250>
+    1438:	c2 07 bf ec 	ld  [ %fp + -20 ], %g1
+    143c:	c2 26 20 10 	st  %g1, [ %i0 + 0x10 ]
+    1440:	82 10 20 01 	mov  1, %g1
+    1444:	10 bf ff cb 	b  1370 <dlerror+0xd8>
+    1448:	c2 26 20 04 	st  %g1, [ %i0 + 4 ]
+    144c:	82 10 60 3c 	or  %g1, 0x3c, %g1
+    1450:	e0 05 c0 01 	ld  [ %l7 + %g1 ], %l0
+    1454:	c4 04 00 00 	ld  [ %l0 ], %g2
+    1458:	80 a0 a0 00 	cmp  %g2, 0
+    145c:	12 bf ff a7 	bne  12f8 <dlerror+0x60>
+    1460:	03 00 00 00 	sethi  %hi(0), %g1
+    1464:	7f ff ff 71 	call  1228 <init>
+    1468:	01 00 00 00 	nop 
+    146c:	c2 04 00 00 	ld  [ %l0 ], %g1
+    1470:	82 10 60 02 	or  %g1, 2, %g1
+    1474:	10 bf ff a0 	b  12f4 <dlerror+0x5c>
+    1478:	c2 24 00 00 	st  %g1, [ %l0 ]
+    147c:	03 00 00 00 	sethi  %hi(0), %g1
+    1480:	82 10 60 84 	or  %g1, 0x84, %g1	! 84 <GLIBC_2.0+0x84>
+    1484:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    1488:	40 00 4b 35 	call  1415c <__dcgettext@plt>
+    148c:	94 10 20 05 	mov  5, %o2
+    1490:	c2 06 20 0c 	ld  [ %i0 + 0xc ], %g1
+    1494:	c4 48 40 00 	ldsb  [ %g1 ], %g2
+    1498:	03 00 00 00 	sethi  %hi(0), %g1
+    149c:	80 a0 a0 00 	cmp  %g2, 0
+    14a0:	02 80 00 04 	be  14b0 <dlerror+0x218>
+    14a4:	82 10 60 48 	or  %g1, 0x48, %g1
+    14a8:	03 00 00 00 	sethi  %hi(0), %g1
+    14ac:	82 10 60 4c 	or  %g1, 0x4c, %g1	! 4c <GLIBC_2.0+0x4c>
+    14b0:	d6 05 c0 01 	ld  [ %l7 + %g1 ], %o3
+    14b4:	03 00 00 00 	sethi  %hi(0), %g1
+    14b8:	82 10 60 54 	or  %g1, 0x54, %g1	! 54 <GLIBC_2.0+0x54>
+    14bc:	98 10 00 08 	mov  %o0, %o4
+    14c0:	d2 05 c0 01 	ld  [ %l7 + %g1 ], %o1
+    14c4:	90 07 bf ec 	add  %fp, -20, %o0
+    14c8:	40 00 4b 19 	call  1412c <__asprintf@plt>
+    14cc:	d4 06 20 0c 	ld  [ %i0 + 0xc ], %o2
+    14d0:	10 bf ff d2 	b  1418 <dlerror+0x180>
+    14d4:	80 a2 3f ff 	cmp  %o0, -1
+    14d8:	40 00 4b 27 	call  14174 <free@plt>
+    14dc:	90 10 00 10 	mov  %l0, %o0
+    14e0:	10 bf ff a4 	b  1370 <dlerror+0xd8>
+    14e4:	c0 26 20 10 	clr  [ %i0 + 0x10 ]
+    14e8:	40 00 4b 23 	call  14174 <free@plt>
+    14ec:	d0 06 20 10 	ld  [ %i0 + 0x10 ], %o0
+    14f0:	c2 07 bf ec 	ld  [ %fp + -20 ], %g1
+    14f4:	10 bf ff d3 	b  1440 <dlerror+0x1a8>
+    14f8:	c2 26 20 10 	st  %g1, [ %i0 + 0x10 ]
+    14fc:	d0 00 a0 10 	ld  [ %g2 + 0x10 ], %o0
+    1500:	9f c2 00 00 	call  %o0
+    1504:	01 00 00 00 	nop 
+    1508:	81 c7 e0 08 	ret 
+    150c:	91 e8 00 08 	restore  %g0, %o0, %o0
+
+00001510 <_dlerror_run>:
+_dlerror_run():
+    1510:	9d e3 bf 90 	save  %sp, -112, %sp
+    1514:	03 00 00 00 	sethi  %hi(0), %g1
+    1518:	2f 00 00 4a 	sethi  %hi(0x12800), %l7
+    151c:	7f ff ff 41 	call  1220 <dlvsym+0xb8>
+    1520:	ae 05 e2 e4 	add  %l7, 0x2e4, %l7	! 12ae4 <__FRAME_END__+0x10bf4>
+    1524:	82 10 60 7c 	or  %g1, 0x7c, %g1
+    1528:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    152c:	80 a0 a0 00 	cmp  %g2, 0
+    1530:	02 80 00 28 	be  15d0 <_dlerror_run+0xc0>
+    1534:	03 00 00 00 	sethi  %hi(0), %g1
+    1538:	05 00 00 00 	sethi  %hi(0), %g2
+    153c:	82 10 60 3c 	or  %g1, 0x3c, %g1
+    1540:	84 10 a0 28 	or  %g2, 0x28, %g2
+    1544:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    1548:	40 00 4a e7 	call  140e4 <__pthread_once@plt>
+    154c:	d2 05 c0 02 	ld  [ %l7 + %g2 ], %o1
+    1550:	03 00 00 00 	sethi  %hi(0), %g1
+    1554:	82 10 60 34 	or  %g1, 0x34, %g1	! 34 <GLIBC_2.0+0x34>
+    1558:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    155c:	c6 00 80 00 	ld  [ %g2 ], %g3
+    1560:	a0 90 e0 00 	orcc  %g3, 0, %l0
+    1564:	32 80 00 12 	bne,a   15ac <_dlerror_run+0x9c>
+    1568:	d0 04 20 10 	ld  [ %l0 + 0x10 ], %o0
+    156c:	03 00 00 00 	sethi  %hi(0), %g1
+    1570:	82 10 60 94 	or  %g1, 0x94, %g1	! 94 <GLIBC_2.0+0x94>
+    1574:	c8 05 c0 01 	ld  [ %l7 + %g1 ], %g4
+    1578:	80 a1 20 00 	cmp  %g4, 0
+    157c:	02 80 00 08 	be  159c <_dlerror_run+0x8c>
+    1580:	86 10 20 00 	clr  %g3
+    1584:	03 00 00 00 	sethi  %hi(0), %g1
+    1588:	82 10 60 2c 	or  %g1, 0x2c, %g1	! 2c <GLIBC_2.0+0x2c>
+    158c:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1590:	9f c1 00 00 	call  %g4
+    1594:	d0 00 80 00 	ld  [ %g2 ], %o0
+    1598:	86 10 00 08 	mov  %o0, %g3
+    159c:	a0 90 e0 00 	orcc  %g3, 0, %l0
+    15a0:	02 80 00 18 	be  1600 <_dlerror_run+0xf0>
+    15a4:	90 10 20 01 	mov  1, %o0
+    15a8:	d0 04 20 10 	ld  [ %l0 + 0x10 ], %o0
+    15ac:	80 a2 20 00 	cmp  %o0, 0
+    15b0:	02 80 00 2e 	be  1668 <_dlerror_run+0x158>
+    15b4:	03 00 00 00 	sethi  %hi(0), %g1
+    15b8:	c2 0c 20 08 	ldub  [ %l0 + 8 ], %g1
+    15bc:	80 a0 60 00 	cmp  %g1, 0
+    15c0:	12 80 00 21 	bne  1644 <_dlerror_run+0x134>
+    15c4:	01 00 00 00 	nop 
+    15c8:	10 80 00 27 	b  1664 <_dlerror_run+0x154>
+    15cc:	c0 24 20 10 	clr  [ %l0 + 0x10 ]
+    15d0:	82 10 60 3c 	or  %g1, 0x3c, %g1
+    15d4:	e0 05 c0 01 	ld  [ %l7 + %g1 ], %l0
+    15d8:	c4 04 00 00 	ld  [ %l0 ], %g2
+    15dc:	80 a0 a0 00 	cmp  %g2, 0
+    15e0:	12 bf ff dd 	bne  1554 <_dlerror_run+0x44>
+    15e4:	03 00 00 00 	sethi  %hi(0), %g1
+    15e8:	7f ff ff 10 	call  1228 <init>
+    15ec:	01 00 00 00 	nop 
+    15f0:	c2 04 00 00 	ld  [ %l0 ], %g1
+    15f4:	82 10 60 02 	or  %g1, 2, %g1
+    15f8:	10 bf ff d6 	b  1550 <_dlerror_run+0x40>
+    15fc:	c2 24 00 00 	st  %g1, [ %l0 ]
+    1600:	40 00 4a da 	call  14168 <calloc@plt>
+    1604:	92 10 20 14 	mov  0x14, %o1
+    1608:	a0 92 20 00 	orcc  %o0, 0, %l0
+    160c:	02 80 00 12 	be  1654 <_dlerror_run+0x144>
+    1610:	03 00 00 00 	sethi  %hi(0), %g1
+    1614:	82 10 60 ac 	or  %g1, 0xac, %g1	! ac <GLIBC_2.0+0xac>
+    1618:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+    161c:	80 a0 e0 00 	cmp  %g3, 0
+    1620:	02 bf ff e2 	be  15a8 <_dlerror_run+0x98>
+    1624:	03 00 00 00 	sethi  %hi(0), %g1
+    1628:	82 10 60 2c 	or  %g1, 0x2c, %g1	! 2c <GLIBC_2.0+0x2c>
+    162c:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1630:	d0 00 80 00 	ld  [ %g2 ], %o0
+    1634:	9f c0 c0 00 	call  %g3
+    1638:	92 10 00 10 	mov  %l0, %o1
+    163c:	10 bf ff dc 	b  15ac <_dlerror_run+0x9c>
+    1640:	d0 04 20 10 	ld  [ %l0 + 0x10 ], %o0
+    1644:	40 00 4a cc 	call  14174 <free@plt>
+    1648:	01 00 00 00 	nop 
+    164c:	10 80 00 06 	b  1664 <_dlerror_run+0x154>
+    1650:	c0 24 20 10 	clr  [ %l0 + 0x10 ]
+    1654:	03 00 00 00 	sethi  %hi(0), %g1
+    1658:	82 10 60 38 	or  %g1, 0x38, %g1	! 38 <GLIBC_2.0+0x38>
+    165c:	10 bf ff d3 	b  15a8 <_dlerror_run+0x98>
+    1660:	e0 05 c0 01 	ld  [ %l7 + %g1 ], %l0
+    1664:	03 00 00 00 	sethi  %hi(0), %g1
+    1668:	82 10 60 98 	or  %g1, 0x98, %g1	! 98 <GLIBC_2.0+0x98>
+    166c:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1670:	c6 00 a0 b0 	ld  [ %g2 + 0xb0 ], %g3
+    1674:	96 10 00 18 	mov  %i0, %o3
+    1678:	98 10 00 19 	mov  %i1, %o4
+    167c:	90 04 20 0c 	add  %l0, 0xc, %o0
+    1680:	92 04 20 10 	add  %l0, 0x10, %o1
+    1684:	9f c0 c0 00 	call  %g3
+    1688:	94 04 20 08 	add  %l0, 8, %o2
+    168c:	c2 04 20 10 	ld  [ %l0 + 0x10 ], %g1
+    1690:	80 a0 00 01 	cmp  %g0, %g1
+    1694:	84 60 3f ff 	subx  %g0, -1, %g2
+    1698:	80 a0 00 01 	cmp  %g0, %g1
+    169c:	c4 24 20 04 	st  %g2, [ %l0 + 4 ]
+    16a0:	d0 24 00 00 	st  %o0, [ %l0 ]
+    16a4:	b0 40 20 00 	addx  %g0, 0, %i0
+    16a8:	81 c7 e0 08 	ret 
+    16ac:	81 e8 00 00 	restore 
+
+000016b0 <check_free>:
+check_free():
+    16b0:	9d e3 bf 78 	save  %sp, -136, %sp
+    16b4:	05 00 00 00 	sethi  %hi(0), %g2
+    16b8:	c2 06 20 10 	ld  [ %i0 + 0x10 ], %g1
+    16bc:	2f 00 00 4a 	sethi  %hi(0x12800), %l7
+    16c0:	7f ff fe d8 	call  1220 <dlvsym+0xb8>
+    16c4:	ae 05 e1 40 	add  %l7, 0x140, %l7	! 12940 <__FRAME_END__+0x10a50>
+    16c8:	90 90 60 00 	orcc  %g1, 0, %o0
+    16cc:	02 80 00 1a 	be  1734 <check_free+0x84>
+    16d0:	84 10 a0 44 	or  %g2, 0x44, %g2
+    16d4:	40 00 4a 8a 	call  140fc <strcmp@plt>
+    16d8:	d2 05 c0 02 	ld  [ %l7 + %g2 ], %o1
+    16dc:	03 00 00 00 	sethi  %hi(0), %g1
+    16e0:	82 10 60 40 	or  %g1, 0x40, %g1	! 40 <GLIBC_2.0+0x40>
+    16e4:	92 07 bf e0 	add  %fp, -32, %o1
+    16e8:	94 07 bf dc 	add  %fp, -36, %o2
+    16ec:	80 a2 20 00 	cmp  %o0, 0
+    16f0:	02 80 00 11 	be  1734 <check_free+0x84>
+    16f4:	96 10 20 00 	clr  %o3
+    16f8:	c0 27 bf dc 	clr  [ %fp + -36 ]
+    16fc:	40 00 4a 8f 	call  14138 <_dl_addr@plt>
+    1700:	d0 05 c0 01 	ld  [ %l7 + %g1 ], %o0
+    1704:	80 a2 20 00 	cmp  %o0, 0
+    1708:	02 80 00 0b 	be  1734 <check_free+0x84>
+    170c:	c2 07 bf dc 	ld  [ %fp + -36 ], %g1
+    1710:	80 a0 60 00 	cmp  %g1, 0
+    1714:	02 80 00 08 	be  1734 <check_free+0x84>
+    1718:	01 00 00 00 	nop 
+    171c:	c2 00 60 18 	ld  [ %g1 + 0x18 ], %g1
+    1720:	80 a0 60 00 	cmp  %g1, 0
+    1724:	12 80 00 04 	bne  1734 <check_free+0x84>
+    1728:	01 00 00 00 	nop 
+    172c:	40 00 4a 92 	call  14174 <free@plt>
+    1730:	d0 06 20 10 	ld  [ %i0 + 0x10 ], %o0
+    1734:	01 00 00 00 	nop 
+    1738:	81 c7 e0 08 	ret 
+    173c:	81 e8 00 00 	restore 
+
+00001740 <fini>:
+fini():
+    1740:	9d e3 bf 90 	save  %sp, -112, %sp
+    1744:	03 00 00 00 	sethi  %hi(0), %g1
+    1748:	2f 00 00 4a 	sethi  %hi(0x12800), %l7
+    174c:	7f ff fe b5 	call  1220 <dlvsym+0xb8>
+    1750:	ae 05 e0 b4 	add  %l7, 0xb4, %l7	! 128b4 <__FRAME_END__+0x109c4>
+    1754:	82 10 60 38 	or  %g1, 0x38, %g1
+    1758:	f0 05 c0 01 	ld  [ %l7 + %g1 ], %i0
+    175c:	10 bf ff d5 	b  16b0 <check_free>
+    1760:	81 e8 00 00 	restore 
+    1764:	01 00 00 00 	nop 
+
+00001768 <free_key_mem>:
+free_key_mem():
+    1768:	9d e3 bf 90 	save  %sp, -112, %sp
+    176c:	2f 00 00 4a 	sethi  %hi(0x12800), %l7
+    1770:	7f ff fe ac 	call  1220 <dlvsym+0xb8>
+    1774:	ae 05 e0 90 	add  %l7, 0x90, %l7	! 12890 <__FRAME_END__+0x109a0>
+    1778:	7f ff ff ce 	call  16b0 <check_free>
+    177c:	90 10 00 18 	mov  %i0, %o0
+    1780:	40 00 4a 7d 	call  14174 <free@plt>
+    1784:	90 10 00 18 	mov  %i0, %o0
+    1788:	03 00 00 00 	sethi  %hi(0), %g1
+    178c:	82 10 60 ac 	or  %g1, 0xac, %g1	! ac <GLIBC_2.0+0xac>
+    1790:	05 00 00 00 	sethi  %hi(0), %g2
+    1794:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+    1798:	84 10 a0 2c 	or  %g2, 0x2c, %g2
+    179c:	80 a0 e0 00 	cmp  %g3, 0
+    17a0:	02 80 00 05 	be  17b4 <free_key_mem+0x4c>
+    17a4:	92 10 20 00 	clr  %o1
+    17a8:	c2 05 c0 02 	ld  [ %l7 + %g2 ], %g1
+    17ac:	9f c0 c0 00 	call  %g3
+    17b0:	d0 00 40 00 	ld  [ %g1 ], %o0
+    17b4:	01 00 00 00 	nop 
+    17b8:	81 c7 e0 08 	ret 
+    17bc:	81 e8 00 00 	restore 
+    17c0:	81 c3 e0 08 	retl 
+    17c4:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+000017c8 <dladdr>:
+dladdr():
+    17c8:	9d e3 bf 90 	save  %sp, -112, %sp
+    17cc:	03 00 00 00 	sethi  %hi(0), %g1
+    17d0:	2f 00 00 4a 	sethi  %hi(0x12800), %l7
+    17d4:	7f ff ff fb 	call  17c0 <free_key_mem+0x58>
+    17d8:	ae 05 e0 2c 	add  %l7, 0x2c, %l7	! 1282c <__FRAME_END__+0x1093c>
+    17dc:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    17e0:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    17e4:	c4 00 80 00 	ld  [ %g2 ], %g2
+    17e8:	b4 10 20 00 	clr  %i2
+    17ec:	b6 10 20 00 	clr  %i3
+    17f0:	80 a0 a0 00 	cmp  %g2, 0
+    17f4:	90 10 00 18 	mov  %i0, %o0
+    17f8:	12 80 00 04 	bne  1808 <dladdr+0x40>
+    17fc:	92 10 00 19 	mov  %i1, %o1
+    1800:	10 80 4a 4e 	b  14138 <_dl_addr@plt>
+    1804:	81 e8 00 00 	restore 
+    1808:	c2 00 a0 14 	ld  [ %g2 + 0x14 ], %g1
+    180c:	9f c0 40 00 	call  %g1
+    1810:	01 00 00 00 	nop 
+    1814:	81 c7 e0 08 	ret 
+    1818:	91 e8 00 08 	restore  %g0, %o0, %o0
+    181c:	81 c3 e0 08 	retl 
+    1820:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001824 <dladdr1>:
+dladdr1():
+    1824:	9d e3 bf 90 	save  %sp, -112, %sp
+    1828:	03 00 00 00 	sethi  %hi(0), %g1
+    182c:	2f 00 00 49 	sethi  %hi(0x12400), %l7
+    1830:	7f ff ff fb 	call  181c <dladdr+0x54>
+    1834:	ae 05 e3 d0 	add  %l7, 0x3d0, %l7	! 127d0 <__FRAME_END__+0x108e0>
+    1838:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    183c:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1840:	c4 00 80 00 	ld  [ %g2 ], %g2
+    1844:	82 10 00 1b 	mov  %i3, %g1
+    1848:	96 10 00 1b 	mov  %i3, %o3
+    184c:	80 a0 a0 00 	cmp  %g2, 0
+    1850:	90 10 00 18 	mov  %i0, %o0
+    1854:	b6 10 00 1a 	mov  %i2, %i3
+    1858:	94 10 00 1a 	mov  %i2, %o2
+    185c:	12 80 00 0b 	bne  1888 <dladdr1+0x64>
+    1860:	92 10 00 19 	mov  %i1, %o1
+    1864:	80 a0 60 01 	cmp  %g1, 1
+    1868:	02 80 00 04 	be  1878 <dladdr1+0x54>
+    186c:	80 a0 60 02 	cmp  %g1, 2
+    1870:	02 80 00 04 	be  1880 <dladdr1+0x5c>
+    1874:	b6 10 20 00 	clr  %i3
+    1878:	10 80 4a 30 	b  14138 <_dl_addr@plt>
+    187c:	95 e8 20 00 	restore  %g0, 0, %o2
+    1880:	10 80 4a 2e 	b  14138 <_dl_addr@plt>
+    1884:	81 e8 00 00 	restore 
+    1888:	c2 00 a0 18 	ld  [ %g2 + 0x18 ], %g1
+    188c:	9f c0 40 00 	call  %g1
+    1890:	01 00 00 00 	nop 
+    1894:	81 c7 e0 08 	ret 
+    1898:	91 e8 00 08 	restore  %g0, %o0, %o0
+    189c:	00 00 00 74 	unimp  0x74
+    18a0:	00 00 00 c0 	unimp  0xc0
+    18a4:	00 00 00 d0 	unimp  0xd0
+    18a8:	00 00 00 74 	unimp  0x74
+    18ac:	00 00 00 dc 	unimp  0xdc
+    18b0:	00 00 00 ec 	unimp  0xec
+    18b4:	00 00 00 fc 	unimp  0xfc
+    18b8:	00 00 00 74 	unimp  0x74
+    18bc:	00 00 00 74 	unimp  0x74
+    18c0:	00 00 01 0c 	unimp  0x10c
+    18c4:	00 00 00 a4 	unimp  0xa4
+    18c8:	81 c3 e0 08 	retl 
+    18cc:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+000018d0 <dlinfo_doit>:
+dlinfo_doit():
+    18d0:	9d e3 bf 90 	save  %sp, -112, %sp
+    18d4:	c4 06 20 08 	ld  [ %i0 + 8 ], %g2
+    18d8:	2f 00 00 49 	sethi  %hi(0x12400), %l7
+    18dc:	7f ff ff fb 	call  18c8 <dladdr1+0xa4>
+    18e0:	ae 05 e3 24 	add  %l7, 0x324, %l7	! 12724 <__FRAME_END__+0x10834>
+    18e4:	b4 10 00 18 	mov  %i0, %i2
+    18e8:	80 a0 a0 0a 	cmp  %g2, 0xa
+    18ec:	18 80 00 09 	bgu  1910 <dlinfo_doit+0x40>
+    18f0:	d0 06 20 04 	ld  [ %i0 + 4 ], %o0
+    18f4:	03 00 00 49 	sethi  %hi(0x12400), %g1
+    18f8:	82 10 63 64 	or  %g1, 0x364, %g1	! 12764 <__FRAME_END__+0x10874>
+    18fc:	86 25 c0 01 	sub  %l7, %g1, %g3
+    1900:	85 28 a0 02 	sll  %g2, 2, %g2
+    1904:	c2 00 c0 02 	ld  [ %g3 + %g2 ], %g1
+    1908:	81 c0 40 03 	jmp  %g1 + %g3
+    190c:	01 00 00 00 	nop 
+    1910:	03 00 00 00 	sethi  %hi(0), %g1
+    1914:	82 10 60 98 	or  %g1, 0x98, %g1	! 98 <GLIBC_2.0+0x98>
+    1918:	05 00 00 00 	sethi  %hi(0), %g2
+    191c:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+    1920:	84 10 a0 5c 	or  %g2, 0x5c, %g2
+    1924:	c2 00 e0 b4 	ld  [ %g3 + 0xb4 ], %g1
+    1928:	d6 05 c0 02 	ld  [ %l7 + %g2 ], %o3
+    192c:	90 10 20 00 	clr  %o0
+    1930:	92 10 20 00 	clr  %o1
+    1934:	9f c0 40 00 	call  %g1
+    1938:	94 10 20 00 	clr  %o2
+    193c:	30 80 00 25 	b,a   19d0 <dlinfo_doit+0x100>
+    1940:	c2 02 22 40 	ld  [ %o0 + 0x240 ], %g1
+    1944:	80 a0 60 00 	cmp  %g1, 0
+    1948:	12 80 00 1d 	bne  19bc <dlinfo_doit+0xec>
+    194c:	84 10 20 00 	clr  %g2
+    1950:	c2 06 a0 0c 	ld  [ %i2 + 0xc ], %g1
+    1954:	10 80 00 1f 	b  19d0 <dlinfo_doit+0x100>
+    1958:	c4 20 40 00 	st  %g2, [ %g1 ]
+    195c:	c4 06 20 0c 	ld  [ %i0 + 0xc ], %g2
+    1960:	c2 02 20 18 	ld  [ %o0 + 0x18 ], %g1
+    1964:	10 80 00 1b 	b  19d0 <dlinfo_doit+0x100>
+    1968:	c2 20 80 00 	st  %g1, [ %g2 ]
+    196c:	c2 06 20 0c 	ld  [ %i0 + 0xc ], %g1
+    1970:	10 80 00 18 	b  19d0 <dlinfo_doit+0x100>
+    1974:	d0 20 40 00 	st  %o0, [ %g1 ]
+    1978:	f2 06 a0 0c 	ld  [ %i2 + 0xc ], %i1
+    197c:	b0 10 00 08 	mov  %o0, %i0
+    1980:	10 80 49 dc 	b  140f0 <_dl_rtld_di_serinfo@plt>
+    1984:	95 e8 20 00 	restore  %g0, 0, %o2
+    1988:	f2 06 a0 0c 	ld  [ %i2 + 0xc ], %i1
+    198c:	b0 10 00 08 	mov  %o0, %i0
+    1990:	10 80 49 d8 	b  140f0 <_dl_rtld_di_serinfo@plt>
+    1994:	95 e8 20 01 	restore  %g0, 1, %o2
+    1998:	f0 06 20 0c 	ld  [ %i0 + 0xc ], %i0
+    199c:	f2 02 21 b0 	ld  [ %o0 + 0x1b0 ], %i1
+    19a0:	10 80 49 fb 	b  1418c <strcpy@plt>
+    19a4:	81 e8 00 00 	restore 
+    19a8:	c4 06 20 0c 	ld  [ %i0 + 0xc ], %g2
+    19ac:	c0 20 80 00 	clr  [ %g2 ]
+    19b0:	c2 02 22 40 	ld  [ %o0 + 0x240 ], %g1
+    19b4:	10 80 00 07 	b  19d0 <dlinfo_doit+0x100>
+    19b8:	c2 20 80 00 	st  %g1, [ %g2 ]
+    19bc:	40 00 49 d9 	call  14120 <_dl_tls_get_addr_soft@plt>
+    19c0:	01 00 00 00 	nop 
+    19c4:	84 10 00 08 	mov  %o0, %g2
+    19c8:	c2 06 a0 0c 	ld  [ %i2 + 0xc ], %g1
+    19cc:	c4 20 40 00 	st  %g2, [ %g1 ]
+    19d0:	81 c7 e0 08 	ret 
+    19d4:	81 e8 00 00 	restore 
+
+000019d8 <dlinfo>:
+dlinfo():
+    19d8:	9d e3 bf 70 	save  %sp, -144, %sp
+    19dc:	03 00 00 00 	sethi  %hi(0), %g1
+    19e0:	2f 00 00 49 	sethi  %hi(0x12400), %l7
+    19e4:	7f ff ff b9 	call  18c8 <dladdr1+0xa4>
+    19e8:	ae 05 e2 1c 	add  %l7, 0x21c, %l7	! 1261c <__FRAME_END__+0x1072c>
+    19ec:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    19f0:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    19f4:	88 07 e0 08 	add  %i7, 8, %g4
+    19f8:	07 00 00 00 	sethi  %hi(0), %g3
+    19fc:	c4 00 80 00 	ld  [ %g2 ], %g2
+    1a00:	86 10 e0 58 	or  %g3, 0x58, %g3
+    1a04:	96 10 00 04 	mov  %g4, %o3
+    1a08:	92 07 bf e0 	add  %fp, -32, %o1
+    1a0c:	90 10 00 18 	mov  %i0, %o0
+    1a10:	80 a0 a0 00 	cmp  %g2, 0
+    1a14:	12 80 00 0f 	bne  1a50 <dlinfo+0x78>
+    1a18:	94 10 00 1a 	mov  %i2, %o2
+    1a1c:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+    1a20:	c8 27 bf d0 	st  %g4, [ %fp + -48 ]
+    1a24:	f0 27 bf d4 	st  %i0, [ %fp + -44 ]
+    1a28:	f2 27 bf d8 	st  %i1, [ %fp + -40 ]
+    1a2c:	f4 27 bf dc 	st  %i2, [ %fp + -36 ]
+    1a30:	c4 1f bf d0 	ldd  [ %fp + -48 ], %g2
+    1a34:	d8 1f bf d8 	ldd  [ %fp + -40 ], %o4
+    1a38:	c4 3f bf e0 	std  %g2, [ %fp + -32 ]
+    1a3c:	7f ff fe b5 	call  1510 <_dlerror_run>
+    1a40:	d8 3f bf e8 	std  %o4, [ %fp + -24 ]
+    1a44:	80 a0 00 08 	cmp  %g0, %o0
+    1a48:	10 80 00 05 	b  1a5c <dlinfo+0x84>
+    1a4c:	90 60 20 00 	subx  %g0, 0, %o0
+    1a50:	c2 00 a0 1c 	ld  [ %g2 + 0x1c ], %g1
+    1a54:	9f c0 40 00 	call  %g1
+    1a58:	92 10 00 19 	mov  %i1, %o1
+    1a5c:	81 c7 e0 08 	ret 
+    1a60:	91 e8 00 08 	restore  %g0, %o0, %o0
+    1a64:	81 c3 e0 08 	retl 
+    1a68:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001a6c <dlmopen_doit>:
+dlmopen_doit():
+    1a6c:	9d e3 bf 88 	save  %sp, -120, %sp
+    1a70:	c2 06 00 00 	ld  [ %i0 ], %g1
+    1a74:	2f 00 00 49 	sethi  %hi(0x12400), %l7
+    1a78:	7f ff ff fb 	call  1a64 <dlinfo+0x8c>
+    1a7c:	ae 05 e1 88 	add  %l7, 0x188, %l7	! 12588 <__FRAME_END__+0x10698>
+    1a80:	80 a0 60 00 	cmp  %g1, 0
+    1a84:	02 80 00 18 	be  1ae4 <dlmopen_doit+0x78>
+    1a88:	21 00 00 00 	sethi  %hi(0), %l0
+    1a8c:	07 00 00 00 	sethi  %hi(0), %g3
+    1a90:	c2 06 20 04 	ld  [ %i0 + 4 ], %g1
+    1a94:	86 10 e0 64 	or  %g3, 0x64, %g3
+    1a98:	80 a0 60 00 	cmp  %g1, 0
+    1a9c:	90 10 20 16 	mov  0x16, %o0
+    1aa0:	92 10 20 00 	clr  %o1
+    1aa4:	02 80 00 23 	be  1b30 <dlmopen_doit+0xc4>
+    1aa8:	94 10 20 00 	clr  %o2
+    1aac:	07 00 00 00 	sethi  %hi(0), %g3
+    1ab0:	c2 06 20 08 	ld  [ %i0 + 8 ], %g1
+    1ab4:	84 14 20 98 	or  %l0, 0x98, %g2
+    1ab8:	86 10 e0 68 	or  %g3, 0x68, %g3
+    1abc:	90 10 20 16 	mov  0x16, %o0
+    1ac0:	80 88 61 00 	btst  0x100, %g1
+    1ac4:	02 80 00 09 	be  1ae8 <dlmopen_doit+0x7c>
+    1ac8:	01 00 00 00 	nop 
+    1acc:	c2 05 c0 02 	ld  [ %l7 + %g2 ], %g1
+    1ad0:	c4 00 60 b4 	ld  [ %g1 + 0xb4 ], %g2
+    1ad4:	9f c0 80 00 	call  %g2
+    1ad8:	d6 05 c0 03 	ld  [ %l7 + %g3 ], %o3
+    1adc:	10 80 00 03 	b  1ae8 <dlmopen_doit+0x7c>
+    1ae0:	c2 06 20 08 	ld  [ %i0 + 8 ], %g1
+    1ae4:	c2 06 20 08 	ld  [ %i0 + 8 ], %g1
+    1ae8:	13 20 00 00 	sethi  %hi(0x80000000), %o1
+    1aec:	92 10 40 09 	or  %g1, %o1, %o1
+    1af0:	c2 06 20 04 	ld  [ %i0 + 4 ], %g1
+    1af4:	19 00 00 00 	sethi  %hi(0), %o4
+    1af8:	09 00 00 00 	sethi  %hi(0), %g4
+    1afc:	1b 00 00 00 	sethi  %hi(0), %o5
+    1b00:	84 14 20 98 	or  %l0, 0x98, %g2
+    1b04:	07 00 00 00 	sethi  %hi(0), %g3
+    1b08:	98 13 20 a0 	or  %o4, 0xa0, %o4
+    1b0c:	88 11 20 a4 	or  %g4, 0xa4, %g4
+    1b10:	9a 13 60 9c 	or  %o5, 0x9c, %o5
+    1b14:	90 10 00 01 	mov  %g1, %o0
+    1b18:	d6 05 c0 02 	ld  [ %l7 + %g2 ], %o3
+    1b1c:	80 a0 60 00 	cmp  %g1, 0
+    1b20:	12 80 00 14 	bne  1b70 <dlmopen_doit+0x104>
+    1b24:	86 10 e0 6c 	or  %g3, 0x6c, %g3
+    1b28:	10 80 00 12 	b  1b70 <dlmopen_doit+0x104>
+    1b2c:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+    1b30:	82 14 20 98 	or  %l0, 0x98, %g1
+    1b34:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1b38:	c2 00 a0 b4 	ld  [ %g2 + 0xb4 ], %g1
+    1b3c:	9f c0 40 00 	call  %g1
+    1b40:	d6 05 c0 03 	ld  [ %l7 + %g3 ], %o3
+    1b44:	07 00 00 00 	sethi  %hi(0), %g3
+    1b48:	c2 06 20 08 	ld  [ %i0 + 8 ], %g1
+    1b4c:	84 14 20 98 	or  %l0, 0x98, %g2
+    1b50:	86 10 e0 68 	or  %g3, 0x68, %g3
+    1b54:	90 10 20 16 	mov  0x16, %o0
+    1b58:	92 10 20 00 	clr  %o1
+    1b5c:	80 88 61 00 	btst  0x100, %g1
+    1b60:	02 bf ff e2 	be  1ae8 <dlmopen_doit+0x7c>
+    1b64:	94 10 20 00 	clr  %o2
+    1b68:	10 bf ff da 	b  1ad0 <dlmopen_doit+0x64>
+    1b6c:	c2 05 c0 02 	ld  [ %l7 + %g2 ], %g1
+    1b70:	c4 05 c0 0c 	ld  [ %l7 + %o4 ], %g2
+    1b74:	c6 05 c0 04 	ld  [ %l7 + %g4 ], %g3
+    1b78:	c2 00 80 00 	ld  [ %g2 ], %g1
+    1b7c:	c2 23 a0 5c 	st  %g1, [ %sp + 0x5c ]
+    1b80:	c8 05 c0 0d 	ld  [ %l7 + %o5 ], %g4
+    1b84:	c4 02 e0 c4 	ld  [ %o3 + 0xc4 ], %g2
+    1b88:	d8 00 c0 00 	ld  [ %g3 ], %o4
+    1b8c:	da 01 00 00 	ld  [ %g4 ], %o5
+    1b90:	d4 06 20 10 	ld  [ %i0 + 0x10 ], %o2
+    1b94:	9f c0 80 00 	call  %g2
+    1b98:	d6 06 00 00 	ld  [ %i0 ], %o3
+    1b9c:	d0 26 20 0c 	st  %o0, [ %i0 + 0xc ]
+    1ba0:	81 c7 e0 08 	ret 
+    1ba4:	81 e8 00 00 	restore 
+
+00001ba8 <dlmopen>:
+dlmopen():
+    1ba8:	9d e3 bf 78 	save  %sp, -136, %sp
+    1bac:	03 00 00 00 	sethi  %hi(0), %g1
+    1bb0:	2f 00 00 49 	sethi  %hi(0x12400), %l7
+    1bb4:	7f ff ff ac 	call  1a64 <dlinfo+0x8c>
+    1bb8:	ae 05 e0 4c 	add  %l7, 0x4c, %l7	! 1244c <__FRAME_END__+0x1055c>
+    1bbc:	82 10 60 8c 	or  %g1, 0x8c, %g1
+    1bc0:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1bc4:	07 00 00 00 	sethi  %hi(0), %g3
+    1bc8:	88 07 e0 08 	add  %i7, 8, %g4
+    1bcc:	c4 00 80 00 	ld  [ %g2 ], %g2
+    1bd0:	86 10 e0 60 	or  %g3, 0x60, %g3
+    1bd4:	92 07 bf d8 	add  %fp, -40, %o1
+    1bd8:	96 10 00 04 	mov  %g4, %o3
+    1bdc:	90 10 00 18 	mov  %i0, %o0
+    1be0:	80 a0 a0 00 	cmp  %g2, 0
+    1be4:	12 80 00 0c 	bne  1c14 <dlmopen+0x6c>
+    1be8:	94 10 00 1a 	mov  %i2, %o2
+    1bec:	f0 3f bf d8 	std  %i0, [ %fp + -40 ]
+    1bf0:	f4 27 bf e0 	st  %i2, [ %fp + -32 ]
+    1bf4:	c8 27 bf e8 	st  %g4, [ %fp + -24 ]
+    1bf8:	7f ff fe 46 	call  1510 <_dlerror_run>
+    1bfc:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+    1c00:	80 a2 20 00 	cmp  %o0, 0
+    1c04:	12 80 00 07 	bne  1c20 <dlmopen+0x78>
+    1c08:	90 10 20 00 	clr  %o0
+    1c0c:	10 80 00 05 	b  1c20 <dlmopen+0x78>
+    1c10:	d0 07 bf e4 	ld  [ %fp + -28 ], %o0
+    1c14:	c2 00 a0 20 	ld  [ %g2 + 0x20 ], %g1
+    1c18:	9f c0 40 00 	call  %g1
+    1c1c:	92 10 00 19 	mov  %i1, %o1
+    1c20:	81 c7 e0 08 	ret 
+    1c24:	91 e8 00 08 	restore  %g0, %o0, %o0
+    1c28:	81 c3 e0 08 	retl 
+    1c2c:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001c30 <init>:
+init():
+    1c30:	9d e3 bf 90 	save  %sp, -112, %sp
+    1c34:	03 00 00 00 	sethi  %hi(0), %g1
+    1c38:	05 00 00 00 	sethi  %hi(0), %g2
+    1c3c:	2f 00 00 48 	sethi  %hi(0x12000), %l7
+    1c40:	7f ff ff fa 	call  1c28 <dlmopen+0x80>
+    1c44:	ae 05 e3 c0 	add  %l7, 0x3c0, %l7	! 123c0 <__FRAME_END__+0x104d0>
+    1c48:	82 10 60 a4 	or  %g1, 0xa4, %g1
+    1c4c:	84 10 a0 9c 	or  %g2, 0x9c, %g2
+    1c50:	c6 05 c0 01 	ld  [ %l7 + %g1 ], %g3
+    1c54:	c8 05 c0 02 	ld  [ %l7 + %g2 ], %g4
+    1c58:	f0 20 c0 00 	st  %i0, [ %g3 ]
+    1c5c:	f2 21 00 00 	st  %i1, [ %g4 ]
+    1c60:	81 c7 e0 08 	ret 
+    1c64:	81 e8 00 00 	restore 
+    1c68:	81 c3 e0 08 	retl 
+    1c6c:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001c70 <dlopen_doit>:
+dlopen_doit():
+    1c70:	9d e3 bf 88 	save  %sp, -120, %sp
+    1c74:	c4 06 00 00 	ld  [ %i0 ], %g2
+    1c78:	90 10 00 02 	mov  %g2, %o0
+    1c7c:	03 00 00 00 	sethi  %hi(0), %g1
+    1c80:	2f 00 00 48 	sethi  %hi(0x12000), %l7
+    1c84:	7f ff ff f9 	call  1c68 <init+0x38>
+    1c88:	ae 05 e3 7c 	add  %l7, 0x37c, %l7	! 1237c <__FRAME_END__+0x1048c>
+    1c8c:	07 00 00 00 	sethi  %hi(0), %g3
+    1c90:	09 00 00 00 	sethi  %hi(0), %g4
+    1c94:	1b 00 00 00 	sethi  %hi(0), %o5
+    1c98:	82 10 60 98 	or  %g1, 0x98, %g1
+    1c9c:	05 00 00 00 	sethi  %hi(0), %g2
+    1ca0:	86 10 e0 a0 	or  %g3, 0xa0, %g3
+    1ca4:	88 11 20 a4 	or  %g4, 0xa4, %g4
+    1ca8:	9a 13 60 9c 	or  %o5, 0x9c, %o5
+    1cac:	80 a2 20 00 	cmp  %o0, 0
+    1cb0:	d8 05 c0 01 	ld  [ %l7 + %g1 ], %o4
+    1cb4:	12 80 00 03 	bne  1cc0 <dlopen_doit+0x50>
+    1cb8:	84 10 a0 74 	or  %g2, 0x74, %g2
+    1cbc:	d0 05 c0 02 	ld  [ %l7 + %g2 ], %o0
+    1cc0:	c2 06 00 00 	ld  [ %i0 ], %g1
+    1cc4:	80 a0 00 01 	cmp  %g0, %g1
+    1cc8:	c6 05 c0 03 	ld  [ %l7 + %g3 ], %g3
+    1ccc:	c2 00 c0 00 	ld  [ %g3 ], %g1
+    1cd0:	c2 23 a0 5c 	st  %g1, [ %sp + 0x5c ]
+    1cd4:	d4 05 c0 0d 	ld  [ %l7 + %o5 ], %o2
+    1cd8:	96 60 20 00 	subx  %g0, 0, %o3
+    1cdc:	c8 05 c0 04 	ld  [ %l7 + %g4 ], %g4
+    1ce0:	c4 06 20 04 	ld  [ %i0 + 4 ], %g2
+    1ce4:	c2 03 20 c4 	ld  [ %o4 + 0xc4 ], %g1
+    1ce8:	da 02 80 00 	ld  [ %o2 ], %o5
+    1cec:	13 20 00 00 	sethi  %hi(0x80000000), %o1
+    1cf0:	92 10 80 09 	or  %g2, %o1, %o1
+    1cf4:	96 0a ff fe 	and  %o3, -2, %o3
+    1cf8:	d8 01 00 00 	ld  [ %g4 ], %o4
+    1cfc:	9f c0 40 00 	call  %g1
+    1d00:	d4 06 20 0c 	ld  [ %i0 + 0xc ], %o2
+    1d04:	d0 26 20 08 	st  %o0, [ %i0 + 8 ]
+    1d08:	81 c7 e0 08 	ret 
+    1d0c:	81 e8 00 00 	restore 
+
+00001d10 <dlopen@GLIBC_2.0>:
+dlopen@GLIBC_2.0():
+    1d10:	9d e3 bf 80 	save  %sp, -128, %sp
+    1d14:	82 07 e0 08 	add  %i7, 8, %g1
+    1d18:	07 00 00 00 	sethi  %hi(0), %g3
+    1d1c:	2f 00 00 48 	sethi  %hi(0x12000), %l7
+    1d20:	7f ff ff d2 	call  1c68 <init+0x38>
+    1d24:	ae 05 e2 e0 	add  %l7, 0x2e0, %l7	! 122e0 <__FRAME_END__+0x103f0>
+    1d28:	86 10 e0 70 	or  %g3, 0x70, %g3
+    1d2c:	92 07 bf e0 	add  %fp, -32, %o1
+    1d30:	94 10 00 01 	mov  %g1, %o2
+    1d34:	90 10 00 18 	mov  %i0, %o0
+    1d38:	80 8e 60 03 	btst  3, %i1
+    1d3c:	f0 27 bf e0 	st  %i0, [ %fp + -32 ]
+    1d40:	12 80 00 03 	bne  1d4c <dlopen@GLIBC_2.0+0x3c>
+    1d44:	c2 27 bf ec 	st  %g1, [ %fp + -20 ]
+    1d48:	b2 16 60 01 	or  %i1, 1, %i1
+    1d4c:	03 00 00 00 	sethi  %hi(0), %g1
+    1d50:	82 10 60 8c 	or  %g1, 0x8c, %g1	! 8c <GLIBC_2.0+0x8c>
+    1d54:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1d58:	c2 00 80 00 	ld  [ %g2 ], %g1
+    1d5c:	80 a0 60 00 	cmp  %g1, 0
+    1d60:	12 80 00 09 	bne  1d84 <dlopen@GLIBC_2.0+0x74>
+    1d64:	f2 27 bf e4 	st  %i1, [ %fp + -28 ]
+    1d68:	7f ff fd ea 	call  1510 <_dlerror_run>
+    1d6c:	d0 05 c0 03 	ld  [ %l7 + %g3 ], %o0
+    1d70:	80 a2 20 00 	cmp  %o0, 0
+    1d74:	12 80 00 07 	bne  1d90 <dlopen@GLIBC_2.0+0x80>
+    1d78:	90 10 20 00 	clr  %o0
+    1d7c:	10 80 00 05 	b  1d90 <dlopen@GLIBC_2.0+0x80>
+    1d80:	d0 07 bf e8 	ld  [ %fp + -24 ], %o0
+    1d84:	c2 00 40 00 	ld  [ %g1 ], %g1
+    1d88:	9f c0 40 00 	call  %g1
+    1d8c:	92 10 00 19 	mov  %i1, %o1
+    1d90:	81 c7 e0 08 	ret 
+    1d94:	91 e8 00 08 	restore  %g0, %o0, %o0
+    1d98:	81 c3 e0 08 	retl 
+    1d9c:	ae 03 c0 17 	add  %o7, %l7, %l7
+
+00001da0 <__do_global_ctors_aux>:
+__do_global_ctors_aux():
+    1da0:	9d e3 bf 98 	save  %sp, -104, %sp
+    1da4:	03 00 00 00 	sethi  %hi(0), %g1
+    1da8:	2f 00 00 48 	sethi  %hi(0x12000), %l7
+    1dac:	7f ff ff fb 	call  1d98 <dlopen@GLIBC_2.0+0x88>
+    1db0:	ae 05 e2 54 	add  %l7, 0x254, %l7	! 12254 <__FRAME_END__+0x10364>
+    1db4:	82 10 60 78 	or  %g1, 0x78, %g1
+    1db8:	c4 05 c0 01 	ld  [ %l7 + %g1 ], %g2
+    1dbc:	c2 00 bf fc 	ld  [ %g2 + -4 ], %g1
+    1dc0:	80 a0 7f ff 	cmp  %g1, -1
+    1dc4:	02 80 00 08 	be  1de4 <__do_global_ctors_aux+0x44>
+    1dc8:	a0 00 bf fc 	add  %g2, -4, %l0
+    1dcc:	9f c0 40 00 	call  %g1
+    1dd0:	a0 04 3f fc 	add  %l0, -4, %l0
+    1dd4:	c2 04 00 00 	ld  [ %l0 ], %g1
+    1dd8:	80 a0 7f ff 	cmp  %g1, -1
+    1ddc:	12 bf ff fc 	bne  1dcc <__do_global_ctors_aux+0x2c>
+    1de0:	01 00 00 00 	nop 
+    1de4:	81 c7 e0 08 	ret 
+    1de8:	81 e8 00 00 	restore 
+
+00001dec <call___do_global_ctors_aux>:
+call___do_global_ctors_aux():
+    1dec:	9d e3 bf 98 	save  %sp, -104, %sp
+    1df0:	81 c7 e0 08 	ret 
+    1df4:	81 e8 00 00 	restore 
+セクション .fini の逆アセンブル:
+
+00001df8 <_fini>:
+_fini():
+    1df8:	9d e3 bf a0 	save  %sp, -96, %sp
+    1dfc:	7f ff fb cd 	call  d30 <__do_global_dtors_aux>
+    1e00:	01 00 00 00 	nop 
+    1e04:	81 c7 e0 08 	ret 
+    1e08:	81 e8 00 00 	restore 
+セクション .plt の逆アセンブル:
+
+000140b4 <__pthread_once@plt-0x30>:
+	...
+
+000140e4 <__pthread_once@plt>:
+   140e4:	03 00 00 30 	sethi  %hi(0xc000), %g1
+   140e8:	30 bf ff f3 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   140ec:	01 00 00 00 	nop 
+
+000140f0 <_dl_rtld_di_serinfo@plt>:
+   140f0:	03 00 00 3c 	sethi  %hi(0xf000), %g1
+   140f4:	30 bf ff f0 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   140f8:	01 00 00 00 	nop 
+
+000140fc <strcmp@plt>:
+   140fc:	03 00 00 48 	sethi  %hi(0x12000), %g1
+   14100:	30 bf ff ed 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14104:	01 00 00 00 	nop 
+
+00014108 <_dl_vsym@plt>:
+   14108:	03 00 00 54 	sethi  %hi(0x15000), %g1
+   1410c:	30 bf ff ea 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14110:	01 00 00 00 	nop 
+
+00014114 <strerror@plt>:
+   14114:	03 00 00 60 	sethi  %hi(0x18000), %g1
+   14118:	30 bf ff e7 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   1411c:	01 00 00 00 	nop 
+
+00014120 <_dl_tls_get_addr_soft@plt>:
+   14120:	03 00 00 6c 	sethi  %hi(0x1b000), %g1
+   14124:	30 bf ff e4 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14128:	01 00 00 00 	nop 
+
+0001412c <__asprintf@plt>:
+   1412c:	03 00 00 78 	sethi  %hi(0x1e000), %g1
+   14130:	30 bf ff e1 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14134:	01 00 00 00 	nop 
+
+00014138 <_dl_addr@plt>:
+   14138:	03 00 00 84 	sethi  %hi(0x21000), %g1
+   1413c:	30 bf ff de 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14140:	01 00 00 00 	nop 
+
+00014144 <_dl_sym@plt>:
+   14144:	03 00 00 90 	sethi  %hi(0x24000), %g1
+   14148:	30 bf ff db 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   1414c:	01 00 00 00 	nop 
+
+00014150 <__cxa_finalize@plt>:
+   14150:	03 00 00 9c 	sethi  %hi(0x27000), %g1
+   14154:	30 bf ff d8 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14158:	01 00 00 00 	nop 
+
+0001415c <__dcgettext@plt>:
+   1415c:	03 00 00 a8 	sethi  %hi(0x2a000), %g1
+   14160:	30 bf ff d5 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14164:	01 00 00 00 	nop 
+
+00014168 <calloc@plt>:
+   14168:	03 00 00 b4 	sethi  %hi(0x2d000), %g1
+   1416c:	30 bf ff d2 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14170:	01 00 00 00 	nop 
+
+00014174 <free@plt>:
+   14174:	03 00 00 c0 	sethi  %hi(0x30000), %g1
+   14178:	30 bf ff cf 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   1417c:	01 00 00 00 	nop 
+
+00014180 <_Jv_RegisterClasses@plt>:
+   14180:	03 00 00 cc 	sethi  %hi(0x33000), %g1
+   14184:	30 bf ff cc 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14188:	01 00 00 00 	nop 
+
+0001418c <strcpy@plt>:
+   1418c:	03 00 00 d8 	sethi  %hi(0x36000), %g1
+   14190:	30 bf ff c9 	b,a   140b4 <_PROCEDURE_LINKAGE_TABLE_>
+   14194:	01 00 00 00 	nop 
+   14198:	01 00 00 00 	nop 

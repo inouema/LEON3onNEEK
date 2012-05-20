@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="leon3mp">
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:0:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:10:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:1:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\ime:im0:0:itags0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_g7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mul32:\mgen:mul0|techmult:\xm1616:m1616|gen_mult_pipe:\pipe2:arch0:dwm|lpm_mult:Mult0" CBX_FILE_NAME="mult_v4t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:11:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:2:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\ime:im0:1:itags0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_g7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|regfile_3p:rf0|syncram_2p:\s1:dp:x0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_87r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:12:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:3:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\l3:dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem0:0:ram0|syncram:\nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu:\mmugen:m0|mmutlb:\tlbsplit0:itlb0|syncram:dataram|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q6r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|regfile_3p:rf0|syncram_2p:\s1:dp:x1|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_87r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|clkgen:clkgen0|clkgen_cycloneiii:\cyc3:v|cyclone3_pll:sdclk_pll|altpll:\sden:altpll0" CBX_FILE_NAME="altpll_9m31.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:13:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:4:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|syncram_2p:write_buff|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_47r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\l3:dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem0:0:ram0|syncram:\nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\l3:dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem0:1:ram0|syncram:\nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\dme:dd0:0:ddata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q9r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\ime:im0:0:idata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q9r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|svgactrl:\lcd:lcd0|syncram_2p:clutram|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_c7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|svgactrl:\lcd:lcd0|syncram_2p:ram0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_b7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:14:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:5:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|syncram_2p:read_buff|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_47r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|dsu3:\l3:dsugen:dsu0|dsu3x:x0|tbufmem:\tb0:mem0|syncram64:\mem0:1:ram0|syncram:\nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\dme:dd0:1:ddata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q9r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram:\ime:im0:1:idata0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q9r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram_dp:\dme:dtags1:dt1:dt0:0:dtags0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_a7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:15:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:6:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|cachemem:cmem0|syncram_dp:\dme:dtags1:dt1:dt0:1:dtags0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_a7r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu:\mmugen:m0|mmutlb:\tlbsplit0:dtlb0|syncram:dataram|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_q6r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|tbufmem:\tbmem_gen:tbmem0|syncram64:\mem0:0:ram0|syncram:\nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:7:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|apll:pll0|altpll:altpll_component" CBX_FILE_NAME="apll_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|tbufmem:\tbmem_gen:tbmem0|syncram64:\mem0:0:ram0|syncram:\nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|tbufmem:\tbmem_gen:tbmem0|syncram64:\mem0:1:ram0|syncram:\nos64:x0|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|altera_eek_clkgen:\lcd:lcdclkgen|altpll:altpll0" CBX_FILE_NAME="altpll_r971.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:8:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|leon3s:\l3:cpu:0:u0|tbufmem:\tbmem_gen:tbmem0|syncram64:\mem0:1:ram0|syncram:\nos64:x1|altera_syncram:\alt:x0|altera_syncram_dp:u0|altsyncram:u0" CBX_FILE_NAME="altsyncram_67r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|leon3mp|ddrspa:\ddrsp0:ddrc0|ddrphy_wrap:ddr_phy0|ddrphy:ddr_phy0|cycloneiii_ddr_phy:\cyc3:ddr_phy0|adqin:\ddgen:9:dq_in_pad|altddio_in:altddio_in_component" CBX_FILE_NAME="ddio_in_vff.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

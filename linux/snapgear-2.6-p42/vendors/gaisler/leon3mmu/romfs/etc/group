@@ -1,0 +1,10 @@
+root::0:root
+bin::1:root,bin,daemon
+daemon::2:root,bin,daemon
+wheel::3:root
+ftp::4:
+pop::5:pop
+nobody::98:nobody
+nogroup::99:
+users::100:
+

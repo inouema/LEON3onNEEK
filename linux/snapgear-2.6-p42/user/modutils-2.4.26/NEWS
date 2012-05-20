@@ -1,0 +1,71 @@
+Since -pre6:
+  - Picked up Philip Blundell's changes from the opengroup CVS tree.
+  - Picked up RTH's changes from the opengroup CVS tree.
+  - Add support for ksymoops debugging of modules.
+
+Since -pre2:
+  - Upgraded "create_syms" to be usable after a kernel "make modules_install"
+  - Added option "-q" to insmod and modprobe for silent loading.
+  - Depmod logic restructured, Test an extreme case with /etc/modules.conf:
+	depfile=/lib/modules/modules.dep
+	path=/lib/modules
+    This is example is just for testing, but it is a good test.
+    You might like the "-q" option to depmod...
+    With "-q" modprobe will now silently seriously probe for a good stack.
+
+    Strong recommendation: Always use modprobe rather than insmod,
+    unless you absolutely have to (such as if you are developing
+    a new module)!!! You will only gain from this strategy.
+
+Since snap-990308:
+  - Additional keywords for /etc/modules.conf:
+	if, else, elseif, endif, include, define, above, below
+  - Also uses wordexp() or glob() if available.
+  - All arguments in config files are expanded w.r.t. meta-characters.
+  - New depmod options (some especially for distribution maintainers):
+	-C file		Use alternate config file
+	-F file		Read kernel symbols from a file
+	-b base		Work with a moved image of /lib/modules
+	-q		Keep QUIET about unresolved symbols
+	-n		Don't do it, just show it
+   - Modprobe has (most of) the same additional options.
+
+Since snap-990228:
+  - Fixed a buffer overflow in depmod, bug report from:
+    Jochen Friedrich <jochen@scram.de>
+
+Since 2.1.121:
+  - Heavy restructuring
+  - Made "modprobe -r" able to clean up "autoclean" modules.
+  - Replaced modprobe and depmod with updated C++ versions based on
+    the work of Jacques Gelinas.
+  - Converted modprobe to C and merged it with insmod
+
+Since 2.1.107:
+
+  - ARM and MIPS ports added.
+  - Compilation in a separate directory works.
+
+Since 2.1.85:
+
+  - Insmod's -L parameter used by modprobe to prevent races.
+
+Since 2.1.71:
+
+  - Handling of local symbols revamped, so that ld -r objects work
+    properly when they have "conflicting" symbols.
+  - Modules may have .*.init sections which are freed after init_module
+    runs.  Note that the module must have _very_ large initial data for
+    this to have any effect at all.  Modules with large firmware blocks
+    to download are good candidates though.
+  - Aliases are now matched through globbing (for devfs), and
+    aliases of aliases resolve properly.
+
+Since 2.1.55:
+
+  - Build process now uses an autoconf-generated configure script.
+  - New program modinfo to display information embedded in the object
+    files of 2.1.x-style modules (by Tom Dyas, still in development).
+  - Recognize quoted parameter strings for 2.0.x modules.
+  - Kerneld zombie bug fixed.
+

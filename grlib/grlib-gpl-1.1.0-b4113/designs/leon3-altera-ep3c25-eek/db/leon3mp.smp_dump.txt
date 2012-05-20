@@ -1,0 +1,240 @@
+
+State Machine - |leon3mp|serializer:\lcd:lcdser0|r.state
+Name r.state.vec2 r.state.vec1 r.state.vec0 
+r.state.vec0 0 0 0 
+r.state.vec1 0 1 1 
+r.state.vec2 1 0 1 
+
+State Machine - |leon3mp|svgactrl:\lcd:lcd0|r.state
+Name r.state.reset r.state.not_running r.state.running 
+r.state.running 0 0 0 
+r.state.not_running 0 1 1 
+r.state.reset 1 0 1 
+
+State Machine - |leon3mp|i2cmst:\i2cm:i2c0|i2c_master_byte_ctrl:byte_ctrl|\statemachine:c_state
+Name \statemachine:c_state.st_stop \statemachine:c_state.st_ack \statemachine:c_state.st_write \statemachine:c_state.st_read \statemachine:c_state.st_start \statemachine:c_state.st_idle 
+\statemachine:c_state.st_idle 0 0 0 0 0 0 
+\statemachine:c_state.st_start 0 0 0 0 1 1 
+\statemachine:c_state.st_read 0 0 0 1 0 1 
+\statemachine:c_state.st_write 0 0 1 0 0 1 
+\statemachine:c_state.st_ack 0 1 0 0 0 1 
+\statemachine:c_state.st_stop 1 0 0 0 0 1 
+
+State Machine - |leon3mp|i2cmst:\i2cm:i2c0|i2c_master_byte_ctrl:byte_ctrl|i2c_master_bit_ctrl:bit_ctrl|s_state
+Name s_state.wr_d s_state.wr_c s_state.wr_b s_state.wr_a s_state.rd_d s_state.rd_c s_state.rd_b s_state.rd_a s_state.stop_d s_state.stop_c s_state.stop_b s_state.stop_a s_state.start_g s_state.start_f s_state.start_e s_state.start_d s_state.start_c s_state.start_b s_state.start_a s_state.idle 
+s_state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+s_state.start_a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+s_state.start_b 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+s_state.start_c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+s_state.start_d 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+s_state.start_e 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+s_state.start_f 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+s_state.start_g 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+s_state.stop_a 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+s_state.stop_b 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+s_state.stop_c 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+s_state.stop_d 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+s_state.rd_a 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.rd_b 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.rd_c 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.rd_d 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.wr_a 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.wr_b 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.wr_c 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+s_state.wr_d 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|i2cmst:\i2cm:i2c0|i2c_master_byte_ctrl:byte_ctrl|i2c_master_bit_ctrl:bit_ctrl|c_state
+Name c_state.wr_d c_state.wr_c c_state.wr_b c_state.wr_a c_state.rd_d c_state.rd_c c_state.rd_b c_state.rd_a c_state.stop_d c_state.stop_c c_state.stop_b c_state.stop_a c_state.start_g c_state.start_f c_state.start_e c_state.start_d c_state.start_c c_state.start_b c_state.start_a c_state.idle 
+c_state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+c_state.start_a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+c_state.start_b 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+c_state.start_c 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+c_state.start_d 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+c_state.start_e 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+c_state.start_f 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+c_state.start_g 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+c_state.stop_a 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+c_state.stop_b 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+c_state.stop_c 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+c_state.stop_d 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+c_state.rd_a 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.rd_b 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.rd_c 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.rd_d 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.wr_a 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.wr_b 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.wr_c 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+c_state.wr_d 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|apbps2:\ps2:ps20|r.txstate
+Name r.txstate.ack r.txstate.stop r.txstate.parity r.txstate.data r.txstate.start r.txstate.waitrequest r.txstate.idle 
+r.txstate.idle 0 0 0 0 0 0 0 
+r.txstate.waitrequest 0 0 0 0 0 1 1 
+r.txstate.start 0 0 0 0 1 0 1 
+r.txstate.data 0 0 0 1 0 0 1 
+r.txstate.parity 0 0 1 0 0 0 1 
+r.txstate.stop 0 1 0 0 0 0 1 
+r.txstate.ack 1 0 0 0 0 0 1 
+
+State Machine - |leon3mp|apbps2:\ps2:ps20|r.rxstate
+Name r.rxstate.stop r.rxstate.parity r.rxstate.data r.rxstate.start r.rxstate.idle 
+r.rxstate.idle 0 0 0 0 0 
+r.rxstate.start 0 0 0 1 1 
+r.rxstate.data 0 0 1 0 1 
+r.rxstate.parity 0 1 0 0 1 
+r.rxstate.stop 1 0 0 0 1 
+
+State Machine - |leon3mp|apbuart:\ua1:uart1|r.rxstate
+Name r.rxstate.stopbit r.rxstate.cparity r.rxstate.data r.rxstate.startbit r.rxstate.idle 
+r.rxstate.idle 0 0 0 0 0 
+r.rxstate.startbit 0 0 0 1 1 
+r.rxstate.data 0 0 1 0 1 
+r.rxstate.cparity 0 1 0 0 1 
+r.rxstate.stopbit 1 0 0 0 1 
+
+State Machine - |leon3mp|apbuart:\ua1:uart1|r.txstate
+Name r.txstate.stopbit r.txstate.cparity r.txstate.data r.txstate.idle 
+r.txstate.idle 0 0 0 0 
+r.txstate.data 0 0 1 1 
+r.txstate.cparity 0 1 0 1 
+r.txstate.stopbit 1 0 0 1 
+
+State Machine - |leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|r.istate
+Name r.istate.finish r.istate.lmode r.istate.emode r.istate.ref2 r.istate.ref1 r.istate.pre r.istate.iidle 
+r.istate.iidle 0 0 0 0 0 0 0 
+r.istate.pre 0 0 0 0 0 1 1 
+r.istate.ref1 0 0 0 0 1 0 1 
+r.istate.ref2 0 0 0 1 0 0 1 
+r.istate.emode 0 0 1 0 0 0 1 
+r.istate.lmode 0 1 0 0 0 0 1 
+r.istate.finish 1 0 0 0 0 0 1 
+
+State Machine - |leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|r.cmstate
+Name r.cmstate.leadout r.cmstate.ext r.cmstate.active r.cmstate.midle 
+r.cmstate.midle 0 0 0 0 
+r.cmstate.active 0 0 1 1 
+r.cmstate.ext 0 1 0 1 
+r.cmstate.leadout 1 0 0 1 
+
+State Machine - |leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|r.sdstate
+Name r.sdstate.srr3 r.sdstate.srr2 r.sdstate.srr1 r.sdstate.dpd r.sdstate.pd r.sdstate.cks r.sdstate.sref r.sdstate.ioreg2 r.sdstate.ioreg1 r.sdstate.sidle r.sdstate.wr5 r.sdstate.wr4 r.sdstate.wr4a r.sdstate.wr3 r.sdstate.wr2 r.sdstate.wr1 r.sdstate.rd8 r.sdstate.rd7 r.sdstate.rd6 r.sdstate.rd5 r.sdstate.rd4 r.sdstate.rd3a r.sdstate.rd3 r.sdstate.rd2a r.sdstate.rd2 r.sdstate.rd1 r.sdstate.act3 r.sdstate.act2 r.sdstate.act1 
+r.sdstate.act1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+r.sdstate.act2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+r.sdstate.act3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+r.sdstate.rd1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+r.sdstate.rd2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+r.sdstate.rd2a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+r.sdstate.rd3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+r.sdstate.rd3a 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+r.sdstate.rd4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+r.sdstate.rd5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+r.sdstate.rd6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.rd7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.rd8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr4a 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr5 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.sidle 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.ioreg1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.ioreg2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.sref 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.cks 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.pd 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.dpd 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.srr1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.srr2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.srr3 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|r.mstate
+Name r.mstate.leadout r.mstate.ext r.mstate.active r.mstate.midle 
+r.mstate.midle 0 0 0 0 
+r.mstate.active 0 0 1 1 
+r.mstate.ext 0 1 0 1 
+r.mstate.leadout 1 0 0 1 
+
+State Machine - |leon3mp|ddrspa:\ddrsp0:ddrc0|ddrsp16a:\ddr16:ddrc|ra.state
+Name ra.state.whold2 ra.state.whold1 ra.state.dwrite ra.state.dread ra.state.rhold ra.state.midle 
+ra.state.midle 0 0 0 0 0 0 
+ra.state.rhold 0 0 0 0 1 1 
+ra.state.dread 0 0 0 1 0 1 
+ra.state.dwrite 0 0 1 0 0 1 
+ra.state.whold1 0 1 0 0 0 1 
+ra.state.whold2 1 0 0 0 0 1 
+
+State Machine - |leon3mp|mctrl:\mg2:sr1|r.bstate
+Name r.bstate.bwrite16 r.bstate.bread16 r.bstate.bwrite8 r.bstate.bread8 r.bstate.bwrite r.bstate.bread r.bstate.berr r.bstate.idle 
+r.bstate.idle 0 0 0 0 0 0 0 0 
+r.bstate.berr 0 0 0 0 0 0 1 1 
+r.bstate.bread 0 0 0 0 0 1 0 1 
+r.bstate.bwrite 0 0 0 0 1 0 0 1 
+r.bstate.bread8 0 0 0 1 0 0 0 1 
+r.bstate.bwrite8 0 0 1 0 0 0 0 1 
+r.bstate.bread16 0 1 0 0 0 0 0 1 
+r.bstate.bwrite16 1 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|ahbjtag:\ahbjtaggen0:ahbjtag0|jtagcom:jtagcom0|r.state
+Name r.state.nxt_shft r.state.ahb r.state.shft 
+r.state.shft 0 0 0 
+r.state.ahb 0 1 1 
+r.state.nxt_shft 1 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu:\mmugen:m0|mmutw:tw0|r.state
+Name r.state.lv4 r.state.lv3 r.state.lv2 r.state.lv1 r.state.pte r.state.waitm r.state.idle 
+r.state.idle 0 0 0 0 0 0 0 
+r.state.waitm 0 0 0 0 0 1 1 
+r.state.pte 0 0 0 0 1 0 1 
+r.state.lv1 0 0 0 1 0 0 1 
+r.state.lv2 0 0 1 0 0 0 1 
+r.state.lv3 0 1 0 0 0 0 1 
+r.state.lv4 1 0 0 0 0 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu:\mmugen:m0|mmutlb:\tlbsplit0:dtlb0|r.s2_tlbstate
+Name r.s2_tlbstate.dofault r.s2_tlbstate.diag r.s2_tlbstate.sync r.s2_tlbstate.flush r.s2_tlbstate.pack r.s2_tlbstate.walk r.s2_tlbstate.match r.s2_tlbstate.idle 
+r.s2_tlbstate.idle 0 0 0 0 0 0 0 0 
+r.s2_tlbstate.match 0 0 0 0 0 0 1 1 
+r.s2_tlbstate.walk 0 0 0 0 0 1 0 1 
+r.s2_tlbstate.pack 0 0 0 0 1 0 0 1 
+r.s2_tlbstate.flush 0 0 0 1 0 0 0 1 
+r.s2_tlbstate.sync 0 0 1 0 0 0 0 1 
+r.s2_tlbstate.diag 0 1 0 0 0 0 0 1 
+r.s2_tlbstate.dofault 1 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu:\mmugen:m0|mmutlb:\tlbsplit0:itlb0|r.s2_tlbstate
+Name r.s2_tlbstate.dofault r.s2_tlbstate.diag r.s2_tlbstate.sync r.s2_tlbstate.flush r.s2_tlbstate.pack r.s2_tlbstate.walk r.s2_tlbstate.match r.s2_tlbstate.idle 
+r.s2_tlbstate.idle 0 0 0 0 0 0 0 0 
+r.s2_tlbstate.match 0 0 0 0 0 0 1 1 
+r.s2_tlbstate.walk 0 0 0 0 0 1 0 1 
+r.s2_tlbstate.pack 0 0 0 0 1 0 0 1 
+r.s2_tlbstate.flush 0 0 0 1 0 0 0 1 
+r.s2_tlbstate.sync 0 0 1 0 0 0 0 1 
+r.s2_tlbstate.diag 0 1 0 0 0 0 0 1 
+r.s2_tlbstate.dofault 1 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu_dcache:dcache0|r.dstate
+Name r.dstate.loadpend r.dstate.dblwrite r.dstate.asi_idtag r.dstate.wflush r.dstate.wtrans r.dstate.wwrite r.dstate.rtrans r.dstate.wread r.dstate.idle 
+r.dstate.idle 0 0 0 0 0 0 0 0 0 
+r.dstate.wread 0 0 0 0 0 0 0 1 1 
+r.dstate.rtrans 0 0 0 0 0 0 1 0 1 
+r.dstate.wwrite 0 0 0 0 0 1 0 0 1 
+r.dstate.wtrans 0 0 0 0 1 0 0 0 1 
+r.dstate.wflush 0 0 0 1 0 0 0 0 1 
+r.dstate.asi_idtag 0 0 1 0 0 0 0 0 1 
+r.dstate.dblwrite 0 1 0 0 0 0 0 0 1 
+r.dstate.loadpend 1 0 0 0 0 0 0 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|mmu_cache:c0mmu|mmu_icache:icache0|r.istate
+Name r.istate.stop r.istate.streaming r.istate.trans r.istate.idle 
+r.istate.idle 0 0 0 0 
+r.istate.trans 0 0 1 1 
+r.istate.streaming 0 1 0 1 
+r.istate.stop 1 0 0 1 
+
+State Machine - |leon3mp|leon3s:\l3:cpu:0:u0|proc3:p0|iu3:iu0|r.x.rstate
+Name r.x.rstate.dsu2 r.x.rstate.dsu1 r.x.rstate.trap r.x.rstate.run 
+r.x.rstate.run 0 0 0 0 
+r.x.rstate.trap 0 0 1 1 
+r.x.rstate.dsu1 0 1 0 1 
+r.x.rstate.dsu2 1 0 0 1 

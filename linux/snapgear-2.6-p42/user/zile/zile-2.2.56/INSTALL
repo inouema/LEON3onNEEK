@@ -1,0 +1,50 @@
+               Zile build and installation instructions
+               ----------------------------------------
+
+To build and install Zile:
+
+[Only if you're compiling the CVS sources, first make sure you have
+the GNU autotools installed (automake >= 1.9, autoconf >= 2.59) and
+run
+
+        autoreconf -i
+]
+
+1) Run configure:
+
+	./configure
+
+2) Compile the sources:
+
+	make
+
+3) To install Zile, run
+
+	make install
+
+   By default, Zile is installed under /usr/local; this can be changed
+   by using the --prefix argument to configure, e.g.
+
+	./configure --prefix=$HOME/zile
+
+   You can also run it in place (src/zile), but if you do that the
+   built-in documentation won't be available.
+
+
+Options
+-------
+
+If you are debugging the editor, you can enable the debugging code:
+
+  --enable-debug          include debugging code and assertions
+
+For other configure options, run
+
+	./configure --help
+
+
+Automated releases
+------------------
+
+To make a release automatically, you need woger, from
+http://rrt.sc3d.org/Software/woger

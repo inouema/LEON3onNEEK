@@ -1,0 +1,74 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+DEFSNOARCH	:= -I$(srcdir)/../include -D_GNU_SOURCE @DEFS@ $(EXTRA_DEFS)
+DEFS		:= -DELF_MACHINE_H='"elf_$(ARCH).h"' -DARCH_$(ARCH)
+OBJS		:= depmod.o
+
+# arch specific definitions for common 32/64 code
+
+ifeq (@COMMON_sparc@,yes)
+DEFS64		:= -DELF_MACHINE_H='"elf_sparc64.h"' -DARCH_sparc64
+endif
+
+ifeq (@COMMON_hppa@,yes)
+DEFS64		:= -DELF_MACHINE_H='"elf_hppa64.h"' -DARCH_hppa64
+endif
+
+ifeq (@COMMON_ppc@,yes)
+DEFS64		:= -DELF_MACHINE_H='"elf_ppc64.h"' -DARCH_ppc64
+endif
+
+ifeq (@COMMON_s390@,yes)
+DEFS64		:= -DELF_MACHINE_H='"elf_s390x.h"' -DARCH_s390x
+endif
+
+ifeq (@COMMON_i386@,yes)
+DEFS64		:= -DELF_MACHINE_H='"elf_x86_64.h"' -DARCH_x86_64
+endif
+
+# arch independent definitions for common 32/64 code
+
+ifdef DEFS64
+DEFSNOARCH	+= -DCOMMON_3264
+DEFS		+= -DONLY_32
+DEFS64		+= -DONLY_64 $(call check_gcc,-malign-double,)
+OBJS		+= depmod_64.o
+endif
+
+# Rule for building 64 bit versions, only used when building common code
+# for 32 and 64 bit systems.
+%_64.o: %.c
+	$(CC) $(CFLAGS) $(DEFSNOARCH) $(DEFS64) -c -o $@ $<
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(DEFSNOARCH) $(DEFS) -c -o $@ $<
+
+######################################################################
+
+all: .depend depmod
+
+depmod: $(OBJS) ../util/libutil.a ../obj/libobj.a
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS) $(ZLIB_STATIC)
+
+clean:
+	rm -f *.o
+	rm -f depmod
+
+realclean: clean
+	rm -f .depend
+
+distclean: realclean
+	rm -f Makefile
+
+install install-bin: all
+	$(MKDIR) $(DESTDIR)$(sbindir)
+	$(INSTALL) $(STRIP) depmod $(DESTDIR)$(sbindir)
+
+dep depend .depend: depmod.c
+	$(CC) -M $(CFLAGS) $(DEFSNOARCH) $(DEFS) $^ > .depend
+
+ifeq (.depend,$(wildcard .depend))
+include .depend
+endif

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<cof>
+	<eprom_name>CFI_128MB</eprom_name>
+	<output_filename>leon3mp.pof</output_filename>
+	<n_pages>1</n_pages>
+	<width>3</width>
+	<mode>8</mode>
+	<sof_data>
+		<start_address>00020000</start_address>
+		<user_name>Page_0</user_name>
+		<page_flags>1</page_flags>
+		<ap_conf_master> 
+			<sof_filename>leon3mp.sof</sof_filename>
+		</ap_conf_master> 
+		<ap_high_byte> 
+		</ap_high_byte> 
+		<ap_low_byte> 
+		</ap_low_byte> 
+	</sof_data>
+	<version>5</version>
+	<create_cvp_file>0</create_cvp_file>
+	<options>
+		<map_file>1</map_file>
+		<option_start_address>0</option_start_address>
+		<dynamic_compression>0</dynamic_compression>
+	</options>
+</cof>

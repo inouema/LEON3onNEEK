@@ -1,0 +1,94 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+DEFS = -I$(srcdir)/../include -D_GNU_SOURCE @DEFS@
+DEFS += $(DEBUG) $(NO_GDBM) $(EXTRA_DEFS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(DEFS) -c -o $@ $<
+
+######################################################################
+
+# Enable debugging by adding the option  debug  to kerneld: "kerneld debug"
+# (Debugging can also be enabled via the kdstat utility: "kdstat debug")
+DEBUG=-DDEBUG
+
+# If you have gdbm, and if you want to use it for persistent module storage,
+# remove (or comment) the following line:
+NO_GDBM=-DNO_GDBM
+
+# If you are compiling this on a 2.2.* kernel for use on a 2.0.* kernel
+# and you want to use the new kerneld protocol,
+# then uncomment the following line.  See also "linux/include/linux/kerneld.h"
+#	DEFS += -DNEW_KERNELD_PROTOCOL
+
+#----------------------------------------------------------------------
+
+
+PROGS= kerneld
+
+ifndef NO_GDBM
+PROGS += admpersist
+LIBS += -lgdbm
+endif
+
+all: .depend $(PROGS)
+
+kerneld: kerneld.o ../util/libutil.a
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+install install-bin: all
+	set -e; \
+	for i in $(PROGS); do \
+	  $(MKDIR) $(sbindir); \
+	  $(INSTALL) $(STRIP) $$i $(sbindir); \
+	done
+
+install-scripts:
+	$(MKDIR) $(sbindir)
+	$(INSTALL) request-route.sh $(sbindir)/request-route
+
+UTILS= kdstat
+TESTPROGS= kdsend
+TARGETS= $(PROGS) $(UTILS) $(TESTPROGS)
+
+#
+# Build the fake kerneld message generator: kdsend and the kdstat "utility"
+# Used for debugging purposes only
+#
+test: all $(TESTPROGS)
+
+utils: all $(UTILS)
+
+install-utils: utils
+	set -e; \
+	for i in $(UTILS); do \
+	  $(MKDIR) $(sbindir); \
+	  $(INSTALL) $$i $(sbindir); \
+	done
+
+clean:
+	rm -f $(TARGETS) *.o
+
+realclean: clean
+	rm -f .depend
+
+distclean: realclean
+	rm -f Makefile
+
+depend dep .depend: $(addsuffix .c, $(TARGETS))
+	@echo "Read the Makefile comment about NEW_KERNELD_PROTOCOL!"
+	$(CC) -M $(CFLAGS) $(DEFS) $^ > .depend
+
+check_persist.o: check_persist.c
+	$(CC) $(CFLAGS) $(DEFS) -DMODULE -D__KERNEL__ -c check_persist.c
+
+kdstat: kdstat.c
+	$(CC) $(CFLAGS) $(DEFS) -o $@ $^
+
+# include a dependency file if one exists
+
+ifeq (.depend,$(wildcard .depend))
+include .depend
+endif

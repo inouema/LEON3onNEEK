@@ -1,0 +1,21 @@
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devpts devpts /dev/pts
+
+#grep -q ext2 /proc/mounts
+#[ "$?" = "0" ] && mount -oremount,rw /dev/ram /
+
+hostname sparky
+
+ifconfig lo up 127.0.0.1 netmask 255.0.0.0
+route add 127.0.0.1 dev lo
+#
+ifconfig eth0 up 192.168.0.40
+#route add default gw 192.168.0.1 dev eth0
+#
+portmap -d &
+inetd -d & 
+
+#mount -o nolock -o ro -t nfs 192.168.0.15:/home /home/nfs

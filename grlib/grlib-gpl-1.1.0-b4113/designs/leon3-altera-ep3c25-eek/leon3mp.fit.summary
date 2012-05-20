@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Feb  5 18:50:48 2012
+Quartus II 32-bit Version : 11.1 Build 216 11/23/2011 SP 1 SJ Web Edition
+Revision Name : leon3mp
+Top-level Entity Name : leon3mp
+Family : Cyclone III
+Device : EP3C25F324C8
+Timing Models : Final
+Total logic elements : 17,731 / 24,624 ( 72 % )
+    Total combinational functions : 15,185 / 24,624 ( 62 % )
+    Dedicated logic registers : 6,723 / 24,624 ( 27 % )
+Total registers : 6811
+Total pins : 204 / 216 ( 94 % )
+Total virtual pins : 0
+Total memory bits : 233,696 / 608,256 ( 38 % )
+Embedded Multiplier 9-bit elements : 2 / 132 ( 2 % )
+Total PLLs : 3 / 4 ( 75 % )

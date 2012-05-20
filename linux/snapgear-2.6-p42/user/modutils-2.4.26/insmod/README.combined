@@ -1,0 +1,20 @@
+Benefits of combining executables, especially for boot systems (and ramdisk)
+Numbers from builds on a RedHat 5.2 system running Linux-2.2.2 with i586
+
+Separate executables:                  Stripped size (no 2.0 compatibility)
+
+	insmod                                 39684 (36896)
+	ksyms                                   8904 ( 7148)
+	lsmod                                   9052 ( 7500)
+	modprobe                               30780 (29060)
+	rmmod                                   9272 ( 7572)
+
+Combined executables:
+
+	insmod+rmmod                           41012 (38272)
+	insmod+modprobe                        48912 (46188)
+	insmod+rmmod+lsmod                     42136 (39584)
+	insmod+rmmod+modprobe                  50048 (47324)
+	insmod+rmmod+modprobe+lsmod            51076 (48524)
+	insmod+rmmod+modprobe+lsmod+ksyms      52008 (49452)
+

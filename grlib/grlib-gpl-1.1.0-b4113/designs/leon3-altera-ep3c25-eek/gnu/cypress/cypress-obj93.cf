@@ -1,0 +1,12 @@
+v 3
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/cypress/ssram/cy7c1380d.vhd" "20120118214648.000" "20120128164854.486":
+  entity cy7c1380d at 36( 1225) + 0 on 16;
+  architecture cy7c1380d_arch of cy7c1380d at 210( 10281) + 0 on 17;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/cypress/ssram/package_utility.vhd" "20120118214648.000" "20120128164854.299":
+  package package_utility at 7( 384) + 0 on 12 body;
+  package body package_utility at 25( 788) + 0 on 13;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/cypress/ssram/components.vhd" "20120118214648.000" "20120128164854.255":
+  package components at 21( 829) + 0 on 11;
+file "/home/inouema/work/LEON/grlib/grlib-gpl-1.1.0-b4113/designs/leon3-altera-ep3c25-eek/" "../../lib/cypress/ssram/cy7c1354b.vhd" "20120118214648.000" "20120128164854.338":
+  entity cy7c1354 at 37( 1317) + 0 on 14;
+  architecture behave of cy7c1354 at 129( 4338) + 0 on 15;

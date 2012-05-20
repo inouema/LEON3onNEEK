@@ -1,0 +1,235 @@
+2010-03-16:   Added template configurations for GR-LEON4-ITX
+
+2010-02-15:   Added power-down instruction to cpu_idle() loop.
+
+2009-11-27:   Fixed so that Linux does not crash if the RTC is used from the ntp services.
+
+2009-10-09:   Fixed dsu/tsim linker scripts, missing #ifdef when initramfs was used
+
+2009-08-24:   GRETH: Fixed PHY address autodetection.
+
+2009-08-05:   Update pci-utils and mtd-utils utilities.
+
+2009-05-15:   Added support for multiple APB bridges and two AHB buses in Linux loader
+
+2009-04-28:   Fixed return value of srmmu_swprobe()
+
+2009-04-16:   Added support for new IRQ register in GRPCI core
+
+2009-04-16:   Added support for extended interrupt controller
+
+2009-03-25:   Added multicast support for ethernet
+
+2009-03-10:   Avoid flush of icache when calling flush_cache_page()
+
+2009-02-11:   GRUSBDC added to recognized peripheral controller list
+
+2009-02-01:   Add support for multiple APB bridges
+
+2009-01-19:   Added support for PHY interrupts in greth driver
+
+2008-12-30:   Patch by Gilead Kutnick: readout complete uart fifo in leonuart_rx_chars. 
+
+2008-11-27:   Add support for page sizes != 4k
+
+2008-11-11:   SVGACTRL driver did not initialize correctly if core was
+              already enabled.
+
+2008-11-11:   Added support for AHB2AHB bridge
+
+2008-11-04:   Added documentation on how to initialize DVI transmitter
+              from userspace, via I2C.
+
+2008-11-04:   Create more i2c-devices for leon3mmu
+
+2008-11-04:   Added 800x480 resolution to grvga
+
+2008-11-04:   Added argument to grvga to set framebuffer address
+
+2008-11-03:   Changed default shell from user/sash to busybox sash.
+
+2008-10-30:   Added documentation about root file system on CompactFlash
+
+2008-10-26:   Added Xilinx System ACE driver and support for GRACECTRL
+
+2008-10-23:   Fix Leon2 bug due to compiler register allocation error in asm statement.
+
+2008-09-26:   Added driver for USB device controller
+
+2008-09-10:   Updated DDR2 CFG3 tRFC calculation
+
+2008-08-28:   Fixed AMBA Plug&Play FREE functions for AHB/APB scanning.
+
+2008-02-25:   Added applications tcl8.5.1, ncurses-5.6, and zile-2.2.56
+
+2008-02-24:   Added generic GPIO driver for GRGPIO, device id 212
+
+2008-02-22:   Updated iptables to 2.4.0 and added netfilter template config.
+
+2007-12-14:   Created new Snapgear-2.6 dist
+               * cleaned up from linux 2.0.
+               * Upgraded busybox to 1.8.2,
+               * Added uClibc toolchain
+               * removed microLibc library
+               * Added apps and busybox config to templates
+               * added romfs directory to leon2mmu and leon3mmu
+
+2007-12-06:   Fixed PCI compilation issues with gcc 3.4.4.
+
+2007-12-06:   Added template configurations for GR-XC3S-1500, Altera NIOS 2
+              and HAPS-51 template designs.
+
+2007-12-04:   AMBA PnP now scans for 16 AHB slaves and 16 AHB masters 
+
+2007-11-30:   Updated 2.6.21.1 ATA DMA driver
+
+2007-11-20:   Added DDR and DDR2 SDRAM controller to boot prom and GUI.
+
+2007-10-03:   Added fix for telnetd
+
+2007-09-13:   Implemented register store in gdbserver.
+
+2007-09-12:   Fixed 2.6.21.1 ATA driver.
+
+2007-09-11:   Added Debugging chapter in documentation
+
+2007-09-07:   Added basic debugging support to gdbserver for the SPARC 
+              Architecture. Register store is to be implemented.
+
+2007-09-05:   Fixed uClibc system call bugs for Linux-2.6.21.1 (pipe,mmap,wait4)
+              and Linux-2.0.x (pipe)
+
+2007-08-28:   Added Linux-2.6.21.1 SPI driver for GRSPI core.
+
+2007-08-20:   Fixed a bug in GRETH GBIT driver.
+
+2007-08-15:   Fixed boot PROM memory mappings, if unlucky this could make 
+              vmalloc fail on Linux-2.6.21.1.
+
+2007-07-10:   Added support for GRLIB port of OC I2C-master
+
+2007-07-03:   Added proper cache flushing routines to pgtable.h in uClinux. 
+
+2007-06-19:   Added support for PCI type 1 configuration cycles.
+
+2007-05-22:   Added 640x480 8-bit as default mode for GRVGA.
+
+2007-05-18:   Updated the USB 2.0 and 1.1 (GRUSB) support for Linux 2.6.21.1.
+
+2007-05-15:   Added support for FT-Memory controller for SMC91x driver.
+
+2007-05-14:   Added Linux 2.0.x kernel command line setting from kernel
+              conguration tool, under 'General Setup'.
+
+2007-05-07:   Updated 2.6 Linux kernel to 2.6.21.1
+
+2007-04-23:   Added U-Boot image target (make uImage) to linux-2.6.18.1 kernel
+
+2007-04-23:   Fixed a Linux 2.6.18.1 GRPCI driver byte twisting issue
+
+2007-04-13:   Fixed LEON2 (Linux 2.6.18.1 CPU 0) frequency detection
+
+2007-04-13:   Fixed GRVGA driver mmap interface, it is now possible to use
+              GRVGA with X11, also cleaned it up.
+
+2007-03-21:   Added driver for Gaisler DMA ATA Controller.
+
+2007-02-15:   Fixed LEON2 kernel command line.
+
+2007-02-14:   Added newer boa webserver for linux 2.0.x.
+
+2007-02-14:   Added Template design menu to main Snapgear GUI. Its only purpose
+              is to provide users with sample configurations.
+
+2007-02-12:   Added klibc-1.4.31, ATA or Ethernet support in klibc & manual,
+              shutdown fix, initramfs merge.
+
+2007-02-09:   Fixed LEON3 reboot problem for linux 2.x and 2.6.x.
+
+2007-01-31:   Added SnapGear Manual.
+
+2007-01-30:   Fixed lanchip SMC91x driver for 2.6.18.1.
+
+2007-01-25:   Added option to bootloader menu for root filesystem, 
+              ROMFS/INITRAMFS/CUSTOM/NONE.
+
+2007-01-23:   Added LEON SMP support to 2.6.18.1 and bootloader.
+
+2007-01-08:   Added example on how to use Framebuffer console and PS/2 keybord.
+
+2006-12-20:   Kernel boot problem when enabling kernel loadable modules fixed.
+
+2006-12-14:   Updated linux 2.0 PS/2 driver to support new grlib PS/2 core.
+              
+              Note: This kernel need the latest grlib version (containing 
+              the new PS/2 core) if you are using PS/2 keyboard or mouse.
+
+2006-12-13:   Added config bit in xconfig. The bit enables linux to write
+              to flash/prom memory.
+
+2006-12-13:   updated 2.6.18.1 PS/2 driver to support new grlib PS/2 core.
+              Also, added linux->keyboard communication, which enables
+              support for kbd leds and delays.
+
+              Note: This kernel need the latest grlib version (containing 
+              the new PS/2 core) if you are using PS/2 keyboard or mouse.
+
+2006-12-11:   Fixed PS/2 keyboard registration problem for 2.6.18.1
+
+2006-12-07:   LEON linux 2.6.18.1 stability fix.
+
+2006-11-23: 	Fixed some errors/varnings on gcc-4 compiler
+
+2006-11-23: 	Fixed Greth & apbuart spinlocks
+
+2006-11-17: 	Added NFS boot support to snapgear
+
+2006-11-08: 	Added Framebuffer Video driver to 2.6.18.1 kernel.
+
+2006-10-19: 	Leon3mmu & Leon2mmu default config for linux 2.6.18.1 kernel
+
+2006-09-09: 	wrong calculation of sdram size in boot loader
+
+2006-07-04:	Modified the linux-2.6 driver for LAN91C111 to
+		work with LEON3 and the standard memory controller.
+
+2006-06-19:	/dev/pty were wrongly removed when romfs was built
+
+2006-06-19:	added plug&play support for DDR controller in linux-2.6 
+		flashbz image
+
+2006-06-15:	Added kernel boot parameter option in xconfig for leon3mmu
+		
+2006-06-09:	Added linux 2.6 ATA device driver for ATACTRL core
+
+2006-03-31:	Leon3mmu bzimage for flash booting did not initialize sdram
+
+2006-03-30:	Default kernel config for leon2mmu/linux-2.6.11 enabled
+		leon3 features by mistake.
+
+2005-12-14:	Added greth ethermac driver
+		,CONFIG_USE_ARCHMEMCPY config option to enable linux memcpy|memmove
+		,CONFIG_GRLIB_OPENCORES_ETHERNET_MII_100MB to enable 100mbit ehternet
+		
+2005-11-30:	Added /proc/bus/amba entry from BARDON Damien<damien83@orange.fr>
+		Support multiple cores in open_eth.c from BARDON Damien<damien83@orange.fr>
+
+2005-09-27:	Kconfig fix for openeth driver leon2/leon3
+		amba_free_apbslv_device() for modules
+
+2004-08-18:	getversion.sh should have execute permission
+		uClibc/extra/scripts/getversion.sh
+		user/busybox/scripts/getversion.sh
+
+2004-08-18:	uClinux needs 4 Kbyte free mem at top of ram
+		vendors/gaisler/common/bootloader.pl
+
+2004-08-17:	wrong ram settings for leon2 when multiple ram banks
+		were configured
+		vendors/gaisler/common/config.in
+		vendors/gaisler/common/bootloader.pl
+
+2004-08-10:	uClinux applications for sparcnommu missed -msoft-float
+		during linking.
+		vendors/config/sparcnommu/config.arch
+		vendors/config/sparc/config.arch

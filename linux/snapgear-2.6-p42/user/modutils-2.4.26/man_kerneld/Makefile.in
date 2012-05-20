@@ -1,0 +1,20 @@
+VPATH	= @srcdir@
+srcdir	= @srcdir@
+include	../Makefile.common
+
+######################################################################
+
+all install-bin clean dep depend install:
+
+install-man:
+	set -e; \
+	for i in $(srcdir)/*.[1-8] ; do \
+	  ext=`echo $$i | sed 's/.*\.//'`; \
+	  $(MKDIR) $(DESTDIR)$(mandir)/man$$ext/; \
+	  $(INSTALL) -m 644 $$i $(DESTDIR)$(mandir)/man$$ext/; \
+	done
+
+realclean: clean
+
+distclean: realclean
+	rm -f Makefile

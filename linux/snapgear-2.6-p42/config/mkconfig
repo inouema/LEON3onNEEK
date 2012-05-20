@@ -1,0 +1,218 @@
+#! /bin/sh
+#############################################################################
+#
+# Generate the vendor/product menu entries for the top level config
+#
+# davidm@snapgear.com
+#
+#############################################################################
+
+fix_name()
+{
+	echo $1 | tr '[\-\.\/\+a-z]' '[____A-Z]'
+}
+
+#############################################################################
+#
+# the header of the config
+#
+
+echo "mainmenu_name 'SnapGear Embedded Linux Configuration'"
+
+#############################################################################
+#
+# Figure out the vendor/products dynamically, allows people to add there
+# own without messin with the config.in file
+#
+
+echo "mainmenu_option next_comment"
+echo "comment 'Vendor/Product Selection'"
+echo "comment 'Select the Vendor you wish to target'"
+echo -n "choice 'Vendor' \""
+
+oldv=
+find vendors -name config.arch -print | sed -e 's?/? ?g' | \
+		sort | while read t1 v p t2
+do
+	[ "$v" = "config" ] && continue
+	[ "$v" = "$oldv" ] && continue
+	echo "${v} CONFIG_DEFAULTS_`fix_name ${v}` \\"
+	oldv=$v
+done
+echo "\" gaisler"
+#echo "endmenu"
+
+# echo "mainmenu_option next_comment"
+# echo "comment 'Product Selection'"
+echo "comment 'Select the Product you wish to target'"
+
+oldv=
+def=
+default=leon3mmu
+find vendors -name config.arch -print | sed -e 's?/? ?g' | \
+		(sort; echo "END END END END") | while read t1 v p t2
+do
+	[ "$v" = "config" ] && continue
+	if [ "$v" != "$oldv" ]
+	then
+		[ "$def" -o "$v" = END ] && echo "\" $default"
+		[ "$def" -o "$v" = END ] && echo "fi"
+		[ "$v" = END ] && break
+		echo "if [ \"\$CONFIG_DEFAULTS_`fix_name ${v}`\" = \"y\" ]; then"
+		echo -n "choice '${v} Products' \""
+		def="${p}"
+	fi
+	if [ -f "vendors/$v/$p/config.languages" ]
+	then
+		for i in `cat "vendors/$v/$p/config.languages"`
+		do
+			echo "${p}($i) CONFIG_DEFAULTS_`fix_name ${v}`_`fix_name ${p}`_`fix_name ${i}` \\"
+		done
+	else
+		echo "${p} CONFIG_DEFAULTS_`fix_name ${v}`_`fix_name ${p}` \\"
+	fi
+	oldv=$v
+done
+
+# echo "mainmenu_option next_comment"
+# echo "comment 'Product Options Selection'"
+echo "comment 'Select the options for a selected Product'"
+
+find vendors -name config.arch -print | sed -e 's?/? ?g' | \
+		(sort; echo "END END END END") | while read t1 v p t2
+do
+	[ "$v" = "config" ] && continue
+	if [ -f "vendors/$v/$p/config.in" ]
+	then
+		[ "$v" = END ] && break
+		#echo "if [ \"\$CONFIG_DEFAULTS_`fix_name ${v}`\" = \"\$CONFIG_DEFAULTS_`fix_name ${v}`_`fix_name ${p}`\" ]; then"
+	        cat "vendors/$v/$p/config.in"
+		#echo "fi"
+	fi
+done
+
+
+echo "endmenu"
+
+#############################################################################
+
+echo "mainmenu_option next_comment"
+echo "comment 'Kernel/Library/Defaults Selection'"
+
+#
+# Which kernel do they want,  if only one then just set it,  I don't
+# expect an explosion of kernels just yet ;-)
+#
+
+KERNELS="`ls -d linux-* 2>/dev/null`"
+NKERNELS="`echo ${KERNELS} | wc -w`"
+if [ ${NKERNELS} -gt 1 ]; then
+	echo -n "choice 'Kernel Version' \""
+	for i in ${KERNELS}; do
+		VER=${i##linux-}
+		CFG="CONFIG_DEFAULTS_KERNEL_`echo ${VER%%.x}|sed -e 's/[-\.]/_/g'`"
+		DEF="linux-${VER}"
+		echo "${DEF} ${CFG} \\"
+	done
+	echo "\" $DEF"
+elif [ ${NKERNELS} -eq 1 ]; then
+	VER=${KERNELS##linux-}
+	CFG="CONFIG_DEFAULTS_KERNEL_`echo ${VER%%.x}|sed -e 's/[-\.]/_/g'`"
+	echo "comment 'Kernel is linux-${VER}'"
+	echo "define_bool ${CFG} y"
+else
+	echo "ERROR: you have no kernels available in this directory." >&2
+	exit 1
+fi
+
+#############################################################################
+#
+# Which libc do they want,  if only one then just set it,  I don't
+# expect an explosion of libc's just yet ;-)
+#
+
+LIBCS="`ls -d lib/libc uClibc uClibc-* glibc glibc-* uclibc-* microLibc 2>/dev/null` none"
+NLIBCS="`echo ${LIBCS} | wc -w`"
+if [ ${NLIBCS} -gt 1 ]; then
+	echo -n "choice 'Libc Version' \""
+	for i in ${LIBCS}; do
+		[ "$i" = "lib/libc" ] && i=uC-libc
+		CFG="CONFIG_DEFAULTS_LIBC_`fix_name ${i}`"
+		DEF="${i}"
+		echo "${DEF} ${CFG} \\"
+	done
+	DEF="glibc-from-compiler"
+	echo "\" $DEF"
+else
+	[ "$i" = "lib/libc" ] && i=uC-libc
+	CFG="CONFIG_DEFAULTS_LIBC_`fix_name ${LIBCS}`"
+	echo "comment 'Libc is ${LIBCS}'"
+	echo "define_bool ${CFG} y"
+fi
+
+# echo "endmenu"
+
+#############################################################################
+#
+# the rest of the config
+#
+
+# echo "mainmenu_option next_comment"
+# echo "comment 'Configuration Overrides'"
+
+cat <<!EOF
+bool 'Default all settings (lose changes)'	CONFIG_DEFAULTS_OVERRIDE
+bool 'Customize Kernel Settings'			CONFIG_DEFAULTS_KERNEL
+!EOF
+[ -d modules ] &&
+	echo "bool 'Customize Module Settings'			CONFIG_DEFAULTS_MODULES"
+cat <<!EOF
+bool 'Customize Vendor/User Settings'		CONFIG_DEFAULTS_VENDOR
+bool 'Update Default Vendor Settings'		CONFIG_DEFAULTS_VENDOR_UPDATE
+endmenu
+!EOF
+
+############################################################################
+# Template Configurations
+#
+
+echo 
+echo
+echo
+echo "mainmenu_option next_comment"
+echo "comment 'Template Configurations'"
+
+# Get all directories 
+targets=`cd vendors/gaisler; ls -d *`
+for target in $targets
+do
+	# only process target directories
+	if [ "$target" != "common" -a -d "vendors/gaisler/$target/templates" ]; then
+	
+		# translate target directory in upper case
+		target_upper=`echo $target | tr [:lower:] [:upper:]`
+		
+		templates=`cd vendors/gaisler/$target/templates; find * -type d | grep -v .svn`
+		
+		if [ -n "$templates" ]; then
+			# enable only choise for respective target
+			echo "if [ \"\$CONFIG_DEFAULTS_GAISLER_${target_upper}\" = \"y\" ]; then"
+			echo "choice 'Templates for ${target}' \" \\"
+			echo "none CONFIG_TEMPLATE_${target_upper}_NONE \\"
+			
+			for template in $templates;
+			do
+				# translate template into upper case
+				template_upper=`echo $template | tr [:lower:] [:upper:]`
+				
+				echo "$template CONFIG_TEMPLATE_${target_upper}_${template_upper} \\" 
+			done
+			echo \" none
+			echo fi
+		fi
+	fi	
+done
+
+echo "bool 'Update configurations with above selection'			CONFIG_TEMPLATES_UPDATE"
+
+echo "endmenu"

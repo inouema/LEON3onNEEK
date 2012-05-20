@@ -1,0 +1,19 @@
+include $CDS_INST_DIR/tools/inca/files/cds.lib
+DEFINE grlib xncsim/grlib 
+DEFINE altera xncsim/altera 
+DEFINE altera_mf xncsim/altera_mf 
+DEFINE cycloneiii xncsim/cycloneiii 
+DEFINE dware xncsim/dware 
+DEFINE synplify xncsim/synplify 
+DEFINE techmap xncsim/techmap 
+DEFINE eth xncsim/eth 
+DEFINE opencores xncsim/opencores 
+DEFINE gaisler xncsim/gaisler 
+DEFINE esa xncsim/esa 
+DEFINE fmf xncsim/fmf 
+DEFINE spansion xncsim/spansion 
+DEFINE gsi xncsim/gsi 
+DEFINE cypress xncsim/cypress 
+DEFINE hynix xncsim/hynix 
+DEFINE micron xncsim/micron 
+DEFINE work xncsim/work 

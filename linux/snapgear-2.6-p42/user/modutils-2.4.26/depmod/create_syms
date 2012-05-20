@@ -1,0 +1,87 @@
+#!/bin/sh
+#
+#
+# Copyright 1999 Björn Ekwall <bj0rn@blox.se>
+#
+# This file is part of the Linux modutils.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+##########################################################################
+#
+# This is a silly little script that creates a list of kernel symbols
+# and calls "depmod -F symfile -a Kernel_Version".
+#
+# You can use it immediately after doing "make modules_install"
+# while building the kernel and its modules.
+#
+# Do a "cd" to the base directory of the kernel source tree
+# and execute this script.
+#
+##########################################################################
+
+for i in .config System.map vmlinux Makefile
+do
+	if [ ! -f $i ]
+	then
+		echo "Oops, $i is missing! Is this directory really a kernel source directory?" > /dev/tty
+		exit 1
+	fi
+done
+
+eval `grep -F 'VERSION =
+PATCHLEVEL =
+SUBLEVEL =
+EXTRAVERSION =
+' Makefile | sed 's/ //g'`
+FORCE=${VERSION}.${PATCHLEVEL}.${SUBLEVEL}${EXTRAVERSION}
+
+OUT=.depmodinfo
+rm -f $OUT
+
+source .config
+if [ A$CONFIG_MODVERSIONS = Ay ]
+then
+	echo "Aha! A versioned kernel!" > /dev/tty
+	echo "I will try to extract the exported versioned symbols." > /dev/tty
+	echo "I will also fake some unversioned symbols for you," > /dev/tty
+	echo "although you had better verify that they really exist..." > /dev/tty
+	echo "...or add some more if 'depmod' below complains..." > /dev/tty
+	for i in Using_Versions \
+		__down_failed \
+		__down_failed_interruptible \
+		__down_failed_trylock \
+		__get_user_1 \
+		__get_user_2 \
+		__get_user_4 \
+		__put_user_1 \
+		__put_user_2 \
+		__put_user_4 \
+		__up_wakeup \
+		up_wakeup \
+		__do_delay
+	do
+		echo $i > /dev/tty
+		echo "vmlinux T $i" >> $OUT
+	done
+
+	strings vmlinux | grep "_R[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]$" | sed 's/^/vmlinux T /' >> $OUT
+else
+	grep ' [A-Z] ' System.map >> $OUT
+fi
+
+echo Here we go...
+set -x
+/sbin/depmod -F $OUT -e -a $FORCE

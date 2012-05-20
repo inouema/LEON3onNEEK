@@ -1,0 +1,7 @@
+# Basic Init Table
+#
+
+# System initialization (runs when system boots).
+::sysinit:/etc/init.d/rcS
+
+::respawn:/bin/sh

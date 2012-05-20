@@ -1,0 +1,2 @@
+BOOTLOADER_VMLINUX = ../../../vmlinux
+BOOTLOADER_BOOTLOADER = <enter>
